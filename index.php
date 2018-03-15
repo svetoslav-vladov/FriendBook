@@ -7,11 +7,14 @@
     // To handle errors not sure yet
     require_once "./include/error_handler.php";
 
+    // for testing
+    // $error = "username do not exists";
+
     require_once "./include/header.php";
 
     //front controller
     if(isset($error) && $error){
-        echo "<h2 class='warning-box'>$error</h2>";
+        echo "<div class='warning-box'>$error</div>";
     }
     if(isset($_GET["page"])){
         $page = htmlentities($_GET["page"]);

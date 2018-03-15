@@ -1,0 +1,18 @@
+body{
+    font-size: 1.2em;
+
+}
+#wrap{
+    width: 100%;
+    max-width: 960px;
+    margin: 30px auto;
+}
+.warning-box{
+    background: #f2dede;
+    padding: 5px;
+    text-align: center;
+    box-sizing: border-box;
+    width: 60%;
+    max-width: 960px;
+    margin: 0 auto;
+}
