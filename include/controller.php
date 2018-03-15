@@ -1,6 +1,27 @@
 <?php
     require_once 'config.php';
-
+    if (isset($_POST['login'])) {
+        $error = false;
+        $email = htmlentities($_POST['email']);
+        $password = htmlentities($_POST['password']);
+        $wrongUsername = true;
+        if (empty($email) || empty($password)) {
+            $error = 'Please fill all filds!';
+        }
+        else {
+            foreach ($usersDB as $key => $user) {
+                if ($user['email'] == $key && $user['password'] == sha1($password)) {
+                    $wrongUsername = false;
+                    $_SESSION['logged'] = $user;
+                    header('location: index.php?page=main');
+                    break;
+                }
+            }
+            if ($wrongUsername) {
+                $error = 'Wrong username or password!';
+            }
+        }
+    }
     if (isset($_POST['register'])) {
         $error = false;
         $user = array();

@@ -24,6 +24,10 @@
             require_once 'register.php';
             echo "<div class='warning-box'>$error</div>";
         }
+        if (isset($_POST['login'])) {
+            require_once 'login.php';
+            echo "<div class='warning-box'>$error</div>";
+        }
     }
     elseif(isset($_GET["page"])) {
         $page_name = $_GET["page"];
