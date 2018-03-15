@@ -1,4 +1,11 @@
 <?php
+    session_start();
+    require_once "./include/config.php";
 
-// 1.Register, Login
-// 2.
+    require_once "./include/header.php";
+
+    echo "demo content here";
+
+    require_once "./include/footer.php";
+
+
