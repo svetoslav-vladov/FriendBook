@@ -10,7 +10,7 @@
         }
         else {
             foreach ($usersDB as $key => $user) {
-                if ($user['email'] == $key && $user['password'] == sha1($password)) {
+                if ($email == $key && $user['password'] == sha1($password)) {
                     $wrongUsername = false;
                     $_SESSION['logged'] = $user;
                     header('location: index.php?page=main');
