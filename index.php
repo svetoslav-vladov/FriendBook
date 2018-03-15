@@ -14,9 +14,13 @@
 
     //front controller
     if(isset($error) && $error){
-        echo "<div class='warning-box'>$error</div>";
+        if (isset($_POST['register'])) {
+            require_once 'register.php';
+            echo "<div class='warning-box'>$error</div>";
+        }
     }
-    if(isset($_GET["page"])){
+    elseif(isset($_GET["page"])) {
+        $page_name = $_GET["page"];
         $page = htmlentities($_GET["page"]);
         if(isset($_SESSION["logged"])){
             require_once "$page.php";
@@ -29,10 +33,10 @@
         }
     }
     else{
-        if(isset($_SESSION["logged"])){
+        if (isset($_SESSION["logged"])) {
             require_once "./main.php";
         }
-        else{
+        else {
             require_once "./login.php";
         }
     }

@@ -1,16 +1,32 @@
 {
-  "email":{
-      "id": 1,
-      "email": "",
-      "first_name": "",
-      "last_name": "",
-      "gender": "",
-      "password": "",
-      "birthday": "",
-      "profile_pic": "./uploads/default_profile.png",
-      "desc": "",
-      "cover": "./uploads/default_cover.jpg",
-      "photos": [],
-      "friends": []
+  "new@abv.bg": {
+    "first_name": "new",
+    "last_name": "new",
+    "username": "new",
+    "email": "new@abv.bg",
+    "password": "40bd001563085fc35165329ea1ff5c5ecbdbbeef",
+    "gender": "male",
+    "birthday": "2018-03-18",
+    "contacts": []
+  },
+  "sda@abv.bg": {
+    "first_name": "asd",
+    "last_name": "asd",
+    "username": "asd",
+    "email": "sda@abv.bg",
+    "password": "f10e2821bbbea527ea02200352313bc059445190",
+    "gender": "male",
+    "birthday": "2018-03-01",
+    "contacts": []
+  },
+  "eray@abv.bg": {
+    "first_name": "eray",
+    "last_name": "myumyun",
+    "username": "eraymmn",
+    "email": "eray@abv.bg",
+    "password": "40bd001563085fc35165329ea1ff5c5ecbdbbeef",
+    "gender": "female",
+    "birthday": "2018-03-01",
+    "contacts": []
   }
 }

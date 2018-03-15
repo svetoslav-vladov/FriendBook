@@ -9,11 +9,14 @@
     <div><input type="email" placeholder="email:" name="email"></div>
     <div><input type="password" placeholder="password:" name="password"></div>
     <div><input type="password" placeholder="confirm password:" name="confirm_pass"></div>
-    <div>Birthday date</div>
-    <div><input type="date"></div>
+
+    <div>
+        <div>Birthday date</div>
+        <input type="date" name="b_day">
+    </div>
     <div>
         <select name="gender">
-            <option selected="selected" disabled="disabled">gender</option>
+            <option value="default_gender" selected="" disabled="disabled">gender</option>
             <option value="male">male</option>
             <option value="female">female</option>
         </select>
