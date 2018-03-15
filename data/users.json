@@ -6,27 +6,19 @@
     "email": "new@abv.bg",
     "password": "40bd001563085fc35165329ea1ff5c5ecbdbbeef",
     "gender": "male",
-    "birthday": "2018-03-18",
-    "contacts": []
+    "birthday": "2018-03-14",
+    "contacts": [],
+    "reg_date": "03\/15\/2018 10:44:15 pm"
   },
-  "sda@abv.bg": {
-    "first_name": "asd",
-    "last_name": "asd",
-    "username": "asd",
-    "email": "sda@abv.bg",
-    "password": "f10e2821bbbea527ea02200352313bc059445190",
-    "gender": "male",
-    "birthday": "2018-03-01",
-    "contacts": []
-  },
-  "eray@abv.bg": {
-    "first_name": "eray",
-    "last_name": "myumyun",
-    "username": "eraymmn",
-    "email": "eray@abv.bg",
+  "last@abv.bg": {
+    "first_name": "last",
+    "last_name": "last",
+    "username": "lastuser",
+    "email": "last@abv.bg",
     "password": "40bd001563085fc35165329ea1ff5c5ecbdbbeef",
-    "gender": "female",
-    "birthday": "2018-03-01",
-    "contacts": []
+    "gender": "male",
+    "birthday": "2018-03-08",
+    "contacts": [],
+    "reg_date": "03\/15\/2018 10:47:42 pm"
   }
 }

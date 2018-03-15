@@ -40,6 +40,7 @@
             $user['email'] = $reg_email;
             $user['birthday'] = $reg_birthday;
             $user['contacts'] = array();
+            $user['reg_date'] = date('m/d/Y h:i:s a', time());
             $usersDB[$reg_email] = $user;
             file_put_contents("./data/users.json", json_encode($usersDB));
             $_SESSION['logged'] = $user;

@@ -10,6 +10,12 @@
     // for testing
     // $error = "username do not exists";
 
+    if(isset($_GET["page"]) && $_GET["page"] == "logout"){
+        session_destroy();
+        header("location:index.php?page=login");
+        die();
+    }
+
     require_once "./include/header.php";
 
     //front controller

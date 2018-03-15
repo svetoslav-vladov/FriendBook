@@ -9,7 +9,6 @@
     <div><input type="email" placeholder="email:" name="email"></div>
     <div><input type="password" placeholder="password:" name="password"></div>
     <div><input type="password" placeholder="confirm password:" name="confirm_pass"></div>
-
     <div>
         <div>Birthday date</div>
         <input type="date" name="b_day">
@@ -23,6 +22,7 @@
     </div>
     <div><input type="submit" name="register" value="register" class="form-button"></div>
 </form>
+<button><a href="index.php?page=login">back to login</a></button>
 
 <div class="footer-front">
     <p>Copyright © 2018 All Rights Reserverd</p>
