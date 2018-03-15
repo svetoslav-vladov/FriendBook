@@ -30,7 +30,7 @@
     if (isset($_POST['register'])) {
         $error = false;
         $user = array();
-        $reg_date = getdate(); // we generate array with all time, date and day and timestamp at $reg_date["0"]
+        //$reg_date = getdate(); // we generate array with all time, date and day and timestamp at $reg_date["0"]
         $reg_first_name = htmlentities($_POST['first_name']);
         $reg_last_name = htmlentities($_POST['last_name']);
         $reg_email = htmlentities($_POST['email']);
@@ -69,7 +69,7 @@
             $user['contacts'] = array();
             //$user['reg_date'] = date('m/d/Y h:i:s a', time());
             //$user['reg_date'] = date("d-m-Y / H:i:s", $reg_date["0"]);
-            $user['reg_date'] = $reg_date["0"];
+            $user['reg_date'] = time();
             $usersDB[$reg_email] = $user;
             file_put_contents("./data/users.json", json_encode($usersDB));
             $_SESSION['logged'] = $user;

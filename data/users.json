@@ -1,26 +1,4 @@
 {
-  "new@abv.bg": {
-    "first_name": "new",
-    "last_name": "new",
-    "username": "new",
-    "email": "new@abv.bg",
-    "password": "40bd001563085fc35165329ea1ff5c5ecbdbbeef",
-    "gender": "male",
-    "birthday": "2018-03-14",
-    "contacts": [],
-    "reg_date": "03\/15\/2018 10:44:15 pm"
-  },
-  "last@abv.bg": {
-    "first_name": "last",
-    "last_name": "last",
-    "username": "lastuser",
-    "email": "last@abv.bg",
-    "password": "40bd001563085fc35165329ea1ff5c5ecbdbbeef",
-    "gender": "male",
-    "birthday": "2018-03-08",
-    "contacts": [],
-    "reg_date": "03\/15\/2018 10:47:42 pm"
-  },
   "komara_@abv.bg": {
     "first_name": "Svetoslav",
     "last_name": "Vladov",
@@ -30,7 +8,8 @@
     "gender": "male",
     "birthday": "1988-12-22",
     "contacts": [],
-    "reg_date": 1521154233,
-    "display_name": ""
+    "reg_date": 1521155361,
+    "display_name": "",
+    "relationship_status": ""
   }
 }
