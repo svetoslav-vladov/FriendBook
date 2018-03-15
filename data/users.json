@@ -4,6 +4,7 @@
       "email": "",
       "first_name": "",
       "last_name": "",
+      "gender": "",
       "password": "",
       "birthday": "",
       "profile_pic": "./uploads/default_profile.png",

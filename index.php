@@ -1,5 +1,5 @@
 <?php
-    session_start();
+    session_start(['cookie_httponly' => true]);
     // all DB
     require_once "./include/config.php";
     require_once "./include/functions.php";
