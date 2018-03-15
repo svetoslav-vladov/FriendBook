@@ -60,6 +60,7 @@
             $user['first_name'] = $reg_first_name;
             $user['last_name'] = $reg_last_name;
             $user['display_name'] = "";
+            $user['relationship_status'] = "";
             $user['email'] = $reg_email;
             $user['password'] = sha1($reg_password);
             $user['gender'] = $reg_gender;
