@@ -20,5 +20,17 @@
     "birthday": "2018-03-08",
     "contacts": [],
     "reg_date": "03\/15\/2018 10:47:42 pm"
+  },
+  "komara_@abv.bg": {
+    "first_name": "Svetoslav",
+    "last_name": "Vladov",
+    "username": "lastuser",
+    "email": "komara_@abv.bg",
+    "password": "f10e2821bbbea527ea02200352313bc059445190",
+    "gender": "male",
+    "birthday": "1988-12-22",
+    "contacts": [],
+    "reg_date": 1521154233,
+    "display_name": ""
   }
 }
