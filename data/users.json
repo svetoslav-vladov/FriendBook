@@ -1,0 +1,15 @@
+{
+  "email":{
+      "id": 1,
+      "email": "",
+      "first_name": "",
+      "last_name": "",
+      "password": "",
+      "birthday": "",
+      "profile_pic": "./uploads/default_profile.png",
+      "desc": "",
+      "cover": "./uploads/default_cover.jpg",
+      "photos": [],
+      "friends": []
+  }
+}
