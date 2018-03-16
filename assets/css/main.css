@@ -16,3 +16,16 @@ body{
     max-width: 960px;
     margin: 0 auto;
 }
+
+#left-col-grid{ grid-area: left;}
+#right-col-grid{ grid-area: right;}
+#top-grid{ grid-area: top;}
+#content-grid{ grid-area: main;}
+
+#gridWrap {
+    display:  grid;
+    grid-template-areas:
+            'left top top top top top'
+            'left main main main main right'
+            'left main main main main right';
+}

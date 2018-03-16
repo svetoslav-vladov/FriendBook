@@ -14,12 +14,13 @@
     //front controller
     if(isset($error) && $error){
         if (isset($_POST['register'])) {
-            require_once 'register.php';
             echo "<div class='warning-box'>$error</div>";
+            require_once 'register.php';
+
         }
         if (isset($_POST['login'])) {
-            require_once 'login.php';
             echo "<div class='warning-box'>$error</div>";
+            require_once 'login.php';
         }
     }
     elseif(isset($_GET["page"])) {
