@@ -46,9 +46,10 @@
             </div>
         </div>
     </div>
-    <div id="content-grid">cen</div>
+    <div id="content-grid">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet assumenda, cum, distinctio dolorem est et incidunt minus natus perspiciatis ratione recusandae temporibus voluptas voluptate. Aut natus omnis recusandae reprehenderit suscipit!</p>
+    </div>
     <div id="right-col-grid">
-        right
         <div class="proposed-container">
             <h3>Suggested for you</h3>
             <ul class="proposed-users">
