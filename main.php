@@ -4,7 +4,7 @@
 <div id="top">
     <div class="center-content">
         <div id="search">
-            <a href="./index.php"><img src="#" alt="friendbook logo"></a>
+            <a href="./index.php"><img width="50" src="https://png.icons8.com/ios/1600/friends.png" alt="friendbook logo"></a>
             <input type="text" name="search" placeholder="Search for someone...">
             <button>Search</button>
         </div>
@@ -14,13 +14,14 @@
                     <a href="#"><img src="<?php if(isset($_SESSION["logged"])){ echo $_SESSION["logged"]["profile_pic"];}?>" alt="profile_pic">
                         <?php if(isset($_SESSION["logged"])){ echo $_SESSION["logged"]["first_name"] . " " . $_SESSION["logged"]["last_name"] ;} ?></a>
                 </li>
-                <li><a href="#">Home</a></li>
+
             </ul>
             <ul id="icon-nav">
-                <li><a href="#"><img src="#" alt="friend alert"></a></li>
-                <li><a href="#"><img src="#" alt="msg alert"></a></li>
-                <li><a href="#"><img src="#" alt="news alert"></a></li>
-                <li><a href="index.php?page=logout"><img src="#" alt="logout"></a></li>
+                <li><a href="index.php"><i class="fas fa-home"></i></a></li>
+                <li><a href="#"><i class="fas fa-user"></i></a></li>
+                <li><a href="#"><i class="fas fa-envelope"></i></a></li>
+                <li><a href="#"><i class="fas fa-bell"></i></a></li>
+                <li><a href="index.php?page=logout"><i class="fas fa-sign-out-alt"></i></a></li>
             </ul>
         </nav>
     </div>
@@ -55,7 +56,10 @@
                 require_once 'include/config.php';
                 foreach ($usersDB as $user) { ?>
                     <?php if ($user['email'] != $_SESSION['logged']['email']) { ?>
-                        <li><a href="#"><img width="50" src="uploads/default_profile.png" alt=""><?php echo $user['first_name'] . " " . $user['last_name']?></a></li>
+                        <li>
+                            <a href="index.php?page=profile&email=<?=$user['email']?>"><img width="50" src="uploads/default_profile.png" alt=""><?php echo $user['first_name'] . " " . $user['last_name']?></a>
+                            <button class="add-friend">Add friend</button>
+                        </li>
                 <?php
                     }
                 }  ?>

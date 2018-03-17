@@ -148,5 +148,16 @@ form#login {
     border-radius:  5px;
 }
 .logo-front {
-    text-align:  center;
+    text-align: center;
+}
+#icon-nav li{
+    padding: 7px;
+}
+a {
+    color: black;
+    text-decoration: none;
+}
+#icon-nav li a{
+    font-size: 1.2em;
+    color: black;
 }
