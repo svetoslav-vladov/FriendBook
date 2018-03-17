@@ -84,14 +84,14 @@ nav ul li {
     position: relative;
     width: 200px;
 }
-#left-col-grid > * {
+#left-col-grid > *,#right-col-grid > * {
     position: fixed;
     width: inherit;
 }
 #top {
     width: 100%;
     background: darkseagreen;
-    padding: 10px;
+    padding: 5px;
     position: fixed;
     top: 0;
 }
@@ -110,7 +110,7 @@ nav ul li {
 }
 nav {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
 }
 nav a {
     font-size: 0.9rem;
@@ -165,6 +165,8 @@ a {
 #icon-nav li a{
     font-size: 1.2em;
     color: black;
+    display: block;
+    position:  relative;
 }
 .proposed-container h3 {
     margin:  5px 0;
@@ -172,4 +174,36 @@ a {
 div#userNameTag {
     text-align: center;
     margin:  10px 0;
+}
+div#right-col-grid {
+    box-sizing: border-box;
+    position: relative;
+    width: 260px;
+}
+div#search img {
+    height: 24px;
+}
+
+div#search a {
+    display:  inline-block;
+    margin-right: 10px;
+    vertical-align:  middle;
+}
+.profile-btn img {
+    height: 28px;
+    border-radius: 100%;
+    top: -8px;
+    position: absolute;
+    left: -40px;
+}
+
+.profile-btn {
+    font-size: 0.8rem;
+}
+div#search {
+    padding-top: 5px;
+}
+
+#search input[type="text"] {
+    width: 65%;
 }

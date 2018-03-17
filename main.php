@@ -4,19 +4,16 @@
 <div id="top">
     <div class="center-content">
         <div id="search">
-            <a href="./index.php"><img width="50" src="https://png.icons8.com/ios/1600/friends.png" alt="friendbook logo"></a>
+            <a href="./index.php"><img src="./assets/images/mini-logo.png" alt="friendbook logo"></a>
             <input type="text" name="search" placeholder="Search for someone...">
             <button>Search</button>
         </div>
         <nav>
-            <ul id="mini-nav">
-                <li>
+            <ul id="icon-nav">
+                <li class="profile-btn">
                     <a href="#"><img src="<?php if(isset($_SESSION["logged"])){ echo $_SESSION["logged"]["profile_pic"];}?>" alt="profile_pic">
                         <?php if(isset($_SESSION["logged"])){ echo $_SESSION["logged"]["first_name"] . " " . $_SESSION["logged"]["last_name"] ;} ?></a>
                 </li>
-
-            </ul>
-            <ul id="icon-nav">
                 <li><a href="index.php"><i class="fas fa-home"></i></a></li>
                 <li><a href="#"><i class="fas fa-user"></i></a></li>
                 <li><a href="#"><i class="fas fa-envelope"></i></a></li>
@@ -50,21 +47,23 @@
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet assumenda, cum, distinctio dolorem est et incidunt minus natus perspiciatis ratione recusandae temporibus voluptas voluptate. Aut natus omnis recusandae reprehenderit suscipit!</p>
     </div>
     <div id="right-col-grid">
-        <div class="proposed-container">
-            <h3>Suggested for you</h3>
-            <ul class="proposed-users">
-            <?php
-                require_once 'include/config.php';
-                foreach ($usersDB as $user) { ?>
-                    <?php if ($user['email'] != $_SESSION['logged']['email']) { ?>
-                        <li>
-                            <a href="index.php?page=profile&email=<?=$user['email']?>"><img width="50" src="uploads/default_profile.png" alt=""><?php echo $user['first_name'] . " " . $user['last_name']?></a>
-                            <button class="add-friend">Add friend</button>
-                        </li>
+        <div class="lwrap">
+            <div class="proposed-container">
+                <h3>Suggested for you</h3>
+                <ul class="proposed-users">
                 <?php
-                    }
-                }  ?>
-            </ul>
+                    require_once 'include/config.php';
+                    foreach ($usersDB as $user) { ?>
+                        <?php if ($user['email'] != $_SESSION['logged']['email']) { ?>
+                            <li>
+                                <a href="index.php?page=profile&email=<?=$user['email']?>"><img width="50" src="uploads/default_profile.png" alt=""><?php echo $user['first_name'] . " " . $user['last_name']?></a>
+                                <button class="add-friend">Add friend</button>
+                            </li>
+                    <?php
+                        }
+                    }  ?>
+                </ul>
+            </div>
         </div>
     </div>
 </div>
