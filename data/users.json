@@ -2,14 +2,15 @@
   "komara_@abv.bg": {
     "first_name": "Svetoslav",
     "last_name": "Vladov",
-    "username": "lastuser",
+    "display_name": "",
+    "relationship_status": "",
+    "profile_pic": ".\/uploads\/default_profile.png",
+    "profile_cover": ".\/uploads\/default_cover.jpg",
     "email": "komara_@abv.bg",
     "password": "f10e2821bbbea527ea02200352313bc059445190",
     "gender": "male",
-    "birthday": "1988-12-22",
+    "birthday": "1988-10-22",
     "contacts": [],
-    "reg_date": 1521155361,
-    "display_name": "",
-    "relationship_status": ""
+    "reg_date": 1521282178
   }
 }

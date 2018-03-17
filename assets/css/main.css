@@ -1,83 +1,102 @@
-body{
+body {
     font-size: 1.1em;
-    padding:  0;
-    background-color:  #e9ebee;
-    margin:  0;
+    padding: 0;
+    background-color: #e9ebee;
+    margin: 0;
 }
-#wrap{
+#wrap {
     width: 100%;
     max-width: 960px;
     margin: 30px auto;
 }
-.warning-box{
+.warning-box {
     background: #f2dede;
     padding: 5px;
     text-align: center;
     box-sizing: border-box;
-    width: 60%;
-    max-width: 960px;
-    margin: 0 auto;
+    width: 100%;
+    max-width: 400px;
+    margin: 20px auto;
 }
-
-#left-col-grid{ grid-area: left;}
-#right-col-grid{ grid-area: right;}
-#top-grid{background:  white;box-sizing:  border-box;padding: 12px 6px 6px 6px;border-radius:  5px;display:  grid;grid-template-columns: 1fr 1fr;}
-#content-grid{grid-area: main;height: 100vh;}
-
+#left-col-grid {
+    grid-area: left;
+}
+#right-col-grid {
+    grid-area: right;
+}
+#top-grid {
+    background: white;
+    box-sizing: border-box;
+    padding: 12px 6px 6px 6px;
+    border-radius: 5px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+#content-grid {
+    grid-area: main;
+    height: 100vh;
+}
 #gridWrap {
-    display:  grid;
+    display: grid;
     grid-gap: 10px;
-    grid-template-areas:
-            'left main main main main right'
-            'left main main main main right';
-    width:  100%;
-    max-width:  960px;
+    grid-template-areas: 'left main main main main right' 'left main main main main right';
+    width: 100%;
+    max-width: 960px;
     margin: 80px auto;
 }
 #user-nav ul {
-    list-style:  none;
-    padding:  0;
-    margin:  0;
-    font-size:  1rem;
-}
-
-nav ul {
-    list-style:  none;
+    list-style: none;
     padding: 0;
-    margin:  0;
+    margin: 0;
+    font-size: 1rem;
 }
-
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+}
 nav ul li {
-    display:  inline-block;
+    display: inline-block;
 }
-
-#search, nav {
-    display:  inline-block;
-}
-
 #left-col-grid {
-    box-sizing:  border-box;
+    box-sizing: border-box;
     position: relative;
 }
-
 #left-col-grid > * {
-    position:  fixed;
+    position: fixed;
 }
-
 #top {
     width: 100%;
     background: darkseagreen;
     padding: 10px;
-    position:  fixed;
+    position: fixed;
     top: 0;
 }
-
 .center-content {
     margin: 0 auto;
     width: 100%;
     max-width: 980px;
-    display:  grid;
-    grid-template-columns:  1fr 1fr;
-    text-align:  center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
     grid-gap: 15%;
+}
+#profile-pic img {
+    height: 140px;
+}
+nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+nav a {
+    font-size: 0.9rem;
+    font-weight:  bold;
+}
+#mini-nav img {
+    height: 32px;
+    border-radius: 100%;
+    top: 10px;
+    position:  relative;
+    right:  6px;
 }

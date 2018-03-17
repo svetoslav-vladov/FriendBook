@@ -1,5 +1,7 @@
 <?php
     require_once 'config.php';
+    $defaultProPic = "./uploads/default_profile.png";
+    $defaultProCover = "./uploads/default_cover.jpg";
     if (isset($_POST['login'])) {
         $error = false;
         $email = htmlentities($_POST['email']);
@@ -61,6 +63,8 @@
             $user['last_name'] = $reg_last_name;
             $user['display_name'] = "";
             $user['relationship_status'] = "";
+            $user['profile_pic'] = $defaultProPic;
+            $user['profile_cover'] = $defaultProCover;
             $user['email'] = $reg_email;
             $user['password'] = sha1($reg_password);
             $user['gender'] = $reg_gender;
