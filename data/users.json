@@ -1,16 +1,1 @@
-{
-  "eray@abv.bg": {
-    "first_name": "eray",
-    "last_name": "myumyun",
-    "display_name": "",
-    "relationship_status": "",
-    "profile_pic": ".\/uploads\/default_profile.png",
-    "profile_cover": ".\/uploads\/default_cover.jpg",
-    "email": "eray@abv.bg",
-    "password": "40bd001563085fc35165329ea1ff5c5ecbdbbeef",
-    "gender": "male",
-    "birthday": "2018-03-13",
-    "contacts": [],
-    "reg_date": 1521289309
-  }
-}
+{"eray@abv.bg":{"first_name":"eray","last_name":"myumyun","display_name":"","relationship_status":"","profile_pic":".\/uploads\/default_profile.png","profile_cover":".\/uploads\/default_cover.jpg","email":"eray@abv.bg","password":"40bd001563085fc35165329ea1ff5c5ecbdbbeef","gender":"male","birthday":"2018-03-13","contacts":[],"reg_date":1521289309},"komara_@abv.bg":{"first_name":"Svetoslav","last_name":"Vladov","display_name":"","relationship_status":"","profile_pic":".\/uploads\/default_profile.png","profile_cover":".\/uploads\/default_cover.jpg","email":"komara_@abv.bg","password":"f10e2821bbbea527ea02200352313bc059445190","gender":"male","birthday":"1988-10-22","contacts":[],"reg_date":1521289516}}

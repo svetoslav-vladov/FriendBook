@@ -1,6 +1,6 @@
 <div id="wrap">
     <div class="logo-front">
-
+        <img src="./assets/images/friendbook-front-logo.png" alt="friend book front logo">
     </div>
     <form id="login" method="POST" action="./index.php">
         <div>
@@ -22,6 +22,6 @@
         </div>
     </form>
     <div class="footer-front">
-        <p>WWW.FriendBook.bg &copy; 2018 - All Rights Reserved</p>
+        <p>www.FriendBook.bg &copy; 2018 <br> All Rights Reserved</p>
     </div>
 </div>
