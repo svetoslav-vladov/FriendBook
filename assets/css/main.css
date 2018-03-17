@@ -44,6 +44,21 @@ body {
     max-width: 960px;
     margin: 80px auto;
 }
+
+.proposed-users {
+    list-style: none;
+}
+.proposed-users li {
+    border-bottom: 1px solid black;
+}
+.proposed-users li a {
+    text-decoration: none;
+    color: black;
+}
+.proposed-users li a img {
+    display: inline-block;
+    vertical-align: middle;
+}
 #user-nav ul {
     list-style: none;
     padding: 0;
