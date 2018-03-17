@@ -12,5 +12,19 @@
     "birthday": "2018-03-13",
     "contacts": [],
     "reg_date": 1521289309
+  },
+  "new@abv.bg": {
+    "first_name": "new",
+    "last_name": "user",
+    "display_name": "",
+    "relationship_status": "",
+    "profile_pic": ".\/uploads\/default_profile.png",
+    "profile_cover": ".\/uploads\/default_cover.jpg",
+    "email": "new@abv.bg",
+    "password": "40bd001563085fc35165329ea1ff5c5ecbdbbeef",
+    "gender": "male",
+    "birthday": "2018-03-16",
+    "contacts": [],
+    "reg_date": 1521289523
   }
 }
