@@ -90,8 +90,8 @@ nav ul li {
 }
 #top {
     width: 100%;
-    background: darkseagreen;
-    padding: 5px;
+    background: #62a762;
+    padding: 2px;
     position: fixed;
     top: 0;
 }
@@ -164,7 +164,7 @@ a {
 }
 #icon-nav li a{
     font-size: 1.2em;
-    color: black;
+    color: #fff;
     display: block;
     position:  relative;
 }
