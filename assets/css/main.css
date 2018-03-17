@@ -29,3 +29,17 @@ body{
             'left main main main main right'
             'left main main main main right';
 }
+.proposed-users {
+    list-style: none;
+}
+.proposed-users li {
+    border-bottom: 1px solid black;
+}
+.proposed-users li a {
+    text-decoration: none;
+    color: black;
+}
+.proposed-users li a img {
+    display: inline-block;
+    vertical-align: middle;
+}

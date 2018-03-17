@@ -33,5 +33,20 @@
         </nav>
     </div>
     <div id="content-grid">cen</div>
-    <div id="right-col-grid">right</div>
+    <div id="right-col-grid">
+        right
+        <div class="proposed-container">
+            <h3>Proposed users</h3>
+            <ul class="proposed-users">
+            <?php
+                require_once 'include/config.php';
+                foreach ($usersDB as $user) { ?>
+                    <?php if ($user['email'] != $_SESSION['logged']['email']) { ?>
+                        <li><a href="index.php?page=<?=$user['email']?>"><img width="50" src="uploads/default_profile.png" alt=""><?php echo $user['first_name'] . " " . $user['last_name']?></a></li>
+                <?php
+                    }
+                }  ?>
+            </ul>
+        </div>
+    </div>
 </div>
