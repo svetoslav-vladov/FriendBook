@@ -1,4 +1,3 @@
-
 {
   "eray@abv.bg": {
     "first_name": "eray",
@@ -41,5 +40,19 @@
     "birthday": "2018-03-16",
     "contacts": [],
     "reg_date": 1521289523
+  },
+  "another@abv.bg": {
+    "first_name": "another",
+    "last_name": "user",
+    "display_name": "",
+    "relationship_status": "",
+    "profile_pic": ".\/uploads\/default_profile.png",
+    "profile_cover": ".\/uploads\/default_cover.jpg",
+    "email": "another@abv.bg",
+    "password": "40bd001563085fc35165329ea1ff5c5ecbdbbeef",
+    "gender": "male",
+    "birthday": "2018-03-06",
+    "contacts": [],
+    "reg_date": 1521731834
   }
 }
