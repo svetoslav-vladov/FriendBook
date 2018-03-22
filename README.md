@@ -6,3 +6,5 @@
 PLAN:
 - Front-controller / some AJAX / JSON for DB
 - Transition to MySQL / PDO / OOP / more AJAX
+
+
