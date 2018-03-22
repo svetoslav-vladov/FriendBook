@@ -22,6 +22,10 @@
             echo "<div class='warning-box'>$error</div>";
             require_once 'login.php';
         }
+        if (isset($_POST['add-post'])) {
+            echo "<div class='warning-box'>$error</div>";
+            require_once 'main.php';
+        }
     }
     elseif(isset($_GET["page"])) {
         $page_name = $_GET["page"];

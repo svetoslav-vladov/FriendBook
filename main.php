@@ -45,9 +45,9 @@
     </div>
     <div id="content-grid">
         <div class="post-container">
-            <form action="index.php">
-                <textarea style="resize: none;" id="" cols="62" rows="10" name="post"></textarea>
-                <input type="submit" value="post">
+            <form action="index.php" method="post">
+                <textarea style="resize: none;" id="" cols="62" rows="10" name="desc"></textarea>
+                <input type="submit" value="post" name="add-post">
             </form>
         </div>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet assumenda, cum, distinctio dolorem est et incidunt minus natus perspiciatis ratione recusandae temporibus voluptas voluptate. Aut natus omnis recusandae reprehenderit suscipit!</p>

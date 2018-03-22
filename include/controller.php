@@ -79,3 +79,20 @@
             $_SESSION['logged'] = $user;
         }
 }
+    if (isset($_POST['add-post'])) {
+        $post = array();
+        $current_post = htmlentities($_POST['desc']);
+        $error = false;
+        if (empty($current_post)) {
+            $error = 'Please fill post!';
+        }
+        if(!$error) {
+            $session_email = $_SESSION['logged']['email'];
+            $post['desc'] = $current_post;
+            $post['created_date'] = $date = date('m/d/Y h:i:s a', time());
+
+            $postsDB[$session_email][] = $post;
+            file_put_contents("./data/posts.json", json_encode($postsDB));
+            header('location: index.php?page=main');
+        }
+    }
