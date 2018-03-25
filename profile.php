@@ -34,9 +34,13 @@
             <div id="newsfeed">
                 <?php
 
+
+
                 foreach ($postsDB as $id => $post) {
                     if ($emailProfile === $id) {
+
                         foreach ($post as $key => $val) {
+
                             ?>
                             <div class="post">
                                 <div class="post-header">
@@ -63,13 +67,6 @@
         </div>
 
     </div>
-    <div id="right-col-grid">
-        <div class="lwrap">
-            <div class="proposed-container">
-                <h3>Module</h3>
-                <p>Empty...</p>
-            </div>
-        </div>
-    </div>
+
 
 <?php require_once "./include/mainFooter.php"; ?>
