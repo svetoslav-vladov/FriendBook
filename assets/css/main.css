@@ -239,3 +239,7 @@ span.post-owner {
 span.post-date {
     float:  right;
 }
+#post-module{
+    resize: none;
+    width: 98%;
+}

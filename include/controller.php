@@ -97,3 +97,8 @@
             header('location: index.php?page=main');
         }
     }
+
+    //get request for profile view
+    if(isset($_GET["page"]) && isset($_GET["email"])){
+        $emailProfile = htmlentities($_GET["email"]);
+    }
