@@ -1,6 +1,8 @@
 <div id="wrap">
     <div class="logo-front">
-        <img src="./assets/images/friendbook-front-logo.png" alt="friend book front logo">
+        <a href="<?php echo $_SERVER["REQUEST_URI"]; ?>">
+            <img src="./assets/images/friendbook-front-logo.png" alt="friend book front logo">
+        </a>
     </div>
     <form id="login" method="POST" action="./index.php">
         <div>

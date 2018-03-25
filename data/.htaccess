@@ -1,0 +1,5 @@
+RewriteEngine On
+
+order deny,allow
+deny from all
+allow from localhost

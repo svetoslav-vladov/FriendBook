@@ -14,15 +14,9 @@
             <div id="userNameTag">
                 <?php if(isset($_SESSION["logged"])){ echo $_SESSION["logged"]["first_name"] . " " . $_SESSION["logged"]["last_name"] ;} ?>
             </div>
-            <div id="user-nav">
-                <ul>
-                    <li><a href="#">News Feed</a></li>
-                    <li><a href="#">Profile page</a></li>
-                    <li><a href="#">Messages</a></li>
-                    <li><a href="#">Settings</a></li>
-                    <li><a href="#">friends</a></li>
-                </ul>
-            </div>
+            <?php
+                require_once  "./include/modules/leftNav.php";
+            ?>
         </div>
     </div>
     <div id="content-grid">
