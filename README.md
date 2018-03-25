@@ -11,6 +11,6 @@ PLAN:
 Info:
 - Demo links for both projects coming soon!
 
-#New folder structure:
+**New folder structure:**
 - V1.0 - is PHP FrontController with Json for DB
 - V2.0 - is MVC / PDO / MySQL / JS & AJAX / PHP / some OOP
