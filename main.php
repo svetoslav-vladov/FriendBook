@@ -27,10 +27,9 @@
     </div>
     <div id="content-grid">
         <div class="post-container">
-            <form action="index.php" method="post">
-                <textarea style="resize: none;" id="" cols="62" rows="10" name="desc"></textarea>
-                <input type="submit" value="post" name="add-post">
-            </form>
+            <?php
+                require_once "./include/modules/post-mod.php";
+            ?>
             <div id="newsfeed">
                 <?php
                     $i = 0;

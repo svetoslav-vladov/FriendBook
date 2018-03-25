@@ -28,19 +28,22 @@
     </div>
     <div id="content-grid">
         <div class="post-container">
+
             <?php
-                require_once "./include/modules/post-mod.php";
+                if($emailProfile !== $_SESSION["logged"]["email"]){
+
+                }
+                else{
+                    require_once "./include/modules/post-mod.php";
+                }
+
             ?>
             <div id="newsfeed">
                 <?php
 
-
-
                 foreach ($postsDB as $id => $post) {
                     if ($emailProfile === $id) {
-
                         foreach ($post as $key => $val) {
-
                             ?>
                             <div class="post">
                                 <div class="post-header">
@@ -67,6 +70,5 @@
         </div>
 
     </div>
-
 
 <?php require_once "./include/mainFooter.php"; ?>
