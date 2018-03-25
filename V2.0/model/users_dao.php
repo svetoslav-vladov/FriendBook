@@ -15,3 +15,29 @@ function regUserExist($email) {
     $row = $statement->fetch();
     return $row['count'] > 0;
 }
+
+function loginSession($email) {
+    $pdo = $GLOBALS['pdo'];
+    $statement = $pdo->prepare("SELECT * FROM users WHERE email = ?");
+    $statement->execute(array($email));
+    $user = $statement->fetch();
+    $logged_user['id'] = $user['id'];
+    $logged_user['first_name'] = $user['first_name'];
+    $logged_user['last_name'] = $user['last_name'];
+    $logged_user['email'] = $user['email'];
+    $logged_user['reg_date'] = $user['reg_date'];
+    $logged_user['gender'] = $user['gender'];
+    $logged_user['birthday'] = $user['birthday'];
+    $logged_user['relation_status'] = $user['relation_status'];
+    $logged_user['profile_pic'] = $user['profile_pic'];
+    $logged_user['profile_cover'] = $user['profile_cover'];
+    $_SESSION['logged'] = $logged_user;
+}
+
+function userPassCheck($email, $password) {
+    $pdo = $GLOBALS['pdo'];
+    $statement = $pdo->prepare("SELECT COUNT(*) as count FROM users WHERE email = ? AND password = ?");
+    $statement->execute(array($email, $password));
+    $row = $statement->fetch(); // return first row of table
+    return $row['count'] > 0;
+}

@@ -7,5 +7,5 @@ Options -Indexes
 
 DirectoryIndex index.php
 
-ErrorDocument 404 /projects/ITTS9/FriendBook/error_404.php
-ErrorDocument 403 /projects/ITTS9/FriendBook/error_403.php
+ErrorDocument 404 /projects/ITTS9/FriendBook/V1.0/error_404.php
+ErrorDocument 403 /projects/ITTS9/FriendBook/V1.0/error_403.php

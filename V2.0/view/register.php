@@ -35,7 +35,7 @@
         <div>
             <input type="submit" name="register" value="register" class="btn">
             <br>
-            <a href="index.php?page=login" class="btn">back to login</a>
+            <a href="login.php" class="btn">back to login</a>
         </div>
 
     </form>

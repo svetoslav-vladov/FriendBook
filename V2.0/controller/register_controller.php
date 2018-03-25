@@ -1,8 +1,8 @@
 <?php
 
-session_start(['cookie_httponly' => true]);
-
+require_once '../include/session.php';
 require_once '../model/users_dao.php';
+
 
 if (isset($_POST['register'])) {
     $first_name = htmlentities($_POST['first_name']);
