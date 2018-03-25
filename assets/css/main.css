@@ -136,13 +136,13 @@ nav a {
     /* border: 1px solid #b1b1b1; */
     /* box-shadow: 2px 2px 10px #00000061; */
 }
-form#login {
-    margin: 15px 0;
+form#login, form#register {
+    margin: 10px 0;
     box-sizing:  border-box;
     padding: 10%;
     background: #fff;
     border-radius:  5px;
-    padding-left: 18%;
+    padding-left: 15%;
 }
 .footer-front{
     text-align: center;
@@ -158,9 +158,11 @@ form#login {
 #icon-nav li{
     padding: 7px;
 }
-a {
+form a {
     color: black;
     text-decoration: none;
+    margin-top: 15px;
+    display:  block;
 }
 #icon-nav li a{
     font-size: 1.2em;
@@ -242,4 +244,16 @@ span.post-date {
 #post-module{
     resize: none;
     width: 98%;
+}
+form div {
+    margin:  10px 0;
+}
+
+input {
+    padding: 5px 10px;
+    box-sizing:  border-box;
+}
+form a:hover {
+    color:  green;
+    text-decoration:  underline;
 }

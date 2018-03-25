@@ -3,27 +3,59 @@
 ?>
     <div id="left-col-grid">
         <div class="lwrap">
-            <div id="profile-pic">
-                <a href="./index.php?page=profile&email=<?php echo $_SESSION["logged"]["email"]; ?>">
-                    <img id="mini-profile-pic" src="<?php if (isset($_GET["email"])) {
-                        echo $usersDB[$emailProfile]["profile_pic"];
-                    }?>" alt="profile_pic">
-                </a>
-            </div>
-            <div id="userNameTag">
-                <?php if (isset($_GET["email"])) {
-                    echo $usersDB[$emailProfile]["first_name"] . " " . $usersDB[$emailProfile]["last_name"];
-                } ?>
-            </div>
-            <div id="user-nav">
-                <ul>
-                    <li><a href="#">News Feed</a></li>
-                    <li><a href="#">Profile page</a></li>
-                    <li><a href="#">Messages</a></li>
-                    <li><a href="#">Settings</a></li>
-                    <li><a href="#">friends</a></li>
-                </ul>
-            </div>
+            <?php
+            if($emailProfile !== $_SESSION["logged"]["email"]){
+                ?>
+                <div id="profile-pic">
+                    <a href="./index.php?page=profile&email=<?php echo $emailProfile; ?>">
+                        <img id="mini-profile-pic" src="<?php if (isset($_GET["email"])) {
+                            echo $usersDB[$emailProfile]["profile_pic"];
+                        }?>" alt="profile_pic">
+                    </a>
+                </div>
+                <div id="userNameTag">
+                    <?php if (isset($_GET["email"])) {
+                        echo $usersDB[$emailProfile]["first_name"] . " " . $usersDB[$emailProfile]["last_name"];
+                    } ?>
+                </div>
+                <div id="user-nav">
+                    <ul>
+                        <li><a href="#">News Feed</a></li>
+                        <li><a href="#">Profile page</a></li>
+                        <li><a href="#">Messages</a></li>
+                        <li><a href="#">Settings</a></li>
+                        <li><a href="#">friends</a></li>
+                    </ul>
+                </div>
+                <?php
+            }
+            else{
+                ?>
+                <div id="profile-pic">
+                    <a href="./index.php?page=profile&email=<?php echo $_SESSION["logged"]["email"]; ?>">
+                        <img id="mini-profile-pic" src="<?php if (isset($_GET["email"])) {
+                            echo $usersDB[$emailProfile]["profile_pic"];
+                        }?>" alt="profile_pic">
+                    </a>
+                </div>
+                <div id="userNameTag">
+                    <?php if (isset($_GET["email"])) {
+                        echo $usersDB[$emailProfile]["first_name"] . " " . $usersDB[$emailProfile]["last_name"];
+                    } ?>
+                </div>
+                <div id="user-nav">
+                    <ul>
+                        <li><a href="#">News Feed</a></li>
+                        <li><a href="#">Profile page</a></li>
+                        <li><a href="#">Messages</a></li>
+                        <li><a href="#">Settings</a></li>
+                        <li><a href="#">friends</a></li>
+                    </ul>
+                </div>
+                <?php
+            }
+            ?>
+
         </div>
     </div>
     <div id="content-grid">
@@ -36,7 +68,6 @@
                 else{
                     require_once "./include/modules/post-mod.php";
                 }
-
             ?>
             <div id="newsfeed">
                 <?php
