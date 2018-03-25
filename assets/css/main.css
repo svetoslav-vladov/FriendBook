@@ -6,11 +6,13 @@ body {
 }
 #wrap {
     width: 100%;
-    max-width: 284px;
+    max-width: 280px;
     margin: 5% auto;
+    overflow:  hidden;
     background: white;
     box-shadow:  2px 2px 10px #00000061;
     margin-bottom: 0;
+    border-radius: 10px;
 }
 .warning-box {
     background: #f2dede;
@@ -48,7 +50,6 @@ body {
     max-width: 960px;
     margin: 80px auto;
 }
-
 .proposed-users {
     list-style: none;
     padding:  0;
@@ -135,7 +136,6 @@ nav a {
     /* border: 1px solid #b1b1b1; */
     /* box-shadow: 2px 2px 10px #00000061; */
 }
-
 form#login {
     margin: 15px 0;
     box-sizing:  border-box;
@@ -183,7 +183,6 @@ div#right-col-grid {
 div#search img {
     height: 24px;
 }
-
 div#search a {
     display:  inline-block;
     margin-right: 10px;
@@ -196,14 +195,47 @@ div#search a {
     position: absolute;
     left: -40px;
 }
-
 .profile-btn {
     font-size: 0.8rem;
 }
 div#search {
     padding-top: 5px;
 }
-
 #search input[type="text"] {
     width: 65%;
+}
+img.postProfPic {
+    height: 100%;
+    border-radius: 100%;
+    /* padding-top: 10px; */
+}
+
+.post-header span {height: 32px;display: inline-block;vertical-align: top;}
+
+.post {
+    background:  white;
+    border-radius:  8px;
+    padding:  5px;
+    box-sizing:  border-box;
+    margin:  20px 0;
+}
+
+.post-desc {
+    padding:  0 10px;
+    font-size: 0.8em;
+}
+
+.post-header {
+    font-size:  0.8em;
+    border-bottom: 1px solid #b5b5b5;
+    padding: 1px 0;
+}
+
+span.post-owner {
+    font-weight: bold;
+    padding-top: 9px;
+}
+
+span.post-date {
+    float:  right;
 }

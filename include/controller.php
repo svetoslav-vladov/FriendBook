@@ -89,7 +89,8 @@
         if(!$error) {
             $session_email = $_SESSION['logged']['email'];
             $post['desc'] = $current_post;
-            $post['created_date'] = $date = date('m/d/Y h:i:s a', time());
+            $post['owner'] = $_SESSION['logged']['email'];
+            $post['created_date'] = $date = time();
 
             $postsDB[$session_email][] = $post;
             file_put_contents("./data/posts.json", json_encode($postsDB));

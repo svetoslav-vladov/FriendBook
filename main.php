@@ -49,14 +49,36 @@
                 <textarea style="resize: none;" id="" cols="62" rows="10" name="desc"></textarea>
                 <input type="submit" value="post" name="add-post">
             </form>
+            <div id="newsfeed">
+                <?php
+                    $i = 0;
+                    foreach ($postsDB as $post){
+                        foreach ($post as $key => $val){
+                            if(array_key_exists($val["owner"], $usersDB)){
+                                ?>
+                                <div class="post">
+                                    <div class="post-header">
+                                        <span><img class="postProfPic" src="<?php echo $usersDB[$val["owner"]]["profile_pic"]; ?>" alt="profile picture"></span>
+                                        <span class="post-owner"><?php echo $usersDB[$val["owner"]]["first_name"] . " " . $usersDB[$val["owner"]]["last_name"]; ?></span>
+                                        <span class="post-date"><?php echo date("d-m-Y / h:m:i",$val["created_date"]); ?></span>
+                                    </div>
+                                    <div class="post-desc">
+                                        <p>
+                                            <?php echo $val["desc"]; ?>
+                                        </p>
+                                    </div>
+                                </div>
+                                <?php
+                            }
+
+                        }
+
+
+                    }
+                ?>
+            </div>
         </div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet assumenda, cum, distinctio dolorem est et incidunt minus natus perspiciatis ratione recusandae temporibus voluptas voluptate. Aut natus omnis recusandae reprehenderit suscipit!</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet assumenda, cum, distinctio dolorem est et incidunt minus natus perspiciatis ratione recusandae temporibus voluptas voluptate. Aut natus omnis recusandae reprehenderit suscipit!</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet assumenda, cum, distinctio dolorem est et incidunt minus natus perspiciatis ratione recusandae temporibus voluptas voluptate. Aut natus omnis recusandae reprehenderit suscipit!</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet assumenda, cum, distinctio dolorem est et incidunt minus natus perspiciatis ratione recusandae temporibus voluptas voluptate. Aut natus omnis recusandae reprehenderit suscipit!</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet assumenda, cum, distinctio dolorem est et incidunt minus natus perspiciatis ratione recusandae temporibus voluptas voluptate. Aut natus omnis recusandae reprehenderit suscipit!</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet assumenda, cum, distinctio dolorem est et incidunt minus natus perspiciatis ratione recusandae temporibus voluptas voluptate. Aut natus omnis recusandae reprehenderit suscipit!</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet assumenda, cum, distinctio dolorem est et incidunt minus natus perspiciatis ratione recusandae temporibus voluptas voluptate. Aut natus omnis recusandae reprehenderit suscipit!</p>
+
     </div>
     <div id="right-col-grid">
         <div class="lwrap">
