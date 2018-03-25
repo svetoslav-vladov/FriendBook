@@ -30,6 +30,11 @@
                     foreach ($postsDB as $post){
                         foreach ($post as $key => $val){
                             if(array_key_exists($val["owner"], $usersDB)){
+                                if($val["owner"] === $_SESSION["logged"]["email"]){
+
+                                }
+                                else{
+
                                 ?>
                                 <div class="post">
                                     <div class="post-header">
@@ -44,6 +49,7 @@
                                     </div>
                                 </div>
                                 <?php
+                                }
                             }
 
                         }

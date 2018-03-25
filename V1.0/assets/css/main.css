@@ -55,7 +55,10 @@ body {
     padding:  0;
 }
 .proposed-users li {
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #ababab;
+    margin: 15px 0;
+    padding: 5px 0;
+    box-sizing:  border-box;
 }
 .proposed-users li a {
     text-decoration: none;
@@ -256,4 +259,7 @@ input {
 form a:hover {
     color:  green;
     text-decoration:  underline;
+}
+.suggest-pic{
+    height:  34px;
 }
