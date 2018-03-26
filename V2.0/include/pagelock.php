@@ -1,6 +1,7 @@
 <?php
     if(!isset($_SESSION["logged"])){
-        header("location:./login.php?error=No%access%for%guests");
+        $msg = "Access denied, please login";
+        header("location:./login.php?error=$msg");
         die("No access for guests");
     }
 ?>

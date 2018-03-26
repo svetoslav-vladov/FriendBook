@@ -257,3 +257,19 @@ form a:hover {
     color:  green;
     text-decoration:  underline;
 }
+.err_msg {
+    padding:  5px 0;
+    text-align:  center;
+    font-size:  0.9em;
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+}
+.ok_msg {
+    padding:  5px 0;
+    text-align:  center;
+    font-size:  0.9em;
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+}
