@@ -8,10 +8,10 @@
         <nav>
             <ul id="icon-nav">
                 <li class="profile-btn">
-                    <a href="#<?php echo $_SESSION["logged"]["email"]; ?>"><img src="<?php if(isset($_SESSION["logged"])){ echo $_SESSION["logged"]["profile_pic"];}?>" alt="profile_pic">
+                    <a href="../include/profile.php?id=<?php echo $_SESSION['logged']['id']; ?>"><img src="<?php if(isset($_SESSION["logged"])){ echo $_SESSION["logged"]["profile_pic"];}?>" alt="profile_pic">
                         <?php if(isset($_SESSION["logged"])){ echo $_SESSION["logged"]["first_name"] . " " . $_SESSION["logged"]["last_name"] ;} ?></a>
                 </li>
-                <li><a href="../index.php"><i class="fas fa-home"></i></a></li>
+                <li><a href="../view/main.php"><i class="fas fa-home"></i></a></li>
                 <li><a href="#"><i class="fas fa-user"></i></a></li>
                 <li><a href="#"><i class="fas fa-envelope"></i></a></li>
                 <li><a href="#"><i class="fas fa-bell"></i></a></li>

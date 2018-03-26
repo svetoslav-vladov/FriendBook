@@ -11,7 +11,7 @@
 <div id="left-col-grid">
     <div class="lwrap">
         <div id="profile-pic">
-            <a href="#<?php echo $_SESSION["logged"]["email"]; ?>">
+            <a href="../include/profile.php?id=<?php echo $_SESSION['logged']['id']; ?>">
                 <img id="mini-profile-pic" src="<?php if(isset($_SESSION["logged"])){ echo $_SESSION["logged"]["profile_pic"];} ?>" alt="profile_pic">
             </a>
         </div>
