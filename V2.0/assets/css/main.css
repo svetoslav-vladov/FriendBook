@@ -64,6 +64,7 @@ body {
 .proposed-users li a img {
     display: inline-block;
     vertical-align: middle;
+    width: 50px;
 }
 #user-nav ul {
     list-style: none;

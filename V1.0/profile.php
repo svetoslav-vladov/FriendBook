@@ -63,7 +63,7 @@
                             <div class="post">
                                 <div class="post-header">
                                     <span><img class="postProfPic"
-                                               src="<?php echo $usersDB[$val["owner"]]["profile_pic"]; ?>"
+                                                src="<?php echo $usersDB[$val["owner"]]["profile_pic"]; ?>"
                                                alt="profile picture"></span>
                                     <span
                                             class="post-owner"><?php echo $usersDB[$val["owner"]]["first_name"] . " " . $usersDB[$val["owner"]]["last_name"]; ?></span>

@@ -36,7 +36,9 @@
 </div>
 <div id="right-col-grid">
     <div class="lwrap">
-        right
+        <div class="suggested_users">
+            <?php require_once '../include/modules/suggested_users.php'?>
+        </div>
     </div>
 </div>
 <?php

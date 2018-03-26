@@ -15,7 +15,7 @@
                 <li><a href="#"><i class="fas fa-user"></i></a></li>
                 <li><a href="#"><i class="fas fa-envelope"></i></a></li>
                 <li><a href="#"><i class="fas fa-bell"></i></a></li>
-                <li><a href="#"><i class="fas fa-sign-out-alt"></i></a></li>
+                <li><a href="../controller/logout_controller.php"><i class="fas fa-sign-out-alt"></i></a></li>
             </ul>
         </nav>
     </div>

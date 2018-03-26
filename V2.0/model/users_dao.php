@@ -41,3 +41,27 @@ function userPassCheck($email, $password) {
     $row = $statement->fetch(); // return first row of table
     return $row['count'] > 0;
 }
+
+function getSuggestedUsers($user_id) {
+    $pdo = $GLOBALS['pdo'];
+    $statement = $pdo->prepare("SELECT id, first_name, last_name, email, birthday, gender, profile_pic, profile_cover, relation_status 
+                                FROM users 
+                                WHERE id != ? LIMIT 10;");
+    $statement->execute(array($user_id));
+    $result = $statement->fetchAll();
+    $suggested_users = [];
+    foreach ($result as $user) {
+        $usr = [];
+        $usr['id'] = $user['id'];
+        $usr['first_name'] = $user['first_name'];
+        $usr['last_name'] = $user['last_name'];
+        $usr['email'] = $user['email'];
+        $usr['birthday'] = $user['birthday'];
+        $usr['gender'] = $user['gender'];
+        $usr['profile_pic'] = $user['profile_pic'];
+        $usr['profile_cover'] = $user['profile_cover'];
+        $usr['relation_status'] = $user['relation_status'];
+        $suggested_users[] = $usr;
+    }
+    return $suggested_users;
+}
