@@ -68,7 +68,7 @@
                                     <span
                                             class="post-owner"><?php echo $usersDB[$val["owner"]]["first_name"] . " " . $usersDB[$val["owner"]]["last_name"]; ?></span>
                                     <span
-                                            class="post-date"><?php echo date("d-m-Y / h:m:i", $val["created_date"]); ?></span>
+                                            class="post-date"><?php echo date("d-m-Y / H:i:s", $val["created_date"]); ?></span>
                                 </div>
                                 <div class="post-desc">
                                     <p>
