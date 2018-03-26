@@ -93,7 +93,7 @@
             }
             $post['desc'] = $current_post;
             $post['owner'] = $_SESSION['logged']['email'];
-            $post['created_date'] = $date = time();
+            $post['created_date'] = time();
             array_unshift($postsDB[$session_email],$post);
             file_put_contents("./data/posts.json", json_encode($postsDB));
             header('location: index.php?page=main');
