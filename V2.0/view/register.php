@@ -1,7 +1,14 @@
+<?php
+    require_once "../include/session.php";
+    require_once "../include/header.php";
+    if(isset($_SESSION["logged"])){
+        header('location: ./main.php');
+    }
+?>
 <div id="wrap">
     <div class="logo-front">
         <a href="<?php echo $_SERVER["REQUEST_URI"]; ?>">
-            <img src="./assets/images/friendbook-front-logo.png" alt="friend book front logo">
+            <img src="../assets/images/friendbook-front-logo.png" alt="friend book front logo">
         </a>
     </div>
 
@@ -40,6 +47,9 @@
 
     </form>
     <div class="footer-front">
-        <p>www.FriendBook.bg &copy; 2018 <br> All Rights Reserved</p>
+        <p>www.FriendBook.bg &copy; 2018 <br> All Rights Reserved <br> Version 2.0</p>
     </div>
 </div>
+<?php
+    require_once "../include/footer.php";
+?>
