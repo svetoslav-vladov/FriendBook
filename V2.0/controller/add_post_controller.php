@@ -10,11 +10,11 @@ if (isset($_POST['add_post'])) {
     $error = false;
 
     if (empty($current_post)) {
-        $error = 'Please fill post!';
+        $error = "You can't create empty post, Please fill the post!";
         header("location: ../view/main.php?error=" . htmlentities($error));
     }
     elseif(mb_strlen($current_post) > 1500) {
-        $error = 'Your post contains many characters! Please enter fewer characters.';
+        $error = 'Your post contains too many characters! Please enter no more than 1500 characters.';
         header("location: ../view/main.php?error=" . htmlentities($error));
     }
     if (!$error) {

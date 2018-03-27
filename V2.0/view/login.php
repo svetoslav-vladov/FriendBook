@@ -27,7 +27,7 @@
             <input type="password" id="password" name="password">
         </div>
         <div>
-            <input type="submit" class="btn" name="login">
+            <input type="submit" class="btn shadow-box" name="login">
             <br>
             <a href="./register.php" class="btn">You don't have account?</a>
         </div>

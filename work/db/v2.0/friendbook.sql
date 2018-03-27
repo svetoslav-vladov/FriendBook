@@ -66,11 +66,18 @@ CREATE TABLE `likes` (
 CREATE TABLE `posts` (
   `id` int(11) NOT NULL,
   `description` text NOT NULL,
-  `create_date` datetime NOT NULL,
+  `create_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `edit_date` datetime DEFAULT NULL,
-  `user_id` int(11) NOT NULL,
-  `postscol` varchar(45) DEFAULT NULL
+  `user_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Схема на данните от таблица `posts`
+--
+
+INSERT INTO `posts` (`id`, `description`, `create_date`, `edit_date`, `user_id`) VALUES
+(2, 'testing this post', '2018-03-26 23:26:18', NULL, 5),
+(3, 'test 2', '2018-03-26 23:29:18', NULL, 5);
 
 -- --------------------------------------------------------
 
@@ -108,8 +115,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `password`, `reg_date`, `gender`, `birthday`, `relation_status`, `profile_pic`, `profile_cover`) VALUES
-(4, 'eray', 'myumyun', 'eray@abv.bg', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', '2018-03-25 20:45:09', 'male', '2018-03-15', NULL, '../uploads/default_profile.png', '../uploads/default_cover.png'),
-(5, 'Svetoslav', 'Vladov', 'komara_@abv.bg', 'f10e2821bbbea527ea02200352313bc059445190', '2018-03-26 15:22:06', 'male', '1988-12-22', NULL, '../uploads/default_profile.png', '../uploads/default_cover.png');
+(4, 'eray', 'myumyun', 'eray@abv.bg', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', '2018-03-26 23:52:59', 'male', '2018-03-15', NULL, '../uploads/male_default_picture.png', '../uploads/default_cover.png'),
+(5, 'Svetoslav', 'Vladov', 'komara_@abv.bg', 'f10e2821bbbea527ea02200352313bc059445190', '2018-03-26 23:53:05', 'male', '1988-12-22', NULL, '../uploads/male_default_picture.png', '../uploads/default_cover.png');
 
 --
 -- Indexes for dumped tables
@@ -170,7 +177,7 @@ ALTER TABLE `comments`
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `users`
 --

@@ -40,7 +40,7 @@
             </select>
         </div>
         <div>
-            <input type="submit" name="register" value="register" class="btn">
+            <input type="submit" name="register" value="register" class="btn shadow-box">
             <br>
             <a href="login.php" class="btn">back to login</a>
         </div>

@@ -11,8 +11,16 @@ if (isset($_POST['register'])) {
     $password = htmlentities(sha1($_POST['password']));
     $confirm_pass = htmlentities(sha1($_POST['confirm_pass']));
     $gender = htmlentities($_POST['gender']);
+    if($gender === "male"){
+        $profile_pic = $GLOBALS['male_default_picture'];
+    }
+    elseif($gender === "female"){
+        $profile_pic = $GLOBALS['female_default_picture'];
+    }
+    else{
+        $profile_pic = "no picture/no gender";
+    }
     $birthday = htmlentities($_POST['b_day']);
-    $profile_pic = $GLOBALS['default_profile_pic'];
     $cover_pic = $GLOBALS['default_cover_pic'];
 
     $error = false;
