@@ -8,7 +8,7 @@
         <nav>
             <ul id="icon-nav">
                 <li class="profile-btn">
-                    <a href="../include/profile.php?id=<?php echo $_SESSION['logged']['id']; ?>"><img src="<?php if(isset($_SESSION["logged"])){ echo $_SESSION["logged"]["profile_pic"];}?>" alt="profile_pic">
+                    <a href="../view/profile.php?id=<?php echo $_SESSION['logged']['id']; ?>"><img src="<?php if(isset($_SESSION["logged"])){ echo $_SESSION["logged"]["profile_pic"];}?>" alt="profile_pic">
                         <?php if(isset($_SESSION["logged"])){ echo $_SESSION["logged"]["first_name"] . " " . $_SESSION["logged"]["last_name"] ;} ?></a>
                 </li>
                 <li><a href="../view/main.php"><i class="fas fa-home"></i></a></li>

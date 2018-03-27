@@ -11,7 +11,7 @@
 <div id="left-col-grid">
     <div class="lwrap">
         <div id="profile-pic">
-            <a href="../include/profile.php?id=<?php echo $_SESSION['logged']['id']; ?>">
+            <a href="profile.php?id=<?php echo $_SESSION['logged']['id']; ?>">
                 <img id="mini-profile-pic" src="<?php if(isset($_SESSION["logged"])){ echo $_SESSION["logged"]["profile_pic"];} ?>" alt="profile_pic">
             </a>
         </div>
@@ -26,10 +26,26 @@
 <div id="content-grid">
     <div class="post-container">
         <?php
-            require_once "../include/modules/post-mod.php";
+        require_once "../include/modules/post-mod.php";
+        require_once "../model/posts_dao.php";
         ?>
         <div id="newsfeed">
-            posts
+            <?php
+            $allPosts = getAllPosts();
+            foreach ($allPosts as $post) { ?>
+            <div class="post">
+                <div class="post-header">
+                    <span><img class="postProfPic" src="<?php echo $post['profile_pic']; ?>" alt="profile picture"></span>
+                    <span class="post-owner"><?php echo $post["first_name"] . " " . $post["last_name"]; ?></span>
+                    <span class="post-date"><?php echo $post['create_date']; ?></span>
+                </div>
+                <div class="post-desc">
+                    <p>
+                        <?php echo $post["description"]; ?>
+                    </p>
+                </div>
+            </div>
+            <?php }?>
         </div>
     </div>
 
