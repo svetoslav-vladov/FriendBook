@@ -1,7 +1,10 @@
 <?php
 
 require_once '../include/session.php';
+
 require_once '../model/users_dao.php';
+
+require_once "../include/default_paths.php";
 
 
 if (isset($_POST['register'])) {
@@ -11,15 +14,19 @@ if (isset($_POST['register'])) {
     $password = htmlentities(sha1($_POST['password']));
     $confirm_pass = htmlentities(sha1($_POST['confirm_pass']));
     $gender = htmlentities($_POST['gender']);
-    if($gender === "male"){
+
+    if($gender == "male"){
         $profile_pic = $GLOBALS['male_default_picture'];
+
     }
-    elseif($gender === "female"){
+    elseif($gender == "female"){
         $profile_pic = $GLOBALS['female_default_picture'];
+
     }
     else{
         $profile_pic = "no picture/no gender";
     }
+
     $birthday = htmlentities($_POST['b_day']);
     $cover_pic = $GLOBALS['default_cover_pic'];
 

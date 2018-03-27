@@ -5,9 +5,6 @@ const DB_IP = 'localhost';
 const DB_PORT = '3306';
 const DB_USER = 'friendbook';
 const DB_PASS = 'test123';
-$GLOBALS["male_default_picture"] = '../uploads/male_default_picture.png';
-$GLOBALS["female_default_picture.png"] = '../uploads/female_default_picture.png';
-$GLOBALS["default_cover_pic"] = '../uploads/default_cover.png';
 
 try {
     $dsn = "mysql:host=" . DB_IP . ":" . DB_PORT . ";dbname=" . DB_NAME;
