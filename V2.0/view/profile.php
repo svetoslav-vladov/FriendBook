@@ -24,15 +24,8 @@
 
     <div id="left-col-grid">
         <div class="lwrap">
-            <div id="profile-pic">
-                <a href="profile.php?id=<?php echo $_SESSION['logged']['id']; ?>">
-                    <img id="mini-profile-pic" src="<?php if(isset($_SESSION["logged"])){ echo $_SESSION["logged"]["profile_pic"];} ?>" alt="profile_pic">
-                </a>
-            </div>
-            <div id="userNameTag">
-                <?php if(isset($_SESSION["logged"])){ echo $_SESSION["logged"]["first_name"] . " " . $_SESSION["logged"]["last_name"] ;} ?>
-            </div>
             <?php
+                require_once  "../include/modules/leftProfileInfo.php";
                 require_once  "../include/modules/leftNav.php";
             ?>
         </div>
@@ -66,7 +59,7 @@
                 <img  id="cover_img" src="<?php echo $profileCover; ?>" alt="user cover picture">
             </div>
             <?php
-                if(isset($_GET["id"])){
+                if(isset($_GET["id"]) && $_GET["id"] != $_SESSION["logged"]["id"]){
                     ?>
                     <div id="userPictrue">
                         <img  id="cover_img" src="<?php echo $profilePic; ?>" alt="user profile picture">
