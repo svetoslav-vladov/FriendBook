@@ -30,7 +30,7 @@
             <div class="post">
                 <div class="post-header">
                     <span><img class="postProfPic" src="<?php echo $post['profile_pic']; ?>" alt="profile picture"></span>
-                    <span class="post-owner"><?php echo $post["first_name"] . " " . $post["last_name"]; ?></span>
+                    <span class="post-owner"><a href="profile.php?id=<?php echo $post['user_id']?>" class="<?php echo ($post['gender'] == 'female') ? "female" : "male"?>"><?php echo $post["first_name"] . " " . $post["last_name"]; ?></a></span>
                     <span class="post-date"><?php echo $post['create_date']; ?></span>
                 </div>
                 <div class="post-desc">
@@ -44,7 +44,7 @@
                 <div class="comments">
                     <div class="add-comment-div">
                         <form action="../controller/add_comment_controller.php" method="post">
-                            <textarea name="comment_description" id="" cols="80" rows=5"></textarea>
+                            <textarea placeholder="Write comment..." class="comment-textarea" name="comment_description" rows="5"></textarea>
                             <input type="hidden" name="post_id" value="<?php echo $post['post_id']?>">
                             <input type="submit" value="comment" name="add_comment">
                         </form>
@@ -53,9 +53,9 @@
                     $allCommentForCurrentPost = getAllCommentsForCurrentPost($post['post_id']);
                     foreach ($allCommentForCurrentPost as $comment) { ?>
                         <div class="comment-header">
-                            <span><a href="profile.php?id=<?php echo $comment['owner_id']?>"><?php echo $comment["first_name"] . " " . $comment["last_name"]; ?><img class="commentProfPic" src="<?php echo $comment['profile_pic']; ?>" alt="profile picture"></a></span>
-                            <span class="comment-owner"></span>
-                            <span class="comment-date"><?php echo $comment['comment_date']; ?></span>
+                            <span><a href="profile.php?id=<?php echo $comment['owner_id']?>"><img class="commentProfPic" src="<?php echo $comment['profile_pic']; ?>" alt="profile picture"></a></span>
+                            <span class="comment-owner"><a href="profile.php?id=<?php echo $comment['owner_id']?>" class="<?php echo ($comment['gender'] == 'female') ? "female" : "male"?>"><?php echo $comment["first_name"] . " " . $comment["last_name"]; ?></a></span>
+                            <div class="comment-date"><?php echo $comment['comment_date']?></div>
                         </div>
                         <div class="comment-desc">
                             <p><?php echo $comment['description']; ?></p>

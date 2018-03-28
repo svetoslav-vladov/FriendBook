@@ -97,6 +97,7 @@ nav ul li {
     padding: 2px;
     position: fixed;
     top: 0;
+    z-index: 9999;
 }
 .center-content {
     margin: 0 auto;
@@ -228,7 +229,7 @@ img.postProfPic {
 
 .post-desc {
     padding:  0 10px;
-    font-size: 0.8em;
+    font-size: 1.5em;
 }
 
 .post-header {
@@ -240,6 +241,10 @@ img.postProfPic {
 span.post-owner {
     font-weight: bold;
     padding-top: 9px;
+}
+
+.post-owner a {
+    text-decoration: none;
 }
 
 span.post-date {
@@ -358,4 +363,51 @@ form#post-form label {
     font-weight:  bold;
     font-family: monospace, helvetica;
     color: #555;
+}
+
+.add-comment-div {
+    margin-bottom: 10px;
+}
+.add-comment-div form textarea {
+    resize: none;
+    width: 99%;
+    height: 50px;
+}
+.comment-header {
+    border-bottom: 1px solid lightgray;
+}
+.commentProfPic{
+    width: 35px;
+    float: left;
+}
+.comment-owner a {
+    text-decoration: none;
+    padding-left: 7px;
+    vertical-align: -webkit-baseline-middle;
+}
+
+.comment-date {
+    font-size: 0.7em;
+    float: right;
+    margin: 5px;
+}
+
+.comment-desc {
+    width: 90%;
+    margin: 0px auto;
+    font-size: 0.9em;
+    padding: 0px;
+}
+
+.comment-desc p {
+    margin: 0px;
+    padding: 2px 2px 2px 12px;
+}
+
+.female {
+    color: deeppink;
+}
+
+.male {
+    color: dodgerblue;
 }
