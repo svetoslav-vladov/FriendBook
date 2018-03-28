@@ -19,7 +19,13 @@ if (isset($_POST['add_comment'])) {
         header("location: ../view/main.php?error=" . htmlentities($error));
     }
     if (!$error) {
-        addComment($comment_desc, $post_id, $user_id);
-        header("location: ../view/main.php");
+        if (isset($_POST['user_id'])) {
+            $id = htmlentities($_POST['user_id']);
+            addComment($comment_desc, $post_id, $user_id);
+            header("location: ../view/profile.php?id=" . $id);
+        }else {
+            addComment($comment_desc, $post_id, $user_id);
+            header("location: ../view/main.php");
+        }
     }
 }

@@ -108,6 +108,7 @@
                                 <form action="../controller/add_comment_controller.php" method="post">
                                     <textarea placeholder="Write comment..." class="comment-textarea" name="comment_description" id="" cols="80" rows=5"></textarea>
                                     <input type="hidden" name="post_id" value="<?php echo $post['post_id']?>">
+                                    <input type="hidden" name="user_id" value="<?php echo $post['user_id']?>">
                                     <input type="submit" value="comment" name="add_comment">
                                 </form>
                             </div>
