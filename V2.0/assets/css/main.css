@@ -97,6 +97,7 @@ nav ul li {
     padding: 2px;
     position: fixed;
     top: 0;
+    z-index: 999;
 }
 .center-content {
     margin: 0 auto;
