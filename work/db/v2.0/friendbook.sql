@@ -77,7 +77,9 @@ CREATE TABLE `posts` (
 
 INSERT INTO `posts` (`id`, `description`, `create_date`, `edit_date`, `user_id`) VALUES
 (2, 'testing this post', '2018-03-26 23:26:18', NULL, 5),
-(3, 'test 2', '2018-03-26 23:29:18', NULL, 5);
+(3, 'test 2', '2018-03-26 23:29:18', NULL, 5),
+(4, 'das', '2018-03-27 10:53:16', NULL, 4),
+(5, 'postwam za posledno s user: eray myumyun', '2018-03-27 13:59:02', NULL, 4);
 
 -- --------------------------------------------------------
 
@@ -115,8 +117,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `password`, `reg_date`, `gender`, `birthday`, `relation_status`, `profile_pic`, `profile_cover`) VALUES
-(4, 'eray', 'myumyun', 'eray@abv.bg', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', '2018-03-26 23:52:59', 'male', '2018-03-15', NULL, '../uploads/male_default_picture.png', '../uploads/default_cover.png'),
-(5, 'Svetoslav', 'Vladov', 'komara_@abv.bg', 'f10e2821bbbea527ea02200352313bc059445190', '2018-03-26 23:53:05', 'male', '1988-12-22', NULL, '../uploads/male_default_picture.png', '../uploads/default_cover.png');
+(4, 'eray', 'myumyun', 'eray@abv.bg', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', '2018-03-28 14:53:46', 'male', '2018-03-15', NULL, '../uploads/male_default_picture.png', '../uploads/default_cover.jpg'),
+(5, 'Svetoslav', 'Vladov', 'komara_@abv.bg', 'f10e2821bbbea527ea02200352313bc059445190', '2018-03-28 14:53:36', 'male', '1988-12-22', NULL, '../uploads/male_default_picture.png', '../uploads/default_cover.jpg'),
+(6, 'asd', 'asd', 'asd1@abv.bg', 'f10e2821bbbea527ea02200352313bc059445190', '2018-03-28 14:53:33', 'female', '0002-02-22', NULL, '../uploads/female_default_picture.png', '../uploads/default_cover.jpg');
 
 --
 -- Indexes for dumped tables
@@ -177,12 +180,12 @@ ALTER TABLE `comments`
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- Ограничения за дъмпнати таблици
 --
