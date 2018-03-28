@@ -66,10 +66,10 @@ function getSuggestedUsers($user_id) {
     return $suggested_users;
 }
 
-function getUserImgInfo($user_id) {
+function getUserInfo($user_id) {
     // This function return information for all posts and information for the owner of the posts
     $pdo = $GLOBALS['pdo'];
-    $statement = $pdo->prepare("SELECT profile_pic, profile_cover
+    $statement = $pdo->prepare("SELECT profile_pic, profile_cover, id, first_name, last_name
                                 FROM users 
                                 WHERE users.id = ? 
                                 ");

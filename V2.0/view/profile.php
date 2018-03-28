@@ -46,11 +46,13 @@
                 require_once "../model/posts_dao.php";
 
                 if(isset($_GET['id'])){
-                    // calling user_dao for function
-                    require_once "../model/users_dao.php";
-                    $userIdInfo = getUserImgInfo(htmlentities($_GET['id']));
+                    //var_dump(getUserInfo(htmlentities($_GET['id'])));
+                    $userIdInfo = getUserInfo(htmlentities($_GET['id']));
                     $profilePic = $userIdInfo["profile_pic"];
                     $profileCover = $userIdInfo["profile_cover"];
+
+                    $userName = $userIdInfo["first_name"] . " " . $userIdInfo["last_name"];
+
 
                     $allPosts = getOwnPosts($_GET['id']);
                 }
@@ -68,6 +70,7 @@
                     ?>
                     <div id="userPictrue">
                         <img  id="cover_img" src="<?php echo $profilePic; ?>" alt="user profile picture">
+                        <p><?php echo $userName; ?></p>
                     </div>
                     <?php
                 }
