@@ -116,8 +116,16 @@
                             $allCommentForCurrentPost = getAllCommentsForCurrentPost($post['post_id']);
                             foreach ($allCommentForCurrentPost as $comment) { ?>
                                 <div class="comment-header">
-                                    <span><a href="profile.php?id=<?php echo $comment['owner_id']?>"><img class="commentProfPic" src="<?php echo $comment['profile_pic']; ?>" alt="profile picture"></a></span>
-                                    <span class="comment-owner"><a href="profile.php?id=<?php echo $comment['owner_id']?>" class="<?php echo ($comment['gender'] == 'female') ? "female" : "male"?>"><?php echo $comment["first_name"] . " " . $comment["last_name"]; ?></a></span>
+                                    <span>
+                                        <a href="profile.php?id=<?php echo $comment['owner_id']?>">
+                                            <img class="commentProfPic" src="<?php echo $comment['profile_pic']; ?>" alt="profile picture">
+                                        </a>
+                                    </span>
+                                    <span class="comment-owner">
+                                        <a href="profile.php?id=<?php echo $comment['owner_id']?>" class="<?php echo ($comment['gender'] == 'female') ? "female" : "male"?>">
+                                            <?php echo $comment["first_name"] . " " . $comment["last_name"]; ?>
+                                        </a>
+                                    </span>
                                     <div class="comment-date"><?php echo $comment['comment_date']?></div>
                                 </div>
                                 <div class="comment-desc">
