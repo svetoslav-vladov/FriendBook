@@ -29,11 +29,19 @@ SET time_zone = "+00:00";
 CREATE TABLE `comments` (
   `id` int(11) NOT NULL,
   `description` varchar(255) NOT NULL,
-  `comment_date` datetime NOT NULL,
+  `comment_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `edited_date` datetime DEFAULT NULL,
   `post_id` int(11) NOT NULL,
   `owner_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Схема на данните от таблица `comments`
+--
+
+INSERT INTO `comments` (`id`, `description`, `comment_date`, `edited_date`, `post_id`, `owner_id`) VALUES
+(3, 'testing here', '2018-03-29 09:30:05', NULL, 5, 5),
+(4, 'yooo', '2018-03-29 09:30:11', NULL, 5, 5);
 
 -- --------------------------------------------------------
 
@@ -175,7 +183,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `posts`
 --
