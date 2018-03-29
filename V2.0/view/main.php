@@ -39,7 +39,7 @@
                     </p>
                 </div>
                 <div>
-                    <button  class="like-button" id="<?php echo "like".$post['post_id']; ?>">Like</button>
+                    <button class="like-button" id="<?php echo $post['post_id']; ?>" onclick="getComments(this.id)">Like</button>
                 </div>
                 <div class="comments">
                     <div class="add-comment-div">
@@ -82,3 +82,17 @@
     //footer is end of html parts
     require_once "../include/footer.php";
 ?>
+
+<script>
+    function getComments(post_id) {
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                var result = JSON.parse(this.responseText);
+                console.log(result);
+            }
+        };
+        xmlhttp.open("GET", "../controller/add_comment_controller.php?post_id="+post_id, true);
+        xmlhttp.send();
+    }
+</script>

@@ -29,3 +29,9 @@ if (isset($_POST['add_comment'])) {
         }
     }
 }
+
+if ($_SERVER['REQUEST_METHOD'] == "GET") {
+    $post_id = $_GET['post_id'];
+    $result = getAllCommentsForCurrentPost($post_id);
+    echo json_encode($result);
+}
