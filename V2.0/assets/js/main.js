@@ -21,6 +21,8 @@ function getComments(post_id) {
                 commentDiv.append(commentHeader).append(commentDesc);
                 comments.append(commentDiv);
             }
+            var commentCounter = $(`<div class="comment-counter">Comments: ${$("#comments"+post_id+" .comment").length}</div>`);
+            comments.prepend(commentCounter);
         }
     };
     request.open("GET", "../controller/add_comment_controller.php?post_id="+post_id, true);

@@ -43,7 +43,7 @@
                 </div>
                 <div class="add-comment-div">
                     <div>
-                        <textarea placeholder="Write comment..." class="comment-textarea<?= $post['post_id'] ?>" name="comment_description" rows="5"></textarea>
+                        <textarea placeholder="Write comment..." class="comment-textarea" class="comment-textarea<?= $post['post_id'] ?>" name="comment_description" rows="5"></textarea>
                         <input type="hidden" name="post_id" value="<?php echo $post['post_id']?>">
                         <button id="add<?php echo $post['post_id']?>">add</button>
                     </div>
@@ -59,7 +59,6 @@
                         $(document).ready(function () {
                             var postId = "<?php echo $post['post_id'] ?>";
                             var addButton = $('#add'+postId);
-
                             addButton.click(function () {
                                 var commentDesc = $('.comment-textarea'+postId);
                                 var request = new XMLHttpRequest();
