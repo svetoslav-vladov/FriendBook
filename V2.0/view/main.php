@@ -39,29 +39,43 @@
                     </p>
                 </div>
                 <div>
-                    <button class="like-button" id="<?php echo $post['post_id']; ?>" onclick="getComments(this.id)">Like</button>
+                    <button class="like-button" id="<?php echo $post['post_id']; ?>">Like</button>
                 </div>
-                <div class="comments">
-                    <div class="add-comment-div">
-                        <form action="../controller/add_comment_controller.php" method="post">
-                            <textarea placeholder="Write comment..." class="comment-textarea" name="comment_description" rows="5"></textarea>
-                            <input type="hidden" name="post_id" value="<?php echo $post['post_id']?>">
-                            <input type="submit" value="comment" name="add_comment">
-                        </form>
+                <div class="add-comment-div">
+                    <div>
+                        <textarea placeholder="Write comment..." class="comment-textarea<?= $post['post_id'] ?>" name="comment_description" rows="5"></textarea>
+                        <input type="hidden" name="post_id" value="<?php echo $post['post_id']?>">
+                        <button id="add<?php echo $post['post_id']?>">add</button>
                     </div>
-                    <?php
-                    $allCommentForCurrentPost = getAllCommentsForCurrentPost($post['post_id']);
-                    foreach ($allCommentForCurrentPost as $comment) { ?>
-                        <div class="comment-header">
-                            <span><a href="profile.php?id=<?php echo $comment['owner_id']?>"><img class="commentProfPic" src="<?php echo $comment['profile_pic']; ?>" alt="profile picture"></a></span>
-                            <span class="comment-owner"><a href="profile.php?id=<?php echo $comment['owner_id']?>" class="<?php echo ($comment['gender'] == 'female') ? "female" : "male"?>"><?php echo $comment["first_name"] . " " . $comment["last_name"]; ?></a></span>
-                            <div class="comment-date"><?php echo $comment['comment_date']?></div>
-                        </div>
-                        <div class="comment-desc">
-                            <p><?php echo $comment['description']; ?></p>
-                        </div>
-                    <?php }
-                    ?>
+                </div>
+                <script>
+                    $(document).ready(function () {
+                        /*this function load all comments in current post with AJAX request*/
+                        getComments(<?php echo $post['post_id'] ?>);
+                    });
+                </script>
+                <div class="comments" id="comments<?php echo $post['post_id'] ?>">
+                    <script>
+                        $(document).ready(function () {
+                            var postId = "<?php echo $post['post_id'] ?>";
+                            var addButton = $('#add'+postId);
+
+                            addButton.click(function () {
+                                var commentDesc = $('.comment-textarea'+postId);
+                                var request = new XMLHttpRequest();
+                                $("#comments"+postId).empty();
+                                request.open('post', '../controller/add_comment_controller.php');
+                                request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                                request.onreadystatechange = function() {
+                                    if (this.readyState === 4 && this.status === 200) {
+                                        getComments(postId)
+                                    }
+                                };
+                                request.send("comment_description=" + commentDesc.val() + "&post_id=" + postId);
+                                commentDesc.val('');
+                            });
+                        });
+                    </script>
                 </div>
             </div>
             <?php }?>
@@ -82,17 +96,3 @@
     //footer is end of html parts
     require_once "../include/footer.php";
 ?>
-
-<script>
-    function getComments(post_id) {
-        var xmlhttp = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                var result = JSON.parse(this.responseText);
-                console.log(result);
-            }
-        };
-        xmlhttp.open("GET", "../controller/add_comment_controller.php?post_id="+post_id, true);
-        xmlhttp.send();
-    }
-</script>

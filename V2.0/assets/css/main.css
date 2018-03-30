@@ -368,7 +368,7 @@ form#post-form label {
 .add-comment-div {
     margin-bottom: 10px;
 }
-.add-comment-div form textarea {
+.add-comment-div textarea {
     resize: none;
     width: 99%;
     height: 50px;
