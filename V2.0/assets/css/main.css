@@ -411,3 +411,43 @@ form#post-form label {
 .male {
     color: dodgerblue;
 }
+
+.users-result {
+    display: none;
+    position: absolute;
+    width: 281px;
+    top: 31px;
+    left: 210px;
+    background: white;
+    z-index: 999;
+}
+
+.users-list {
+    padding: 0px;
+    list-style: none;
+    margin: 0px;
+}
+.users-list li {
+    border-bottom: 1px solid gray;
+}
+
+.users-list li:hover {
+
+}
+.users-list li a {
+    padding: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0px !important;
+    text-decoration: none;
+}
+
+.users-list li a:hover {
+    color: black;
+}
+.users-list li a img {
+    width: 30px;
+    margin: -1px;
+    margin-right: 8px;
+}
+

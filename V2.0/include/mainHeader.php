@@ -2,7 +2,12 @@
     <div class="center-content">
         <div id="search">
             <a href="../index.php"><img src="../assets/images/mini-logo.png" alt="friendbook logo"></a>
-            <input type="text" name="search" placeholder="Search for someone...">
+            <input type="text" name="search" onkeyup="searchUser(this.value)" placeholder="Search for someone...">
+            <div class="users-result">
+                <ul class="users-list">
+
+                </ul>
+            </div>
             <button>Search</button>
         </div>
         <nav>
