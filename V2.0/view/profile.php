@@ -79,15 +79,27 @@
             </div>
         </div>
         <div class="post-container">
+            <?php
+                if (isset($_GET['id'])) {
+                    $current_profile = $_GET['id'];
+                    if ($current_profile == $_SESSION['logged']['id']) { ?>
+                        <form id="post-form" class="shadow-box" action="../controller/add_post_controller.php" method="post">
+                            <label for="post_module">Make post</label>
+                            <textarea id="post_module" class="shadow-box" cols="62" rows="10" name="desc"></textarea>
+                            <input type="hidden" name="user_id" value="<?php echo $_SESSION['logged']['id']?>">
+                            <input class="mini-btn shadow-box" type="submit" value="post" name="add_post">
+                            <div class="clear"></div>
+                        </form>
+                   <?php  }
+                }
+            ?>
 
             <?php
-                require_once "../include/modules/post-mod.php";
                 require_once "../model/comments_dao.php";
             ?>
 
             <div id="newsfeed">
                 <?php
-
                 foreach ($allPosts as $post) { ?>
                     <div class="post">
                         <div class="post-header">
@@ -147,10 +159,9 @@
                                 });
                             </script>
                         </div>
+                    </div>
                 <?php }?>
-            </div>
         </div>
-
     </div>
 
 

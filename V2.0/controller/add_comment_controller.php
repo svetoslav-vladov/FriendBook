@@ -44,7 +44,6 @@ if (isset($_POST['add_comment'])) {
         }
     }
 }
-
 if (isset($_GET['post_id'])) {
     $post_id = $_GET['post_id'];
     $result = getAllCommentsForCurrentPost($post_id);

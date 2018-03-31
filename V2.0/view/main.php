@@ -39,7 +39,7 @@
                     </p>
                 </div>
                 <div>
-                    <button class="like-button" id="<?php echo $post['post_id']; ?>">Like</button>
+                    <button class="like-button" id="like<?php echo $post['post_id']; ?>">Like</button>
                 </div>
                 <div class="add-comment-div">
                     <div>
@@ -59,6 +59,7 @@
                         $(document).ready(function () {
                             var postId = "<?php echo $post['post_id'] ?>";
                             var addButton = $('#add'+postId);
+                            var likeButton = $("#like"+postId);
                             var commentDesc = $('.comment-textarea'+postId);
                             var request = new XMLHttpRequest();
                             addButton.click(function () {
@@ -81,6 +82,9 @@
                                     request.send("comment_description=" + commentDesc.val() + "&post_id=" + postId);
                                     commentDesc.val('');
                                 }
+                            });
+                            likeButton.click(function () {
+                                getPosts()
                             });
                         });
                     </script>

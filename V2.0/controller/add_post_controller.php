@@ -18,7 +18,13 @@ if (isset($_POST['add_post'])) {
         header("location: ../view/main.php?error=" . htmlentities($error));
     }
     if (!$error) {
-        addPost($user_id, $current_post);
-        header("location: ../view/main.php");
+        if (isset($_POST['user_id'])) {
+            $id = htmlentities($_POST['user_id']);
+            addPost($user_id, $current_post);
+            header("location: ../view/profile.php?id=" . $id);
+        }else {
+            addPost($user_id, $current_post);
+            header("location: ../view/main.php");
+        }
     }
 }
