@@ -40,7 +40,6 @@ function searchUser(str) {
     }
     else {
         var xmlhttp = new XMLHttpRequest();
-        usersList.empty();
         xmlhttp.onreadystatechange = function() {
             if (this.readyState === 4 && this.status === 200) {
                 userListDiv.show();
@@ -51,6 +50,7 @@ function searchUser(str) {
                     return;
                 }
                 var users = JSON.parse(this.responseText);
+                usersList.empty();
                 for (var user of users) {
                     var li = $(`<li>
                                 <a href="profile.php?id=${user['id']}" class="${(user['gender'] == 'male') ? 'male' : 'female'}">
@@ -59,6 +59,7 @@ function searchUser(str) {
                                 </a>
                               </li>`);
                     usersList.append(li);
+                    userListDiv.append(usersList);
                 }
                 $('.users-list li a').click(function () {
                     userListDiv.hide();
