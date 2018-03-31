@@ -103,38 +103,50 @@
                         <div>
                             <button  class="like-button" id="<?php echo "like".$post['post_id']; ?>">Like</button>
                         </div>
-                        <div class="comments">
-                            <div class="add-comment-div">
-                                <form action="../controller/add_comment_controller.php" method="post">
-                                    <textarea placeholder="Write comment..." class="comment-textarea" name="comment_description" id="" cols="80" rows=5"></textarea>
-                                    <input type="hidden" name="post_id" value="<?php echo $post['post_id']?>">
-                                    <input type="hidden" name="user_id" value="<?php echo $post['user_id']?>">
-                                    <input type="submit" value="comment" name="add_comment">
-                                </form>
+                        <div class="add-comment-div">
+                            <div>
+                                <textarea placeholder="Write comment..." class="comment-textarea<?= $post['post_id'] ?>" name="comment_description" rows="5"></textarea>
+                                <input type="hidden" name="post_id" value="<?php echo $post['post_id']?>">
+                                <button id="add<?php echo $post['post_id']?>">add</button>
                             </div>
-                            <?php
-                            $allCommentForCurrentPost = getAllCommentsForCurrentPost($post['post_id']);
-                            foreach ($allCommentForCurrentPost as $comment) { ?>
-                                <div class="comment-header">
-                                    <span>
-                                        <a href="profile.php?id=<?php echo $comment['owner_id']?>">
-                                            <img class="commentProfPic" src="<?php echo $comment['profile_pic']; ?>" alt="profile picture">
-                                        </a>
-                                    </span>
-                                    <span class="comment-owner">
-                                        <a href="profile.php?id=<?php echo $comment['owner_id']?>" class="<?php echo ($comment['gender'] == 'female') ? "female" : "male"?>">
-                                            <?php echo $comment["first_name"] . " " . $comment["last_name"]; ?>
-                                        </a>
-                                    </span>
-                                    <div class="comment-date"><?php echo $comment['comment_date']?></div>
-                                </div>
-                                <div class="comment-desc">
-                                    <p><?php echo $comment['description']; ?></p>
-                                </div>
-                            <?php }
-                            ?>
                         </div>
-                    </div>
+                        <script>
+                            $(document).ready(function () {
+                                /*this function load all comments in current post with AJAX request*/
+                                getComments(<?php echo $post['post_id'] ?>);
+                            });
+                        </script>
+                        <div class="comments" id="comments<?php echo $post['post_id'] ?>">
+                            <script>
+                                $(document).ready(function () {
+                                    var postId = "<?php echo $post['post_id'] ?>";
+                                    var addButton = $('#add'+postId);
+                                    var commentDesc = $('.comment-textarea'+postId);
+                                    var request = new XMLHttpRequest();
+                                    addButton.click(function () {
+                                /*validation for text area is empty or contains only white spaces*/
+                                        if (!$.trim($(".comment-textarea"+postId).val())) {
+                                            alert("You can't create empty comment, Please fill the post!");
+                                        }
+                                        else if(commentDesc.val().length > 1500) {
+                                            alert("Your comment contains too many characters! Please enter no more than 1500 characters.");
+                                        }
+                                        else {
+                                            $("#comments"+postId).empty();
+                                            request.open('post', '../controller/add_comment_controller.php');
+                                            request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                                            request.onreadystatechange = function() {
+                                                if (this.readyState === 4 && this.status === 200) {
+                                                    getComments(postId);
+                                                }
+                                            };
+                                            request.send("comment_description=" + commentDesc.val() + "&post_id=" + postId);
+                                            commentDesc.val('');
+                                        }
+                                    });
+                                });
+                            </script>
+                        </div>
                 <?php }?>
             </div>
         </div>

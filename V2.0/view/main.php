@@ -43,7 +43,7 @@
                 </div>
                 <div class="add-comment-div">
                     <div>
-                        <textarea placeholder="Write comment..." class="comment-textarea" class="comment-textarea<?= $post['post_id'] ?>" name="comment_description" rows="5"></textarea>
+                        <textarea placeholder="Write comment..." class="comment-textarea<?= $post['post_id'] ?>" name="comment_description" rows="5"></textarea>
                         <input type="hidden" name="post_id" value="<?php echo $post['post_id']?>">
                         <button id="add<?php echo $post['post_id']?>">add</button>
                     </div>
@@ -59,19 +59,28 @@
                         $(document).ready(function () {
                             var postId = "<?php echo $post['post_id'] ?>";
                             var addButton = $('#add'+postId);
+                            var commentDesc = $('.comment-textarea'+postId);
+                            var request = new XMLHttpRequest();
                             addButton.click(function () {
-                                var commentDesc = $('.comment-textarea'+postId);
-                                var request = new XMLHttpRequest();
-                                $("#comments"+postId).empty();
-                                request.open('post', '../controller/add_comment_controller.php');
-                                request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-                                request.onreadystatechange = function() {
-                                    if (this.readyState === 4 && this.status === 200) {
-                                        getComments(postId)
-                                    }
-                                };
-                                request.send("comment_description=" + commentDesc.val() + "&post_id=" + postId);
-                                commentDesc.val('');
+//                                validation for text area is empty or contains white spaces
+                                if (!$.trim($(".comment-textarea"+postId).val())) {
+                                    alert("You can't create empty comment, Please fill the post!");
+                                }
+                                else if(commentDesc.val().length > 1500) {
+                                    alert("Your comment contains too many characters! Please enter no more than 1500 characters.");
+                                }
+                                else {
+                                    $("#comments"+postId).empty();
+                                    request.open('post', '../controller/add_comment_controller.php');
+                                    request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                                    request.onreadystatechange = function() {
+                                        if (this.readyState === 4 && this.status === 200) {
+                                            getComments(postId);
+                                        }
+                                    };
+                                    request.send("comment_description=" + commentDesc.val() + "&post_id=" + postId);
+                                    commentDesc.val('');
+                                }
                             });
                         });
                     </script>
