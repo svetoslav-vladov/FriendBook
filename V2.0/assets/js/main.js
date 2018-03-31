@@ -40,6 +40,7 @@ function searchUser(str) {
     }
     else {
         var xmlhttp = new XMLHttpRequest();
+        usersList.empty();
         xmlhttp.onreadystatechange = function() {
             if (this.readyState === 4 && this.status === 200) {
                 userListDiv.show();

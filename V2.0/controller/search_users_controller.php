@@ -12,7 +12,11 @@ if (isset($_GET['search'])) {
     $found = false;
     $counter = 0;
     foreach ($users as $user) {
-        if(strstr(strtolower($user["first_name"]), strtolower($searched_user))
+        $fullName = '';
+        $fullName .= $user["first_name"];
+        $fullName .= " ";
+        $fullName .= $user['last_name'];
+        if(strstr(strtolower($fullName), strtolower($searched_user))
             || strstr(strtolower($user["last_name"]), strtolower($searched_user))) {
             $result[] = [
                 'id' => $user['id'],
