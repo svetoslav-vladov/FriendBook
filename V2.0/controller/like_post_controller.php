@@ -11,8 +11,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     likePost($post_id, $user_id);
 }
 
-if ($_SERVER['REQUEST_METHOD'] == "GET") {
+if (isset($_GET['post_id'])) {
     $user_id = $_SESSION['logged']['id'];
-    $post_id = htmlentities($_POST['post_id']);
+    $post_id = htmlentities($_GET['post_id']);
     isLiked($post_id, $user_id);
 }

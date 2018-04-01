@@ -82,3 +82,28 @@ function likePost(post_id) {
     };
     request.send("post_id=" + post_id);
 }
+
+function isLiked(post_id) {
+    var likeButton = $(`<button id="like${post_id}">like</button>`);
+    var dislikeButton = $(`<button id="dislike${post_id}">dislike</button>`);
+    var req = new XMLHttpRequest();
+    req.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            if (this.responseText == 1) {
+                $('#like-container'+post_id).append(dislikeButton);
+            }
+            else {
+                $('#like-container'+post_id).append(likeButton);
+            }
+        }
+    };
+    req.open("GET", "../controller/like_post_controller.php?post_id="+post_id, true);
+    req.send();
+
+    likeButton.click(function () {
+        likePost(post_id);
+        $('#like-container'+post_id).append(dislikeButton);
+        $(this).remove();
+        console.log('helo');
+    });
+}
