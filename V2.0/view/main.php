@@ -38,8 +38,13 @@
                         <?php echo $post["description"]; ?>
                     </p>
                 </div>
-                <div id="like-container<?php echo $post['post_id']?>">
-                    <button class="like-button" id="<?php echo $post['post_id']; ?>">Like</button>
+                <div class="like-container" id="like-container<?php echo $post['post_id']?>">
+                    <script>
+                        $(document).ready(function () {
+                            var postId = "<?php echo $post['post_id']?>";
+                            isLiked(postId);
+                        });
+                    </script>
                 </div>
                 <div class="add-comment-div">
                     <div>
@@ -59,7 +64,6 @@
                         $(document).ready(function () {
                             var postId = "<?php echo $post['post_id'] ?>";
                             var addButton = $('#add'+postId);
-                            var likeButton = $("#"+postId);
                             var commentDesc = $('.comment-textarea'+postId);
                             var request = new XMLHttpRequest();
                             addButton.click(function () {
@@ -82,17 +86,6 @@
                                     request.send("comment_description=" + commentDesc.val() + "&post_id=" + postId);
                                     commentDesc.val('');
                                 }
-                            });
-                            var dislikeButton = $(`<button id="dislike${postId}">dislike</button>`);
-                            likeButton.click(function () {
-                                likePost(this.id);
-
-                                $('#like-container'+postId).append(dislikeButton);
-                                $(this).remove();
-                            });
-
-                            dislikeButton.click(function () {
-                                console.log("dislike post: " + postId)
                             });
                         });
                     </script>

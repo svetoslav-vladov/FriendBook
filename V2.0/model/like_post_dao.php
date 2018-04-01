@@ -15,6 +15,6 @@ function isLiked($post_id, $user_id) {
                                 FROM likes
                                 WHERE post_id = ? AND user_id = ?");
     $statement->execute(array($post_id, $user_id));
-    $result = $statement->fetch(); // return first row of table
-    return $result['isLike'] > 0;
+//    $result = $statement->fetch(); // return first row of table
+    echo $statement->fetch()['isLike'];
 }
