@@ -96,6 +96,7 @@ function dislikePost(post_id) {
 }
 
 function isLiked(post_id) {
+    $('#like-container'+post_id).empty();
     var likeButton = $(`<button id="like${post_id}">like</button>`);
     var dislikeButton = $(`<button id="dislike${post_id}">dislike</button>`);
     var req = new XMLHttpRequest();
@@ -114,13 +115,15 @@ function isLiked(post_id) {
 
     likeButton.click(function () {
         likePost(post_id);
-        $('#like-container'+post_id).append(dislikeButton);
+
+        isLiked(post_id);
         $(this).remove();
     });
 
     dislikeButton.click(function () {
         dislikePost(post_id);
-        $('#like-container'+post_id).append(likeButton);
+
+        isLiked(post_id);
         $(this).remove();
     });
 }
