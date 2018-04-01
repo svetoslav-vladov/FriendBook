@@ -70,3 +70,15 @@ function searchUser(str) {
         xmlhttp.send();
     }
 }
+
+function likePost(post_id) {
+    var request = new XMLHttpRequest();
+    request.open('post', '../controller/like_post_controller.php');
+    request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    request.onreadystatechange = function() {
+        if (this.readyState === 4 && this.status === 200) {
+            console.log("Liked post: " + post_id)
+        }
+    };
+    request.send("post_id=" + post_id);
+}

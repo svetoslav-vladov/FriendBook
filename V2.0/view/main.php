@@ -1,7 +1,7 @@
 <?php
     require_once '../include/session.php';
     require_once "../include/pagelock.php";
-
+    $logged_user_id = $_SESSION['logged']['id'];
     // header.php is head tag, meta, link etc.
     require_once "../include/header.php";
     //mainHeader is after login, top navigation
@@ -38,8 +38,8 @@
                         <?php echo $post["description"]; ?>
                     </p>
                 </div>
-                <div>
-                    <button class="like-button" id="like<?php echo $post['post_id']; ?>">Like</button>
+                <div id="like-container<?php echo $post['post_id']?>">
+                    <button class="like-button" id="<?php echo $post['post_id']; ?>">Like</button>
                 </div>
                 <div class="add-comment-div">
                     <div>
@@ -59,7 +59,7 @@
                         $(document).ready(function () {
                             var postId = "<?php echo $post['post_id'] ?>";
                             var addButton = $('#add'+postId);
-                            var likeButton = $("#like"+postId);
+                            var likeButton = $("#"+postId);
                             var commentDesc = $('.comment-textarea'+postId);
                             var request = new XMLHttpRequest();
                             addButton.click(function () {
@@ -83,8 +83,16 @@
                                     commentDesc.val('');
                                 }
                             });
+                            var dislikeButton = $(`<button id="dislike${postId}">dislike</button>`);
                             likeButton.click(function () {
-                                getPosts()
+                                likePost(this.id);
+
+                                $('#like-container'+postId).append(dislikeButton);
+                                $(this).remove();
+                            });
+
+                            dislikeButton.click(function () {
+                                console.log("dislike post: " + postId)
                             });
                         });
                     </script>
