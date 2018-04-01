@@ -83,6 +83,18 @@ function likePost(post_id) {
     request.send("post_id=" + post_id);
 }
 
+function dislikePost(post_id) {
+    var request = new XMLHttpRequest();
+    request.open('post', '../controller/dislike_post_controller.php');
+    request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    request.onreadystatechange = function() {
+        if (this.readyState === 4 && this.status === 200) {
+            console.log("disliked post: " + post_id)
+        }
+    };
+    request.send("post_id=" + post_id);
+}
+
 function isLiked(post_id) {
     var likeButton = $(`<button id="like${post_id}">like</button>`);
     var dislikeButton = $(`<button id="dislike${post_id}">dislike</button>`);
@@ -104,6 +116,11 @@ function isLiked(post_id) {
         likePost(post_id);
         $('#like-container'+post_id).append(dislikeButton);
         $(this).remove();
-        console.log('helo');
+    });
+
+    dislikeButton.click(function () {
+        dislikePost(post_id);
+        $('#like-container'+post_id).append(likeButton);
+        $(this).remove();
     });
 }

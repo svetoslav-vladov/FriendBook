@@ -9,6 +9,12 @@ function likePost($post_id, $user_id) {
     return $statement->execute(array($post_id, $user_id));
 }
 
+function dislikePost($post_id, $user_id) {
+    $pdo = $GLOBALS['pdo'];
+    $statement = $pdo->prepare("DELETE FROM likes WHERE post_id = ? AND user_id = ?");
+    return $statement->execute(array($post_id, $user_id));
+}
+
 function isLiked($post_id, $user_id) {
     $pdo = $GLOBALS['pdo'];
     $statement = $pdo->prepare("SELECT COUNT(*) AS isLike 
