@@ -106,7 +106,7 @@ nav ul li {
     display: grid;
     grid-template-columns: 1fr 1fr;
     text-align: center;
-    grid-gap: 15%;
+    grid-gap: 5%;
 }
 #profile-pic img {
     width: 100%;
@@ -207,10 +207,9 @@ div#search a {
 div#search {
     padding-top: 5px;
     text-align: left;
+    position:  relative;
 }
-#search input[type="text"] {
-    width: 65%;
-}
+#search input[type="text"] {width: 100%;}
 img.postProfPic {
     height: 100%;
     border-radius: 100%;
@@ -367,6 +366,8 @@ form#post-form label {
 
 .add-comment-div {
     margin-bottom: 10px;
+    width:  100%;
+    text-align: center;
 }
 .add-comment-div textarea {
     resize: none;
@@ -413,13 +414,13 @@ form#post-form label {
 }
 
 .users-result {
-    display: none;
     position: absolute;
-    width: 281px;
-    top: 31px;
-    left: 210px;
+    width: 99.5%;
+    min-width: 280px;
+    top: 25px;
     background: white;
     z-index: 999;
+    left: 1px;
 }
 
 .users-list {
@@ -429,6 +430,7 @@ form#post-form label {
 }
 .users-list li {
     border-bottom: 1px solid gray;
+    box-sizing:  border-box;
 }
 
 .users-list li:hover {
@@ -436,7 +438,7 @@ form#post-form label {
 }
 .users-list li a {
     padding: 5px;
-    width: 100%;
+    width: 96%;
     box-sizing: border-box;
     margin: 0px !important;
     text-decoration: none;
@@ -446,8 +448,123 @@ form#post-form label {
     color: black;
 }
 .users-list li a img {
-    width: 30px;
+    height: 30px !important;
     margin: -1px;
     margin-right: 8px;
+    display: inline-block;
+}
+div#input-box {
+    display:  inline-block;
+    position:  relative;
+    margin-right: 5px;
+    width: 70%;
+    top: -1px;
+}
+div#input-box input {
+    padding: 4px;
+    box-sizing:  border-box;
+    outline:  none;
+    border-radius: 2px;
+    border: 1px solid #0d8e0d;
+}
+button.search-btn {
+    position:  absolute;
+    top: 1px;
+    right: 1px;
+    color: #777;
+    padding: 4px 15px;
+    background: #efefef;
+    outline:  none;
+    border:  none;
+    cursor:  pointer;
+    transition: background 0.3s ease-in-out;
 }
 
+button.search-btn:hover {
+    background: #e0e0e0;
+}
+div#userPictrue {
+    position:  absolute;
+    background: white;
+    bottom: 15px;
+    right: 15px;
+    text-align: center;
+    border-radius:  20px;
+    overflow:  hidden;
+    border: 3px solid white;
+}
+
+div#userPictrue img {
+    max-width: 150px;
+}
+div#cover {
+    position:  relative;
+    overflow:  hidden;
+    height: 300px;
+}
+div#profileUserNav {
+    width: 100%;
+    border-top: 1px solid black;
+}
+
+div#profileUserNav ul {
+    padding:  0;
+    margin:  0;
+    list-style:  none;
+    grid-template-columns:  1fr 1fr 1fr 1fr;
+    display: grid;
+}
+
+div#profileUserNav ul li {
+    display:  inline-block;
+    border-right: 1px solid #d0d0d0;
+}
+
+div#profileUserNav ul li a {
+    padding: 10px 0;
+    width:  100%;
+    display: inline-block;
+    text-align: center;
+    background: #ffffff;
+    text-decoration:  none;
+    color: #555;
+    transition: background 0.3s ease-in-out;
+}
+
+div#profileUserNav ul li a:hover {
+    background: #d6d5d5;
+}
+div#profileHolder {
+    background: white;
+    box-shadow: 2px 2px 6px #00000030;
+    border: 1px solid #0000002b;
+    box-sizing:  border-box;
+}
+
+div#profileUserNav ul li:last-child {
+    border-right:  none;
+}
+.profile-mini-name {
+    background: #f3f3f3;
+    text-transform:  capitalize;
+    font-size:  0.9rem;
+    font-weight:  bold;
+    color: #444;
+    padding: 4px 0;
+    box-sizing: border-box;
+}
+.add-comment-div input {
+    width: 90%;
+    padding: 5px 0;
+}
+
+.add-comment-div button {
+    width:  8%;
+    padding: 6px 0 !important;
+}
+.comment-input {
+    width: 100%;
+    background: #def3de;
+    box-sizing: border-box;
+    padding:  5px;
+}

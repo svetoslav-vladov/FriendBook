@@ -2,18 +2,23 @@
     <div class="center-content">
         <div id="search">
             <a href="../index.php"><img src="../assets/images/mini-logo.png" alt="friendbook logo"></a>
-            <input type="text" name="search" onkeyup="searchUser(this.value)" placeholder="Search for someone...">
-            <div class="users-result">
-                <ul class="users-list">
+            <div id="input-box">
+                <input type="text" name="search" autocomplete="off" onkeyup="searchUser(this.value)" placeholder="Search for someone...">
+                <button class="search-btn"><i class="fas fa-search"></i></button>
+                <div class="users-result">
+                    <ul class="users-list">
 
-                </ul>
+                    </ul>
+                </div>
+
             </div>
-            <button>Search</button>
+
+
         </div>
         <nav>
             <ul id="icon-nav">
                 <li class="profile-btn">
-                    <a href="../view/profile.php?id=<?php echo $_SESSION['logged']['id']; ?>">
+                    <a href="../view/profile.php">
                         <img src="<?php if(isset($_SESSION["logged"])){ echo $_SESSION["logged"]["profile_pic"];}?>" alt="profile_pic">
                         <?php if(isset($_SESSION["logged"])){ echo $_SESSION["logged"]["first_name"] . " " . $_SESSION["logged"]["last_name"] ;} ?>
                     </a>

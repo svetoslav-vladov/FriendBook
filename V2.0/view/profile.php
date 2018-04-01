@@ -7,6 +7,26 @@
     //mainHeader is after login, top navigation
     require_once  "../include/mainHeader.php";
 
+    // calling daos for function
+    require_once "../model/users_dao.php";
+    require_once "../model/posts_dao.php";
+
+    if(isset($_GET['id'])){
+        //var_dump(getUserInfo(htmlentities($_GET['id'])));
+        $userIdInfo = getUserInfo(htmlentities($_GET['id']));
+        $profilePic = $userIdInfo["profile_pic"];
+        $profileCover = $userIdInfo["profile_cover"];
+
+        $userName = $userIdInfo["first_name"] . " " . $userIdInfo["last_name"];
+
+
+        $allPosts = getOwnPosts($_GET['id']);
+    }
+    else{
+        $profilePic = $_SESSION["logged"]["profile_pic"];
+        $profileCover = $_SESSION["logged"]["profile_cover"];
+        $allPosts = getOwnPosts($_SESSION["logged"]["id"]);
+    }
 ?>
 
 <?php
@@ -33,41 +53,19 @@
     <div id="content-grid">
         <div id="profileHolder">
             <div id="cover">
-            <?php
-                // calling daos for function
-                require_once "../model/users_dao.php";
-                require_once "../model/posts_dao.php";
-
-                if(isset($_GET['id'])){
-                    //var_dump(getUserInfo(htmlentities($_GET['id'])));
-                    $userIdInfo = getUserInfo(htmlentities($_GET['id']));
-                    $profilePic = $userIdInfo["profile_pic"];
-                    $profileCover = $userIdInfo["profile_cover"];
-
-                    $userName = $userIdInfo["first_name"] . " " . $userIdInfo["last_name"];
-
-
-                    $allPosts = getOwnPosts($_GET['id']);
-                }
-                else{
-                    $profilePic = $_SESSION["logged"]["profile_pic"];
-                    $profileCover = $_SESSION["logged"]["profile_cover"];
-
-                    $allPosts = getOwnPosts($_SESSION["logged"]["id"]);
-                }
-            ?>
                 <img  id="cover_img" src="<?php echo $profileCover; ?>" alt="user cover picture">
-            </div>
+
             <?php
                 if(isset($_GET["id"]) && $_GET["id"] != $_SESSION["logged"]["id"]){
                     ?>
                     <div id="userPictrue">
                         <img  id="cover_img" src="<?php echo $profilePic; ?>" alt="user profile picture">
-                        <p><?php echo $userName; ?></p>
+                        <div class="profile-mini-name"><?php echo $userName; ?></div>
                     </div>
                     <?php
                 }
             ?>
+            </div>
 
             <div id="profileUserNav">
                 <ul>
@@ -112,16 +110,19 @@
                                 <?php echo $post["description"]; ?>
                             </p>
                         </div>
-                        <div>
-                            <button  class="like-button" id="<?php echo "like".$post['post_id']; ?>">Like</button>
-                        </div>
-                        <div class="add-comment-div">
+                        <div class="comment-input">
                             <div>
-                                <textarea placeholder="Write comment..." class="comment-textarea<?= $post['post_id'] ?>" name="comment_description" rows="5"></textarea>
+                                <button  class="like-button" id="<?php echo "like".$post['post_id']; ?>">Like</button>
+                            </div>
+                            <div class="add-comment-div">
+
+                                <input type="text" placeholder="Write comment..." class="comment-textarea<?= $post['post_id'] ?>" name="comment_description">
                                 <input type="hidden" name="post_id" value="<?php echo $post['post_id']?>">
-                                <button id="add<?php echo $post['post_id']?>">add</button>
+                                <button id="add<?php echo $post['post_id']?>" class="mini-btn">add</button>
+
                             </div>
                         </div>
+
                         <script>
                             $(document).ready(function () {
                                 /*this function load all comments in current post with AJAX request*/
@@ -159,6 +160,7 @@
                                 });
                             </script>
                         </div>
+
                     </div>
                 <?php }?>
         </div>

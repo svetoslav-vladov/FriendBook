@@ -38,14 +38,15 @@
                         <?php echo $post["description"]; ?>
                     </p>
                 </div>
-                <div id="like-container<?php echo $post['post_id']?>">
-                    <button class="like-button" id="<?php echo $post['post_id']; ?>">Like</button>
-                </div>
-                <div class="add-comment-div">
-                    <div>
-                        <textarea placeholder="Write comment..." class="comment-textarea<?= $post['post_id'] ?>" name="comment_description" rows="5"></textarea>
+                <div class="comment-input">
+                    <div id="like-container<?php echo $post['post_id']?>">
+                        <button class="like-button" id="<?php echo $post['post_id']; ?>">Like</button>
+                    </div>
+                    <div class="add-comment-div">
+                        <input type="text" placeholder="Write comment..." class="comment-textarea<?= $post['post_id'] ?>" name="comment_description">
                         <input type="hidden" name="post_id" value="<?php echo $post['post_id']?>">
-                        <button id="add<?php echo $post['post_id']?>">add</button>
+                        <button id="add<?php echo $post['post_id']?>" class="mini-btn">add</button>
+
                     </div>
                 </div>
                 <script>
