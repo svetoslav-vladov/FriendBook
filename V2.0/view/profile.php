@@ -111,8 +111,13 @@
                             </p>
                         </div>
                         <div class="comment-input">
-                            <div>
-                                <button  class="like-button" id="<?php echo "like".$post['post_id']; ?>">Like</button>
+                            <div class="like-container" id="like-container<?php echo $post['post_id']?>">
+                                <script>
+                                    $(document).ready(function () {
+                                        var postId = "<?php echo $post['post_id']?>";
+                                        isLiked(postId);
+                                    });
+                                </script>
                             </div>
                             <div class="add-comment-div">
 

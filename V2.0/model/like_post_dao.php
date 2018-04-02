@@ -24,3 +24,12 @@ function isLiked($post_id, $user_id) {
 //    $result = $statement->fetch(); // return first row of table
     echo $statement->fetch()['isLike'];
 }
+
+function getCountLikes($post_id) {
+    $pdo = $GLOBALS['pdo'];
+    $statement = $pdo->prepare("SELECT COUNT(*) AS like_count 
+                                FROM likes
+                                WHERE post_id = ?");
+    $statement->execute(array($post_id));
+    echo $statement->fetch()['like_count'];
+}

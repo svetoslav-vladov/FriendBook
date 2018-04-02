@@ -102,10 +102,13 @@ function isLiked(post_id) {
     var req = new XMLHttpRequest();
     req.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
+            getCountLikes(post_id);
             if (this.responseText == 1) {
                 $('#like-container'+post_id).append(dislikeButton);
+                // getCountLikes(post_id);
             }
             else {
+                // getCountLikes(post_id);
                 $('#like-container'+post_id).append(likeButton);
             }
         }
@@ -118,10 +121,22 @@ function isLiked(post_id) {
         isLiked(post_id);
         $(this).remove();
     });
-
     dislikeButton.click(function () {
         dislikePost(post_id);
         isLiked(post_id);
         $(this).remove();
     });
+}
+
+function getCountLikes(post_id) {
+    var likeContainer = $('#like-container'+post_id);
+    var req = new XMLHttpRequest();
+    req.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            var likeCounter = $(`<span>likes: ${this.responseText}</span>`);
+            likeContainer.append(likeCounter);
+        }
+    };
+    req.open("GET", "../controller/likeCounter_controller.php?post_id="+post_id, true);
+    req.send();
 }
