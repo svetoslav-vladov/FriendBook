@@ -569,11 +569,7 @@ div#profileUserNav ul li:last-child {
     box-sizing: border-box;
     padding:  5px;
 }
-.like-container {
-    position: absolute;
-    top: 65px;
-    right: 5px;
-}
+
 .like-button {
     background: none;
     border-radius: 50%;

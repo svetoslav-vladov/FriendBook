@@ -31,3 +31,13 @@ function getOwnPosts($user_id) {
     $result = $statement->fetchAll(PDO::FETCH_ASSOC);
     return $result;
 }
+
+function getLikedPosts($user_id) {
+    $pdo = $GLOBALS['pdo'];
+    $statement = $pdo->prepare("SELECT posts.id, likes.post_id, posts.description 
+                                FROM posts 
+                                JOIN likes ON likes.post_id = posts.id AND likes.user_id = ?");
+    $statement->execute(array($user_id));
+    $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+    return $result;
+}

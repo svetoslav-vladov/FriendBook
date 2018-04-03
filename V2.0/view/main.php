@@ -23,6 +23,11 @@
         require_once "../model/posts_dao.php";
         require_once "../model/comments_dao.php";
         ?>
+        <script>
+            $(document).ready(function () {
+                getLikedPost();
+            });
+        </script>
         <div id="newsfeed">
             <?php
             $allPosts = getAllPosts();
@@ -37,9 +42,6 @@
                     <p>
                         <?php echo $post["description"]; ?>
                     </p>
-                </div>
-
-                <div class="comment-input">
                     <div class="like-container" id="like-container<?php echo $post['post_id']?>">
                         <script>
                             $(document).ready(function () {
@@ -48,6 +50,8 @@
                             });
                         </script>
                     </div>
+                </div>
+                <div class="comment-input">
                     <div class="add-comment-div">
                         <input type="text" placeholder="Write comment..." class="comment-textarea<?= $post['post_id'] ?>" name="comment_description">
 

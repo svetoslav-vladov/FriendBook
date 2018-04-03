@@ -16,10 +16,7 @@
         $userIdInfo = getUserInfo(htmlentities($_GET['id']));
         $profilePic = $userIdInfo["profile_pic"];
         $profileCover = $userIdInfo["profile_cover"];
-
         $userName = $userIdInfo["first_name"] . " " . $userIdInfo["last_name"];
-
-
         $allPosts = getOwnPosts($_GET['id']);
     }
     else{
