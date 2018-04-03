@@ -97,23 +97,22 @@ function dislikePost(post_id) {
 
 function isLiked(post_id) {
     $('#like-container'+post_id).empty();
-    var likeButton = $(`<button class="like-button" id="like${post_id}"><i class="fas fa-thumbs-up"></i>like</button>`);
-    var dislikeButton = $(`<button class="dislike-button" id="dislike${post_id}"><i class="fas fa-thumbs-down"></i>dislike</button>`);
+    var likeButton = $(`<button class="like-button" id="like${post_id}"><i class="fas fa-thumbs-up"></i></button>`);
+    var dislikeButton = $(`<button class="dislike-button" id="dislike${post_id}"><i class="fas fa-thumbs-down"></i></button>`);
     var req = new XMLHttpRequest();
+
     req.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             getCountLikes(post_id);
             if (this.responseText == 1) {
                 $('#like-container'+post_id).append(dislikeButton);
-                // getCountLikes(post_id);
             }
             else {
-                // getCountLikes(post_id);
                 $('#like-container'+post_id).append(likeButton);
             }
         }
     };
-    req.open("GET", "../controller/like_post_controller.php?post_id="+post_id, true);
+    req.open("GET", "../controller/like_post_controller.php?post_id="+post_id);
     req.send();
 
     likeButton.click(function () {
@@ -137,6 +136,6 @@ function getCountLikes(post_id) {
             likeContainer.append(likeCounter);
         }
     };
-    req.open("GET", "../controller/likeCounter_controller.php?post_id="+post_id, true);
+    req.open("GET", "../controller/likeCounter_controller.php?post_id="+post_id);
     req.send();
 }
