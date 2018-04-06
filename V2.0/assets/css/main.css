@@ -569,39 +569,53 @@ div#profileUserNav ul li:last-child {
     box-sizing: border-box;
     padding:  5px;
 }
-
-.like-button {
-    background: none;
-    border-radius: 50%;
-    outline:none;
-    border: none;
-    padding: 7px 10px;
-    cursor: pointer;
-    color: blue;
+.loading-gif {
+    position: absolute;
+    top: -30px;
+    left: 50px;
 }
+.like-container {
+    position: relative;
+}
+
 
 .like-button svg {
-    color: blue !important;
-    font-size: 1.7em;
-    border: 1px solid blue;
-    border-radius: 50%;
-    padding: 7px;
+    color: darkgreen;
+    margin-right: 4px;
+    font-size: 1.4em;
 }
-
-.dislike-button{
-    outline:none;
+.dislike-button,.like-button {
+    position: absolute;
+    left: 221px;
+    top: -25px;
+    outline: none;
     background: none;
-    border-radius: 50%;
-    padding: 7px 10px;
-    color: red;
     border: none;
     cursor: pointer;
+    text-align: left;
+    width: 90px;
+    z-index: 999;
+}
+.like-button {
+    color: darkgreen;
+}
+
+.dislike-button {
+    position: absolute;
+    left: 221px;
+    top: -23px !important;
+    color: red;
+}
+.loading-gif {
+    width: 25px;
+    position: absolute;
+    left: 245px;
+    top: -27px;
 }
 
 .dislike-button svg {
     color: red !important;
-    font-size: 1.7em;
-    border: 1px solid red;
-    padding: 7px;
-    border-radius: 50%;
+    font-size: 1.4em;
+    margin-right: 4px;
+    margin-bottom: -4px;
 }

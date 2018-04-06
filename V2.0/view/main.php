@@ -39,14 +39,11 @@
                     <span class="post-date"><?php echo $post['create_date']; ?></span>
                 </div>
                 <div class="post-desc">
-                    <p>
-                        <?php echo $post["description"]; ?>
-                    </p>
+                    <p><?php echo $post["description"]; ?></p>
                     <div class="like-container" id="like-container<?php echo $post['post_id']?>">
                         <script>
                             $(document).ready(function () {
-                                var postId = "<?php echo $post['post_id']?>";
-                                isLiked(postId);
+                                isLiked(<?php echo $post['post_id']?>);
                             });
                         </script>
                     </div>
@@ -54,10 +51,8 @@
                 <div class="comment-input">
                     <div class="add-comment-div">
                         <input type="text" placeholder="Write comment..." class="comment-textarea<?= $post['post_id'] ?>" name="comment_description">
-
                         <input type="hidden" name="post_id" value="<?php echo $post['post_id']?>">
                         <button id="add<?php echo $post['post_id']?>" class="mini-btn">add</button>
-
                     </div>
                 </div>
                 <script>
