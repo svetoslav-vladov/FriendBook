@@ -569,11 +569,7 @@ div#profileUserNav ul li:last-child {
     box-sizing: border-box;
     padding:  5px;
 }
-.loading-gif {
-    position: absolute;
-    top: -30px;
-    left: 50px;
-}
+
 .like-container {
     position: relative;
 }
