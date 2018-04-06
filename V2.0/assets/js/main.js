@@ -82,7 +82,7 @@ function likePost(post_id) {
             setTimeout(function(){
                 loading_gif.remove();
                 isLiked(post_id);
-            },300);
+            },200);
         }
     };
     request.send("post_id=" + post_id);
