@@ -31,7 +31,7 @@ if(document.querySelector('#post-form')){
                 fake_input.removeChild(img);
                 fake_input.style.display = 'none';
                 post_module_form.style.height = '300px';
-            }, 500);
+            }, 400);
 
 
             // form text field box
@@ -54,7 +54,7 @@ if(document.querySelector('#post-form')){
 
             poput_input.style.display = "block";
 
-        }, 700);
+        }, 600);
 
 
     }

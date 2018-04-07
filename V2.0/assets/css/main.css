@@ -93,7 +93,7 @@ nav ul li {
 #top {
     width: 100%;
     background: #62a762;
-    padding: 2px;
+    padding: 4px;
     position: fixed;
     top: 0;
     z-index: 9999;
@@ -172,6 +172,7 @@ form a {
     color: #fff;
     display: block;
     position:  relative;
+    text-decoration:  none;
 }
 .proposed-container h3 {
     margin:  5px 0;
@@ -194,11 +195,11 @@ div#search a {
     vertical-align:  middle;
 }
 .profile-btn img {
-    height: 28px;
+    height: 27px;
     border-radius: 100%;
-    top: -8px;
+    top: -5px;
     position: absolute;
-    left: -40px;
+    left: -37px;
 }
 .profile-btn {
     font-size: 0.8rem;
@@ -220,10 +221,10 @@ img.postProfPic {
 .post {
     background:  white;
     border-radius:  8px;
-    /* padding:  5px; */
     box-sizing:  border-box;
     margin:  20px 0;
     position: relative;
+    border: 1px solid #c1c1c1;
 }
 
 .post-desc {
@@ -374,6 +375,9 @@ form#post-form label {
 .add-comment-div {
     width:  100%;
     text-align: center;
+    padding: 25px;
+    border-top: 1px solid #c1c1c1;
+    box-sizing:  border-box;
 }
 .add-comment-div textarea {
     resize: none;
@@ -649,7 +653,6 @@ div#comments15 {
     background: #ebffeb;
     outline: 1px solid transparent;
     border: 1px solid #55555561;
-    padding:  20px 0;
 }
 
 
@@ -708,6 +711,8 @@ div.date {
     margin: 15px 0px 0;
     background: #e0e0e0;
     padding: 15px;
+    border-top: 1px solid #c1c1c1;
+    border-bottom: 1px solid #c1c1c1;
 }
 
 .comments {
@@ -724,11 +729,11 @@ div.date {
 }
 
 .comments-buttons button {
-    background: #8BC34A;
+    background: #f5af48;
     color: white;
     font-weight:  bold;
     font-family:  arial;
-    border: 1px solid #388c3b;
+    border: 1px solid #c18a38;
     transition:  background 0.4s ease-in-out;
     cursor:  pointer;
 }
@@ -745,33 +750,35 @@ span.likes_counter, .comment-counter {
 }
 
 .like-button {
-    background: #03A9F4;
+    background: #c7c7c7;
     color: white;
     font-weight: bold;
     font-family: arial;
-    border: 1px solid #388c3b;
+    border: 1px solid #959595;
     cursor:  pointer;
     transition: background 0.3s ease-in-out;
 }
 .like-button:hover {
-    background: #1a6db1;
+    background: #4CAF50;
+    border:  1px solid #388c3b;
 }
 
 .dislike-button {
-    background: #E70000;
+    background: #219421;
     color: white;
     font-weight: bold;
     font-family: arial;
-    border: 1px solid red;
+    border: 1px solid #255a27;
     cursor:  pointer;
     transition: background 0.3s ease-in-out;
 }
 
 .dislike-button:hover {
     background: #930000;
+    border: 1px solid #4a0202;
 }
 .comments-buttons button:hover {
-    background: #4CAF50;
+    background: #ff9800;
 }
 
 .comments {
@@ -784,6 +791,7 @@ span.likes_counter, .comment-counter {
 .comment span img {
     height: 50px;
     display: block;
+    border-radius:  50%;
 }
 
 .comment user_pic img {
@@ -796,7 +804,10 @@ span.likes_counter, .comment-counter {
 .comments_box {
     padding: 15px;
     display: none;
-    background: #eee;
+    height: 450px;
+    background: #f1f1f1;
+    overflow:  hidden;
+    overflow-y: scroll;
 }
 .description {
     padding: 10px 30px;
@@ -823,3 +834,4 @@ input[name="comment_description"] {
 .comment_btn_close {
     display:  none;
 }
+#icon-nav li a:hover {color: #e4e4e4;}

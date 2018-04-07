@@ -55,11 +55,7 @@
                     </div>
                 </div>
                 <div class="comments_box" id="comment_box<?php echo $post['post_id']?>">
-                    <div class="add-comment-div">
-                        <input type="text" placeholder="Write comment..." class="comment-textarea<?= $post['post_id'] ?>" name="comment_description">
-                        <input type="hidden" name="post_id" value="<?php echo $post['post_id']?>">
-                        <button id="add<?php echo $post['post_id']?>" class="mini-btn">add</button>
-                    </div>
+
                     <script>
                         $(document).ready(function () {
                             /*this function load all comments in current post with AJAX request*/
@@ -97,6 +93,11 @@
                             });
                         </script>
                     </div>
+                </div>
+                <div class="add-comment-div">
+                    <input type="text" placeholder="Write comment..." class="comment-textarea<?= $post['post_id'] ?>" name="comment_description">
+                    <input type="hidden" name="post_id" value="<?php echo $post['post_id']?>">
+                    <button id="add<?php echo $post['post_id']?>" class="mini-btn">add</button>
                 </div>
             </div>
             <?php }?>
