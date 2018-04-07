@@ -317,6 +317,7 @@ input.btn:hover {
     cursor: pointer;
     transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
     background: #90bd90;
+    vertical-align: middle;
     border: 1px solid #569a56;
 }
 
@@ -341,10 +342,10 @@ textarea#post_module {
 
 form#post-form {
     background: white;
-    padding: 15px;
     box-sizing:  border-box;
     border-radius:  10px;
     cursor: text;
+    transition: height 0.5s ease-in, padding 0.5s ease-in;
 }
 
 .mini-btn:hover {
@@ -362,11 +363,12 @@ textarea#post_module:focus {
 form#post-form label {
     font-weight:  bold;
     font-family: monospace, helvetica;
-    color: #555;
+    color: #717171;
     border-bottom: 1px solid #5555558f;
     width:  100%;
     display: block;
-    padding-bottom:  5px;
+    box-sizing: border-box;
+    padding: 7px 10px;
 }
 
 .add-comment-div {
@@ -562,7 +564,7 @@ div#profileUserNav ul li:last-child {
     padding: 10px 0px;
     text-align: center;
     border: 1px solid #55555561;
-    transition: background 0.3s ease-in-out;
+    transition: background 0.3s ease-in-out, padding 0.4s ease-in-out;
 }
 
 .add-comment-div button {
@@ -616,6 +618,9 @@ div#profileUserNav ul li:last-child {
     left: 245px;
     top: -27px;
 }
+.post_loading{
+    height: 50px;
+}
 
 .dislike-button svg {
     color: red !important;
@@ -630,10 +635,10 @@ div#small_image img {
 div#small_image a {margin:  0;}
 
 div#add_post_wrap {
-    margin: 10px 0;
     display: grid;
     grid-template-columns: 0fr 1fr;
     grid-gap: 10px;
+    padding: 20px 15px;
 }
 
 div#post_add_popup {
@@ -674,4 +679,5 @@ div#comments15 {
     background: #ebffeb;
     outline: 1px solid transparent;
     border: 1px solid #55555561;
+    padding:  20px 0;
 }
