@@ -577,11 +577,7 @@ div#profileUserNav ul li:last-child {
     border-top: 1px solid #62a762;
     border-bottom: 1px solid #62a762;
 }
-.loading-gif {
-    position: absolute;
-    top: -30px;
-    left: 50px;
-}
+
 .like-container {
     position: relative;
 }

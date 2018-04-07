@@ -111,8 +111,7 @@
                             <div class="like-container" id="like-container<?php echo $post['post_id']?>">
                                 <script>
                                     $(document).ready(function () {
-                                        var postId = "<?php echo $post['post_id']?>";
-                                        isLiked(postId);
+                                        isLiked(<?php echo $post['post_id']?>);
                                     });
                                 </script>
                             </div>
