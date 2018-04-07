@@ -7,13 +7,9 @@
                 <button class="search-btn"><i class="fas fa-search"></i></button>
                 <div class="users-result">
                     <ul class="users-list">
-
                     </ul>
                 </div>
-
             </div>
-
-
         </div>
         <nav>
             <ul id="icon-nav">

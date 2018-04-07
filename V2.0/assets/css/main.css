@@ -40,7 +40,6 @@ body {
 }
 #content-grid {
     grid-area: main;
-    height: 100vh;
 }
 #gridWrap {
     display: grid;
@@ -221,7 +220,7 @@ img.postProfPic {
 .post {
     background:  white;
     border-radius:  8px;
-    padding:  5px;
+    /* padding:  5px; */
     box-sizing:  border-box;
     margin:  20px 0;
     position: relative;
@@ -235,7 +234,7 @@ img.postProfPic {
 .post-header {
     font-size:  0.8em;
     border-bottom: 1px solid #b5b5b5;
-    padding: 1px 0;
+    padding: 8px;
 }
 
 span.post-owner {
@@ -255,7 +254,6 @@ span.post-date {
     width: 98%;
 }
 form div {
-    margin:  10px 0;
 }
 
 form#login input, form#register input {
@@ -308,11 +306,12 @@ input.btn:hover {
 .mini-btn {
     padding: 10px 0;
     width: 100%;
-    max-width:  100px;
+    max-width: 100px;
     text-transform:  uppercase;
     font-weight:  bold;
     font-size: 0.7em;
     color: #175a17;
+    margin: 0 5px;
     border-radius:  inherit;
     float: right;
     cursor: pointer;
@@ -333,7 +332,7 @@ textarea#post_module {
     border: 1px solid #2b6f2ba1;
     resize:  none;
     border-radius:  inherit;
-    height: 60px;
+    height: 150px;
     padding: 15px;
     box-sizing: border-box;
     transition: height 0.3s ease-in-out, background 0.3s ease-in-out;
@@ -345,6 +344,7 @@ form#post-form {
     padding: 15px;
     box-sizing:  border-box;
     border-radius:  10px;
+    cursor: text;
 }
 
 .mini-btn:hover {
@@ -363,10 +363,13 @@ form#post-form label {
     font-weight:  bold;
     font-family: monospace, helvetica;
     color: #555;
+    border-bottom: 1px solid #5555558f;
+    width:  100%;
+    display: block;
+    padding-bottom:  5px;
 }
 
 .add-comment-div {
-    margin-bottom: 10px;
     width:  100%;
     text-align: center;
 }
@@ -555,19 +558,24 @@ div#profileUserNav ul li:last-child {
     box-sizing: border-box;
 }
 .add-comment-div input {
-    width: 90%;
-    padding: 5px 0;
+    width: 85%;
+    padding: 10px 0px;
+    text-align: center;
+    border: 1px solid #55555561;
+    transition: background 0.3s ease-in-out;
 }
 
 .add-comment-div button {
-    width:  8%;
-    padding: 6px 0 !important;
+    width: 10%;
+    padding: 11px 0 !important;
 }
 .comment-input {
     width: 100%;
     background: #def3de;
     box-sizing: border-box;
-    padding:  5px;
+    padding: 10px 5px;
+    border-top: 1px solid #62a762;
+    border-bottom: 1px solid #62a762;
 }
 .loading-gif {
     position: absolute;
@@ -618,4 +626,56 @@ div#profileUserNav ul li:last-child {
     font-size: 1.4em;
     margin-right: 4px;
     margin-bottom: -4px;
+}
+div#small_image img {
+    height: 50px;
+}
+
+div#small_image a {margin:  0;}
+
+div#add_post_wrap {
+    margin: 10px 0;
+    display: grid;
+    grid-template-columns: 0fr 1fr;
+    grid-gap: 10px;
+}
+
+div#post_add_popup {
+    display: none;
+}
+div#post_input_fake {
+    font-size: 0.9em;
+    color: #888;
+}
+div#user-nav ul li a {
+    padding: 5px 10px;
+    display: block;
+    margin:  5px 0;
+    text-decoration:  none;
+    transition: background 0.4s ease-in-out;
+    color: #222;
+    text-transform:  capitalize;
+}
+
+div#user-nav ul li a:hover {
+    background: #F6F7F9;
+}
+span.nav-icon {
+    margin-right:  10px;
+    color: #555;
+}
+
+div#comments15 {
+    padding:  15px;
+    font-size:  0.9em;
+}
+
+.comment {
+    margin:  10px 0;
+}
+
+.add-comment-div input:focus {
+    background: #ebffeb;
+    outline: 1px solid transparent;
+    border: 1px solid #55555561;
 }
