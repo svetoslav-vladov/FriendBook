@@ -413,10 +413,12 @@ form#post-form label {
 
 .female {
     color: deeppink;
+    text-decoration: none;
 }
 
 .male {
     color: dodgerblue;
+    text-decoration: none;
 }
 
 .users-result {
@@ -568,7 +570,7 @@ div#profileUserNav ul li:last-child {
 }
 
 .add-comment-div button {
-    width: 10%;
+    width: 11%;
     padding: 11px 0 !important;
 }
 .comment-input {
@@ -586,54 +588,16 @@ div#profileUserNav ul li:last-child {
 .like_counter {
     position: relative;
 }
-.like-counter {
-    position: absolute;
-    top: -30px;
-    left: 400px;
-}
-.like-button svg {
-    color: darkgreen;
-    margin-right: 4px;
-    font-size: 1.4em;
-}
-.dislike-button,.like-button {
-    position: absolute;
-    left: 221px;
-    top: -25px;
-    outline: none;
-    background: none;
-    border: none;
-    cursor: pointer;
-    text-align: left;
-    width: 90px;
-    z-index: 999;
-}
-.like-button {
-    color: darkgreen;
-}
-
-.dislike-button {
-    position: absolute;
-    left: 221px;
-    top: -23px !important;
-    color: red;
-}
 .loading-gif {
     width: 25px;
     position: absolute;
-    left: 245px;
-    top: -27px;
+    left: 100px;
+    top: 12px;
 }
 .post_loading{
     height: 50px;
 }
 
-.dislike-button svg {
-    color: red !important;
-    font-size: 1.4em;
-    margin-right: 4px;
-    margin-bottom: -4px;
-}
 div#small_image img {
     height: 50px;
 }
@@ -686,4 +650,176 @@ div#comments15 {
     outline: 1px solid transparent;
     border: 1px solid #55555561;
     padding:  20px 0;
+}
+
+
+.wrap {
+    width: 100%;
+    max-width: 600px;
+    margin: 50px auto;
+}
+
+body {
+    background-color:  #eee;
+    font-size:  1em;
+    font-family: monospace;
+}
+
+div#post {
+    background:  white;
+    padding: 0;
+    box-sizing:  border-box;
+    border-radius:  10px;
+    border: 1px solid #5555554a;
+    overflow:  hidden;
+}
+
+div.icon img {
+    height:  70px;
+}
+
+.user_info span {
+    vertical-align: top;
+}
+
+div.date {
+    float:  right;
+    top: 25px;
+    position:  relative;
+}
+
+.user_info {
+    color: black;
+    font-weight:  bold;
+    padding: 10px;
+    font-size: 1.4em;
+}
+
+
+.description p {
+    font-size:  1.1em;
+    color: #555;
+}
+
+.post_navigation {
+    display: grid;
+    grid-template-columns:  1fr 1fr;
+    grid-gap:  25px;
+    margin: 15px 0px 0;
+    background: #e0e0e0;
+    padding: 15px;
+}
+
+.comments {
+
+}
+.like-button, .dislike-button, .comments-buttons button {
+    padding:  15px;
+    width: 100%;
+    box-shadow: 2px 2px 5px #0000003b;
+}
+.name, .icon {
+    display:  inline-block;
+    vertical-align:  middle;
+}
+
+.comments-buttons button {
+    background: #8BC34A;
+    color: white;
+    font-weight:  bold;
+    font-family:  arial;
+    border: 1px solid #388c3b;
+    transition:  background 0.4s ease-in-out;
+    cursor:  pointer;
+}
+
+span.likes_counter, .comment-counter {
+    background: #ffffffc2;
+    padding: 5px 7px;
+    font-size:  0.8em;
+    border-radius: 10px;
+    text-align:  center;
+    border: 1px solid #757575;
+    color: black;
+    margin-left: 10px;
+}
+
+.like-button {
+    background: #03A9F4;
+    color: white;
+    font-weight: bold;
+    font-family: arial;
+    border: 1px solid #388c3b;
+    cursor:  pointer;
+    transition: background 0.3s ease-in-out;
+}
+.like-button:hover {
+    background: #1a6db1;
+}
+
+.dislike-button {
+    background: #E70000;
+    color: white;
+    font-weight: bold;
+    font-family: arial;
+    border: 1px solid red;
+    cursor:  pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+.dislike-button:hover {
+    background: #930000;
+}
+.comments-buttons button:hover {
+    background: #4CAF50;
+}
+
+.comments {
+    padding: 10px;
+}
+.comment-owner {
+    /*font-size: 2em;*/
+
+}
+.comment span img {
+    height: 50px;
+    display: block;
+}
+
+.comment user_pic img {
+    display:  block;
+    height:  20px;
+}
+
+.comment {display: grid;grid-template-columns: 0fr 1fr;margin: 0;border-bottom:  1px solid #999;margin-bottom:  40px;grid-gap: 15px;}
+
+.comments_box {
+    padding: 15px;
+    display: none;
+    background: #eee;
+}
+.description {
+    padding: 10px 30px;
+}
+
+span.user_pic_add_comment img {
+    height: 40px;
+    vertical-align: middle;
+}
+
+.input_add_comment {
+    display:  grid;
+    grid-template-columns: 0fr 1fr;
+    grid-gap:  25px;
+}
+
+span.user_pic_add_comment span input {}
+
+input[name="comment_description"] {
+    padding: 10px;
+    width: 85%;
+    box-sizing: border-box;
+}
+.comment_btn_close {
+    display:  none;
 }
