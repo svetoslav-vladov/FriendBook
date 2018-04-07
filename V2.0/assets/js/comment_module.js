@@ -2,6 +2,7 @@ function getComments(post_id) {
     var request = new XMLHttpRequest();
     request.onreadystatechange = function() {
         if (this.readyState === 4 && this.status === 200) {
+            $('#comment-counter'+post_id).remove();
             var result = JSON.parse(this.responseText);
             var comments = $('#comments'+post_id);
             for(var comment of result) {
