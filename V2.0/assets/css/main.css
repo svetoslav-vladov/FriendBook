@@ -583,8 +583,14 @@ div#profileUserNav ul li:last-child {
 .like-container {
     position: relative;
 }
-
-
+.like_counter {
+    position: relative;
+}
+.like-counter {
+    position: absolute;
+    top: -30px;
+    left: 400px;
+}
 .like-button svg {
     color: darkgreen;
     margin-right: 4px;

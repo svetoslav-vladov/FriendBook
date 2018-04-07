@@ -47,6 +47,7 @@
                             });
                         </script>
                     </div>
+                    <div class="like_counter" id="like_counter<?php echo $post['post_id']?>"></div>
                 </div>
                 <div class="comment-input">
                     <div class="add-comment-div">

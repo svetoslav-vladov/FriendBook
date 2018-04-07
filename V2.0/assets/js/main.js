@@ -112,6 +112,7 @@ function isLiked(post_id) {
         if (this.readyState === 4 && this.status === 200) {
             likeButton.click(function () {
                 likePost(post_id);
+                $('#counter'+post_id).remove();
                 $(this).remove();
             });
             dislikeButton.click(function () {
@@ -137,8 +138,9 @@ function getCountLikes(post_id) {
     req.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             var likeCounter = $(`<span class="like-counter" id="counter${post_id}">likes: ${this.responseText}</span>`);
-            $('#like'+post_id).append(likeCounter);
-            $('#dislike'+post_id).append(likeCounter);
+            $("#like_counter"+post_id).append(likeCounter);
+            // $('#like'+post_id).append(likeCounter);
+            // $('#dislike'+post_id).append(likeCounter);
         }
     };
     req.open("GET", "../controller/likeCounter_controller.php?post_id="+post_id);
