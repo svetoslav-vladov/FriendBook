@@ -7,7 +7,13 @@
         foreach ($suggested_users as $user) { ?>
                 <li>
                     <a href="../view/profile.php?id=<?=$user['id']?>"><img src="<?php echo $user['profile_pic']?>" alt="<?php echo $user['first_name'] . " " . $user['last_name']?>"><?php echo $user['first_name'] . " " . $user['last_name']?></a>
-                    <button class="add-friend">Add friend</button>
+                    <div class="add-delete-buttons" id="<?php echo $user['id']?>">
+                        <script>
+                            $(document).ready(function () {
+                                isFriend(<?php echo $user['id']?>);
+                            });
+                        </script>
+                    </div>
                 </li>
         <?php } ?>
     </ul>

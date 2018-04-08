@@ -56,6 +56,7 @@ body {
     padding:  0;
 }
 .proposed-users li {
+    padding: 9px;
     border-bottom: 1px solid black;
 }
 .proposed-users li a {
@@ -447,9 +448,11 @@ form#post-form label {
     left: 1px;
     box-shadow: 1px 1px 6px #00000073;
 }
-
+.not-found {
+    padding: 8px;
+}
 .users-list {
-    /* padding: 10px 25px; */
+    padding: 0px;
     list-style: none;
     margin: 0px;
 }
@@ -477,6 +480,11 @@ form#post-form label {
     margin: -1px;
     margin-right: 8px;
     display: inline-block;
+}
+
+.users-list li a span {
+    display: inline-block;
+    vertical-align: sub;
 }
 div#input-box {
     display:  inline-block;
@@ -779,4 +787,43 @@ div#search img:hover {
 }
 div#logo {
     padding-top: 4px;
+}
+
+.add-delete-buttons {
+    position: relative;
+}
+
+.add-button, .delete-button {
+    position: absolute;
+    top: -14px;
+    left: 50px;
+    padding: 3px 10px;
+    color: white;
+    border-radius: 15px;
+    cursor: pointer;
+    outline: none;
+    border: none;
+}
+
+.add-button {
+    background: darkgreen;
+}
+
+.delete-button {
+    background: #a40000;
+}
+.add-button:hover, .delete-button:hover {
+    box-shadow: 0 0 10px 0px black;
+    color: black;
+}
+.add-button:active, .delete-button:active {
+    transform: scale(0.6);
+    transition: all 0.1s;
+}
+
+.friend-loading-gif {
+    position: absolute;
+    top: -14px;
+    left: 86px;
+    width: 18px;
 }

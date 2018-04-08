@@ -1,4 +1,4 @@
-var loading_gif = $('<img class="loading-gif" src="../assets/images/loading.gif">');
+var loading_gif = $('<img class="loading-gif" src="../assets/images/ajax-loading-c4.gif">');
 function likePost(post_id) {
     var request = new XMLHttpRequest();
     request.open('post', '../controller/like_post_controller.php');
@@ -9,7 +9,7 @@ function likePost(post_id) {
             setTimeout(function(){
                 loading_gif.remove();
                 isLiked(post_id);
-            },200);
+            },250);
         }
     };
     request.send("post_id=" + post_id);
@@ -24,7 +24,7 @@ function dislikePost(post_id) {
             setTimeout(function(){
                 loading_gif.remove();
                 isLiked(post_id);
-            },200);
+            },250);
         }
     };
     request.send("post_id=" + post_id);
