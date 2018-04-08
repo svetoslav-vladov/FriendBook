@@ -1,7 +1,10 @@
 <div id="top">
     <div class="center-content">
-        <div id="search">
+        <div id="logo">
             <a href="../index.php"><img src="../assets/images/mini-logo.png" alt="friendbook logo"></a>
+        </div>
+        <div id="search">
+
             <div id="input-box">
                 <input type="text" name="search" autocomplete="off" onkeyup="searchUser(this.value)" placeholder="Search for someone...">
                 <button class="search-btn"><i class="fas fa-search"></i></button>
@@ -16,7 +19,6 @@
                 <li class="profile-btn">
                     <a href="../view/profile.php">
                         <img src="<?php if(isset($_SESSION["logged"])){ echo $_SESSION["logged"]["profile_pic"];}?>" title="<?php if(isset($_SESSION["logged"])){ echo $_SESSION["logged"]["first_name"] . " " . $_SESSION["logged"]["last_name"] ;} ?>" alt="profile_pic">
-                        <?php if(isset($_SESSION["logged"])){ echo $_SESSION["logged"]["first_name"] . " " . $_SESSION["logged"]["last_name"] ;} ?>
                     </a>
                 </li>
                 <li><a href="../view/main.php"><i class="fas fa-home"></i></a></li>
