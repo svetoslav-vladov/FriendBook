@@ -190,7 +190,7 @@ span.comment_desc {
     padding: 0 20px;
     font-family:  arial;
     line-height: 2;
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     color: #555;
 }
 
@@ -261,4 +261,7 @@ span.likes_counter, .comment-counter {
     padding:  15px;
     width: 100%;
     box-shadow: 2px 2px 5px #0000003b;
+}
+span.comment_desc p {
+    margin-top: 0px;
 }

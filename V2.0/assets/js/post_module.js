@@ -130,5 +130,3 @@ if(document.querySelector('#post-form')){
     }
 
 }
-
-
