@@ -18,6 +18,7 @@ function getComments(post_id) {
                         <span class="comment_desc">
                             <p>${comment['description']}</p>
                         </span>
+                        <span class="comment_owner">${comment['first_name']} ${comment['last_name']}</span>
                         <span class="comment_date">8.4.2018 02:33</span>
                     </div>`);
                 comments.append(commentDiv);

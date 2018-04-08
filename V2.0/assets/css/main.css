@@ -43,12 +43,13 @@ body {
 }
 #gridWrap {
     display: grid;
-    grid-gap: 20px;
+    grid-gap: 15px;
     grid-template-areas:
             'left main main main main right';
     width: 100%;
     max-width: 1010px;
-    margin: 40px auto;
+    margin: 50px auto;
+    grid-template-columns: 1fr 4fr 1fr;
 }
 .proposed-users {
     list-style: none;
@@ -93,7 +94,7 @@ nav ul li {
 #top {
     width: 100%;
     background: #62a762;
-    padding: 4px;
+    padding: 7px 0 9px;
     position: fixed;
     top: 0;
     z-index: 9999;
@@ -110,6 +111,7 @@ nav ul li {
 #profile-pic img {
     width: 100%;
     display: block;
+    border-radius:  5px;
 }
 nav {
     display: grid;
@@ -117,8 +119,8 @@ nav {
     text-align:  right;
 }
 nav a {
-    font-size: 0.9rem;
-    font-weight:  bold;
+    /* font-size: 0.9rem; */
+    /* font-weight:  bold; */
 }
 #mini-nav img {
     height: 32px;
@@ -168,7 +170,7 @@ form a {
     display:  block;
 }
 #icon-nav li a{
-    font-size: 1.2em;
+    font-size: 1.1rem;
     color: #fff;
     display: block;
     position:  relative;
@@ -180,6 +182,7 @@ form a {
 div#userNameTag {
     text-align: center;
     margin:  10px 0;
+    font-weight:  bold;
 }
 div#right-col-grid {
     box-sizing: border-box;
@@ -267,24 +270,30 @@ form a:hover {
     text-decoration:  underline;
 }
 .err_msg {
-    padding:  5px 0;
+    padding: 8px 0;
     text-align:  center;
     font-size:  0.9em;
     color: #a94442;
     background-color: #f2dede;
     border-color: #ebccd1;
     position:  fixed;
-    top: 43px;
+    top: 50px;
     width: 100%;
+    font-weight:  bold;
     z-index: 1000;
 }
 .ok_msg {
-    padding:  5px 0;
+    padding: 8px 0;
     text-align:  center;
-    font-size:  0.9em;
+    font-size: 1em;
     color: #3c763d;
     background-color: #dff0d8;
     border-color: #d6e9c6;
+    position: fixed;
+    top: 50px;
+    width: 100%;
+    font-weight: bold;
+    z-index: 1000;
 }
 input.btn {
     background: #90bd90;
@@ -388,7 +397,7 @@ form#post-form label {
     border-bottom: 1px solid lightgray;
 }
 .commentProfPic{
-    width: 35px;
+    /* width: 35px; */
     float: left;
 }
 .comment-owner a {
@@ -473,7 +482,7 @@ div#input-box {
     top: -1px;
 }
 div#input-box input {
-    padding: 4px;
+    padding: 6px;
     box-sizing:  border-box;
     outline:  none;
     border-radius: 2px;
@@ -484,7 +493,7 @@ button.search-btn {
     top: 1px;
     right: 1px;
     color: #777;
-    padding: 4px 15px;
+    padding: 6px 15px;
     background: #efefef;
     outline:  none;
     border:  none;
@@ -497,7 +506,7 @@ button.search-btn:hover {
 }
 div#userPictrue {
     position:  absolute;
-    background: white;
+    background: #ffffff96;
     bottom: 15px;
     right: 15px;
     text-align: center;
@@ -507,12 +516,15 @@ div#userPictrue {
 }
 
 div#userPictrue img {
-    max-width: 150px;
+    max-width: 135px;
+    border-radius:  50%;
+    margin: 10px;
 }
 div#cover {
     position:  relative;
-    overflow:  hidden;
     height: 300px;
+    width: 100%;
+    overflow:  hidden;
 }
 div#profileUserNav {
     width: 100%;
@@ -533,7 +545,7 @@ div#profileUserNav ul li {
 }
 
 div#profileUserNav ul li a {
-    padding: 10px 0;
+    padding: 15px 0;
     width:  100%;
     display: inline-block;
     text-align: center;
@@ -625,15 +637,18 @@ div#post_input_fake {
 div#user-nav ul li a {
     padding: 5px 10px;
     display: block;
-    margin:  5px 0;
+    border-radius:  4px;
+    border: 1px solid transparent;
+    margin: 5px 0;
     text-decoration:  none;
-    transition: background 0.4s ease-in-out;
+    transition: background 0.5s ease-in-out,border 0.5s ease-in-out;
     color: #222;
     text-transform:  capitalize;
 }
 
 div#user-nav ul li a:hover {
-    background: #F6F7F9;
+    background: #ffffffab;
+    border: 1px solid #e0e0e0;
 }
 span.nav-icon {
     margin-right:  10px;
@@ -789,9 +804,9 @@ span.likes_counter, .comment-counter {
 
 }
 .comment span img {
-    height: 50px;
-    display: block;
-    border-radius:  50%;
+    /* height: 50px; */
+    /* display: block; */
+    /* border-radius:  50%; */
 }
 
 .comment user_pic img {

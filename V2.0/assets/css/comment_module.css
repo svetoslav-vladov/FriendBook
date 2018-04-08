@@ -101,7 +101,7 @@ span.likes_counter {
 }
 
 .comment span img {
-    height: 55px;
+    height: 40px;
     display: inline;
     border-radius: 50%;
 }
@@ -117,10 +117,7 @@ span.likes_counter {
     border-bottom: 1px solid #999;
     margin-bottom: 15px;
     grid-gap: 10px;
-    grid-template-areas:
-            'right left'
-            'bottom left';
-    padding: 0 0 10px;
+    grid-template-areas: 'pic name date '              'desc desc desc ';
     grid-template-columns: 1fr 4fr;
 }
 
@@ -175,19 +172,31 @@ input[type="text"] {
 
 .comment_date {
     font-size: 0.8em;
-    font-weight: bold;
     text-align: center;
+    color: #488676;
+    font-weight:  bold;
+    font-family:  arial;
 }
 
 span.comment_date {
-    grid-area: bottom;
+    grid-area: date;
 }
 
 span.comment_desc {
-    grid-area: left;
+    grid-area: desc;
+    padding:  0 20px;
+    font-family:  arial;
+    line-height: 1.6;
+    font-size: 0.8em;
 }
 
 span.user_pic {
-    grid-area: right;
+    grid-area: pic;
     text-align: center;
+}
+span.comment_owner {
+    font-size:  1.2em;
+    font-weight:  bold;
+    color: #666;
+    padding-top: 10px;
 }
