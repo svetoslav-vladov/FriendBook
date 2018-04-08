@@ -20,11 +20,11 @@ div.date {
     float: right;
     top: 25px;
     position: relative;
-    font-size: 0.9em;
+    font-size: 0.9rem;
 }
 
 .user_info {
-    color: black;
+    color: #888;
     font-weight: bold;
     padding: 10px;
     font-size: 1.2em;
@@ -59,6 +59,7 @@ div.date {
 .name, .icon {
     display: inline-block;
     vertical-align: middle;
+    font-size: 1.2rem;
 }
 
 .comments button {
@@ -142,6 +143,7 @@ span.likes_counter {
 
 .description {
     padding: 25px 20px;
+    font-size: 1.2rem;
 }
 
 span.user_pic_add_comment img {
@@ -171,11 +173,12 @@ input[type="text"] {
 }
 
 .comment_date {
-    font-size: 0.8em;
+    font-size: 0.75em;
     text-align: center;
     color: #488676;
     font-weight:  bold;
     font-family:  arial;
+    padding-top: 10px;
 }
 
 span.comment_date {
@@ -184,10 +187,11 @@ span.comment_date {
 
 span.comment_desc {
     grid-area: desc;
-    padding:  0 20px;
+    padding: 0 20px;
     font-family:  arial;
-    line-height: 1.6;
-    font-size: 0.8em;
+    line-height: 2;
+    font-size: 0.8rem;
+    color: #555;
 }
 
 span.user_pic {
@@ -195,8 +199,66 @@ span.user_pic {
     text-align: center;
 }
 span.comment_owner {
-    font-size:  1.2em;
+    font-size: 1em;
     font-weight:  bold;
     color: #666;
     padding-top: 10px;
+}
+
+.comments-buttons button {
+    background: #f5af48;
+    color: white;
+    font-weight:  bold;
+    font-family:  arial;
+    border: 1px solid #c18a38;
+    transition:  background 0.4s ease-in-out;
+    cursor:  pointer;
+}
+
+span.likes_counter, .comment-counter {
+    background: #ffffffc2;
+    padding: 5px 7px;
+    font-size:  0.8em;
+    border-radius: 10px;
+    text-align:  center;
+    border: 1px solid #757575;
+    color: black;
+    margin-left: 10px;
+}
+
+.like-button {
+    background: #c7c7c7;
+    color: white;
+    font-weight: bold;
+    font-family: arial;
+    border: 1px solid #959595;
+    cursor:  pointer;
+    transition: background 0.3s ease-in-out;
+}
+.like-button:hover {
+    background: #4CAF50;
+    border:  1px solid #388c3b;
+}
+
+.dislike-button {
+    background: #219421;
+    color: white;
+    font-weight: bold;
+    font-family: arial;
+    border: 1px solid #255a27;
+    cursor:  pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+.dislike-button:hover {
+    background: #930000;
+    border: 1px solid #4a0202;
+}
+.comments-buttons button:hover {
+    background: #ff9800;
+}
+.like-button, .dislike-button, .comments-buttons button {
+    padding:  15px;
+    width: 100%;
+    box-shadow: 2px 2px 5px #0000003b;
 }

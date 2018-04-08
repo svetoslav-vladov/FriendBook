@@ -545,7 +545,7 @@ div#profileUserNav ul li {
 }
 
 div#profileUserNav ul li a {
-    padding: 15px 0;
+    padding: 10px 0;
     width:  100%;
     display: inline-block;
     text-align: center;
@@ -556,7 +556,7 @@ div#profileUserNav ul li a {
 }
 
 div#profileUserNav ul li a:hover {
-    background: #d6d5d5;
+    background: #f1f1f1;
 }
 div#profileHolder {
     background: white;
@@ -677,12 +677,6 @@ div#comments15 {
     margin: 50px auto;
 }
 
-body {
-    background-color:  #eee;
-    font-size:  1em;
-    font-family: monospace;
-}
-
 div#post {
     background:  white;
     padding: 0;
@@ -701,16 +695,13 @@ div.icon img {
 }
 
 div.date {
-    float:  right;
-    top: 25px;
-    position:  relative;
 }
 
 .user_info {
-    color: black;
-    font-weight:  bold;
-    padding: 10px;
-    font-size: 1.4em;
+    /* color: black; */
+    /* font-weight:  bold; */
+    /* padding: 10px; */
+    /* font-size: 1.4em; */
 }
 
 
@@ -730,83 +721,11 @@ div.date {
     border-bottom: 1px solid #c1c1c1;
 }
 
-.comments {
 
-}
-.like-button, .dislike-button, .comments-buttons button {
-    padding:  15px;
-    width: 100%;
-    box-shadow: 2px 2px 5px #0000003b;
-}
-.name, .icon {
-    display:  inline-block;
-    vertical-align:  middle;
-}
 
-.comments-buttons button {
-    background: #f5af48;
-    color: white;
-    font-weight:  bold;
-    font-family:  arial;
-    border: 1px solid #c18a38;
-    transition:  background 0.4s ease-in-out;
-    cursor:  pointer;
-}
-
-span.likes_counter, .comment-counter {
-    background: #ffffffc2;
-    padding: 5px 7px;
-    font-size:  0.8em;
-    border-radius: 10px;
-    text-align:  center;
-    border: 1px solid #757575;
-    color: black;
-    margin-left: 10px;
-}
-
-.like-button {
-    background: #c7c7c7;
-    color: white;
-    font-weight: bold;
-    font-family: arial;
-    border: 1px solid #959595;
-    cursor:  pointer;
-    transition: background 0.3s ease-in-out;
-}
-.like-button:hover {
-    background: #4CAF50;
-    border:  1px solid #388c3b;
-}
-
-.dislike-button {
-    background: #219421;
-    color: white;
-    font-weight: bold;
-    font-family: arial;
-    border: 1px solid #255a27;
-    cursor:  pointer;
-    transition: background 0.3s ease-in-out;
-}
-
-.dislike-button:hover {
-    background: #930000;
-    border: 1px solid #4a0202;
-}
-.comments-buttons button:hover {
-    background: #ff9800;
-}
 
 .comments {
     padding: 10px;
-}
-.comment-owner {
-    /*font-size: 2em;*/
-
-}
-.comment span img {
-    /* height: 50px; */
-    /* display: block; */
-    /* border-radius:  50%; */
 }
 
 .comment user_pic img {
@@ -825,7 +744,7 @@ span.likes_counter, .comment-counter {
     overflow-y: scroll;
 }
 .description {
-    padding: 10px 30px;
+    /* padding: 10px 30px; */
 }
 
 span.user_pic_add_comment img {
