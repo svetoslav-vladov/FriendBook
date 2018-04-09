@@ -53,10 +53,10 @@
 
             <div id="profileUserNav">
                 <ul>
-                    <li><a href="#">Timeline</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Friends</a></li>
-                    <li><a href="#">Photos</a></li>
+                    <li><a href="#"><span class="nav-icon"><i class="fas fa-list nav-icon"></i></span>Timeline</a></li>
+                    <li><a href="#"><span class="nav-icon"><i class="fas fa-info-circle nav-icon"></i></span>About</a></li>
+                    <li><a href="friends.php"><span class="nav-icon"><i class="fas fa-users nav-icon"></i></span>Friends</a></li>
+                    <li><a href="#"><span class="nav-icon"><i class="fas fa-images nav-icon"></i></span>Photos</a></li>
                 </ul>
             </div>
         </div>

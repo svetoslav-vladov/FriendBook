@@ -359,6 +359,7 @@ form#post-form {
     border-radius:  10px;
     cursor: text;
     transition: height 0.5s ease-in, padding 0.5s ease-in;
+    border: 1px solid #9f9f9f;
 }
 
 .mini-btn:hover {
@@ -371,7 +372,7 @@ textarea#post_module:focus {
     height: 150px;
 }
 .shadow-box {
-    box-shadow: 2px 2px 5px #00000047;
+    box-shadow: 1px 1px 7px #00000059;
 }
 form#post-form label {
     font-weight:  bold;
@@ -780,3 +781,33 @@ div#search img:hover {
 div#logo {
     padding-top: 4px;
 }
+.active_btn{
+    background: #ffffffab;
+}
+#general_set_box{
+    display: block;
+}
+#security_set_box{
+    display: none;
+}
+li#general, li#security {
+    padding:  5px 10px;
+    margin:  10px 0;
+    cursor:  pointer;
+    border-radius:  2px;
+    border: 1px solid #e2e1e1;
+    box-sizing:  border-box;
+}
+
+li#general:hover, li#security:hover {
+    background: #f1f0f0;
+}
+form#general_form input,form#security_form input {float:  right;padding: 5px;width: 50%;box-sizing: border-box;display: block;}
+
+form#general_form div,form#security_form div {
+    padding: 10px 0;
+    margin: 10px 0;
+    border-top: 1px solid #ccc;
+}
+
+form#general_form ul,form#security_form ul {margin: 5px 0;font-size: 0.9rem;color: red;}
