@@ -47,13 +47,28 @@
                     </div>
                     <?php
                 }
+
+                    if( (isset($_GET["id"]) && $_GET["id"] === $_SESSION["logged"]["id"]) ||
+                        (isset($_SESSION["logged"]["id"]))) {
+                        ?>
+                        <div id="change_cover_pic">
+                            <i class="fas fa-edit"></i>
+                        </div>
+                        <?php
+                    }
+
                 ?>
             </div>
-
             <?php require_once '../include/profile_nav.php'; ?>
         </div>
         <?php
-            if (isset($_GET['id']) && $_GET['id'] == $_SESSION['logged']['id']){
+            if(isset($_GET['id'])){
+
+            }
+            elseif (isset($_GET['id']) && $_GET['id'] === $_SESSION['logged']['id']){
+                require_once '../include/modules/post-mod.php';
+            }
+            elseif(isset($_SESSION['logged']['id'])){
                 require_once '../include/modules/post-mod.php';
             }
         ?>

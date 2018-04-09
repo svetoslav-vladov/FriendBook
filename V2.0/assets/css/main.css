@@ -582,6 +582,7 @@ div#profileHolder {
     box-shadow: 2px 2px 6px #00000030;
     border: 1px solid #0000002b;
     box-sizing:  border-box;
+    margin-bottom:  25px;
 }
 
 div#profileUserNav ul li:last-child {
@@ -925,4 +926,63 @@ img.error_poster {
 }
 .comment_owner p{
     margin:0px;
+}
+div#profile-pic {
+    position:  relative;
+    border: 1px solid #9f9f9f;
+    overflow:  hidden;
+    border-radius: 15px;
+}
+
+div#change_profile_pic {
+    position: absolute;
+    top: -3px;
+    left: 0px;
+    font-size: 1.6rem;
+    color: #999;
+    cursor: help;
+    padding: 10px;
+    transition: color 0.4s ease-in-out;
+    display: none;
+}
+
+div#change_profile_pic:hover {
+    color: #444;
+}
+div#change_cover_pic {
+    position:  absolute;
+    top: 0;
+    right:  0;
+    padding: 10px;
+    font-size: 2rem;
+    color:  #777;
+    cursor: pointer;
+    transition:  color 0.4s ease-in-out;
+    display: none;
+}
+
+div#change_cover_pic:hover {
+    color:  #444;
+}
+#profile-pic a:hover ~ #change_profile_pic {
+    display:block;
+}
+#change_profile_pic:hover {
+    display:block;
+}
+#profile-pic a {
+    transition: display 0.4s ease-in-out;
+}
+
+#cover :hover + #change_cover_pic {
+    display:block;
+}
+#change_cover_pic:hover {
+    display:block;
+}
+#upload_left_image {
+    display: none;
+    visibility:  hidden;
+    height:  0;
+    overflow:  hidden;
 }
