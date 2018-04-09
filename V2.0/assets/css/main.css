@@ -56,8 +56,12 @@ body {
     padding:  0;
 }
 .proposed-users li {
-    padding: 9px;
-    border-bottom: 1px solid black;
+    padding: 8px;
+    background: #e5e5e5;
+    margin: 12px 0px;
+    border-radius: 26px;
+    box-shadow: 0 0 11px 1px darkgrey;
+    border: none;
 }
 .proposed-users li a {
     text-decoration: none;
@@ -67,6 +71,8 @@ body {
     display: inline-block;
     vertical-align: middle;
     width: 50px;
+    border-radius: 50%;
+    margin-right: 5px;
 }
 #user-nav ul {
     list-style: none;
@@ -836,7 +842,7 @@ form#general_form ul,form#security_form ul {margin: 5px 0;font-size: 0.9rem;colo
 .add-button, .delete-button {
     position: absolute;
     top: -28px;
-    left: 50px;
+    left: 57px;
     padding: 3px 10px;
     color: white;
     border-radius: 15px;

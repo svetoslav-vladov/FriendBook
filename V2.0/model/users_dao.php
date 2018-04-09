@@ -50,7 +50,7 @@ function getSuggestedUsers($user_id) {
     $pdo = $GLOBALS['pdo'];
     $statement = $pdo->prepare("SELECT id, first_name, last_name, email, birthday, gender, profile_pic, profile_cover, relation_status 
                                 FROM users 
-                                WHERE id != ? LIMIT 10;");
+                                WHERE id != ? LIMIT 6;");
     $statement->execute(array($user_id));
     $result = $statement->fetchAll();
     $suggested_users = [];
