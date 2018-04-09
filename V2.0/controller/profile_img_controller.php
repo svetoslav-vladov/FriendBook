@@ -1,10 +1,11 @@
 <?php
 
+    require_once '../include/default_paths.php';
     require_once '../include/session.php';
     require_once "../model/images_dao.php";
 
     if ( 0 < $_FILES['file']['error'] ) {
-        echo 'Error: ' . $_FILES['file']['error'] . '<br>';
+        $message['file-firs-error'] = $_FILES['file']['error'];
     }
     else{
         $tmp_name = $_FILES['file']['tmp_name'];
@@ -23,7 +24,11 @@
                 $message = [];
                 if(uploadProfilePicture($_SESSION['logged']['id'],$profile_img)){
                     $oldPic =  $_SESSION['logged']['profile_pic'];
-                    unlink($oldPic);
+                    $default_profil = $GLOBALS["female_default_picture"];
+
+                    if($oldPic !== $default_profil){
+                        unlink($oldPic);
+                    }
                     $_SESSION['logged']['profile_pic'] = $profile_img;
                     $message['img_url'] = $profile_img;
                 }

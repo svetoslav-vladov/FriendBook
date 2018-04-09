@@ -542,7 +542,7 @@ div#userPictrue {
 
 div#userPictrue img {
     max-width: 135px;
-    border-radius:  50%;
+    border-radius: 10%;
     margin: 10px;
 }
 div#cover {
@@ -980,7 +980,7 @@ div#change_cover_pic:hover {
     transition: display 0.4s ease-in-out;
 }
 
-#cover :hover + #change_cover_pic {
+#cover :hover ~ #change_cover_pic {
     display:block;
 }
 #change_cover_pic:hover {
@@ -991,4 +991,13 @@ div#change_cover_pic:hover {
     visibility:  hidden;
     height:  0;
     overflow:  hidden;
+}
+form#cover_image_form {
+    display:  none;
+    visibility:  hidden;
+    overflow:  hidden;
+    height:  0;
+}
+img#cover_img {
+    height:  100%;
 }

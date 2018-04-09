@@ -13,3 +13,17 @@
 
         return $statement->execute();
     }
+
+    function uploadCoverPicture($user_id, $cover_url){
+
+
+        $pdo = $GLOBALS['pdo'];
+        $statement = $pdo->prepare("UPDATE users 
+                                        SET profile_cover=:cover_url WHERE id=:user_id;");
+
+        $statement->bindParam(':user_id',$user_id, PDO::PARAM_INT);
+        $statement->bindParam(':cover_url',$cover_url, PDO::PARAM_STR);
+
+
+        return $statement->execute();
+    }
