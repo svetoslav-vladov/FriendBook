@@ -38,7 +38,6 @@
         <div id="profileHolder">
             <div id="cover">
                 <img  id="cover_img" src="<?php echo $profileCover; ?>" alt="user cover picture">
-
                 <?php
                 if(isset($_GET["id"]) && $_GET["id"] != $_SESSION["logged"]["id"]){
                     ?>
@@ -55,16 +54,13 @@
                 <ul>
                     <li><a href="#"><span class="nav-icon"><i class="fas fa-list nav-icon"></i></span>Timeline</a></li>
                     <li><a href="#"><span class="nav-icon"><i class="fas fa-info-circle nav-icon"></i></span>About</a></li>
-                    <li><a href="friends.php"><span class="nav-icon"><i class="fas fa-users nav-icon"></i></span>Friends</a></li>
+                    <li><a href="friends.php?id=<?= $_SESSION['logged']['id']; ?>"><span class="nav-icon"><i class="fas fa-users nav-icon"></i></span>Friends</a></li>
                     <li><a href="#"><span class="nav-icon"><i class="fas fa-images nav-icon"></i></span>Photos</a></li>
                 </ul>
             </div>
         </div>
         <?php require_once '../include/modules/profile_feed_posts.php'; ?>
     </div>
-
-
-
 
 
 <?php

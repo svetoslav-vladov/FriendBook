@@ -5,9 +5,15 @@
         require_once '../model/users_dao.php';
         $suggested_users = getSuggestedUsers($_SESSION['logged']['id']);
         foreach ($suggested_users as $user) { ?>
-                <li>
-                    <a href="../view/profile.php?id=<?=$user['id']?>"><img src="<?php echo $user['profile_pic']?>" alt="<?php echo $user['first_name'] . " " . $user['last_name']?>"><?php echo $user['first_name'] . " " . $user['last_name']?></a>
-                    <button class="add-friend">Add friend</button>
+                <li id="user<?php echo $user['id']?>">
+                    <a class="<?php echo ($user['gender'] == 'male') ? 'male' : 'female' ?>" href="../view/profile.php?id=<?=$user['id']?>"><img src="<?php echo $user['profile_pic']?>"><?php echo $user['first_name'] . " " . $user['last_name']?></a>
+                    <div class="add-delete-buttons" id="friend<?php echo $user['id']?>">
+                        <script>
+                            $(document).ready(function () {
+                                isFriend(<?php echo $user['id']?>);
+                            });
+                        </script>
+                    </div>
                 </li>
         <?php } ?>
     </ul>

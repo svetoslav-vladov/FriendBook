@@ -198,11 +198,10 @@ span.user_pic {
     grid-area: pic;
     text-align: center;
 }
-span.comment_owner {
-    font-size: 1em;
+a.comment_owner {
+    font-size: 1.1em;
     font-weight:  bold;
-    color: #666;
-    padding-top: 10px;
+    padding-top: 8px;
 }
 
 .comments-buttons button {

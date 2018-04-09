@@ -56,11 +56,12 @@ body {
     padding:  0;
 }
 .proposed-users li {
+    padding: 9px;
     border-bottom: 1px solid black;
 }
 .proposed-users li a {
     text-decoration: none;
-    color: black;
+    vertical-align: top;
 }
 .proposed-users li a img {
     display: inline-block;
@@ -429,15 +430,21 @@ form#post-form label {
 }
 
 .female {
-    color: deeppink;
+    color: deeppink !important;
     text-decoration: none;
 }
-
+.female:hover {
+    opacity: 1;
+    text-shadow: 0 0 10px deeppink;
+}
 .male {
-    color: dodgerblue;
+    color: dodgerblue !important;
     text-decoration: none;
 }
-
+.male:hover {
+    opacity: 1;
+    text-shadow: 0 0 10px dodgerblue;
+}
 .users-result {
     position: absolute;
     width: 99.6%;
@@ -448,9 +455,11 @@ form#post-form label {
     left: 1px;
     box-shadow: 1px 1px 6px #00000073;
 }
-
+.not-found {
+    padding: 8px;
+}
 .users-list {
-    /* padding: 10px 25px; */
+    padding: 0px;
     list-style: none;
     margin: 0px;
 }
@@ -478,6 +487,11 @@ form#post-form label {
     margin: -1px;
     margin-right: 8px;
     display: inline-block;
+}
+
+.users-list li a span {
+    display: inline-block;
+    vertical-align: sub;
 }
 div#input-box {
     display:  inline-block;
@@ -781,6 +795,7 @@ div#search img:hover {
 div#logo {
     padding-top: 4px;
 }
+
 .active_btn{
     background: #ffffffab;
 }
@@ -811,3 +826,81 @@ form#general_form div,form#security_form div {
 }
 
 form#general_form ul,form#security_form ul {margin: 5px 0;font-size: 0.9rem;color: red;}
+
+
+.add-delete-buttons {
+    position: relative;
+}
+
+.add-button, .delete-button {
+    position: absolute;
+    top: -28px;
+    left: 50px;
+    padding: 3px 10px;
+    color: white;
+    border-radius: 15px;
+    cursor: pointer;
+    outline: none;
+    border: none;
+}
+
+.add-button {
+    background: darkgreen;
+}
+
+.delete-button {
+    background: #a40000;
+}
+.add-button:hover, .delete-button:hover {
+    box-shadow: 0 0 10px 0px black;
+    color: black;
+}
+.add-button:active, .delete-button:active {
+    transform: scale(0.6);
+    transition: all 0.1s;
+}
+
+.friend-loading-gif {
+    position: absolute;
+    top: -28px;
+    left: 86px;
+    width: 18px;
+}
+.friends-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.friend-div a img {
+    display: inline-block;
+    vertical-align: top;
+    border-radius: 50%;
+    width: 50px;
+}
+
+.friend-div {
+    width: 28%;
+    margin: 10px;
+    display: inline-block;
+    position: relative;
+    padding: 10px;
+    text-align: left;
+    border-radius: 30px;
+    box-shadow: 0 0 16px 0px grey;
+}
+.male-background {
+    background: aliceblue;
+}
+.female-background {
+    background: pink;
+}
+.friend-div button {
+    top: 34px;
+    left: 66px;
+}
+
+.friend-div .friend-loading-gif {
+    top: 35px;
+    left: 101px;
+}
+>>>>>>> c4ad5777252c9fe98a3c54631d628dc9ad7f38a0

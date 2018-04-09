@@ -14,7 +14,7 @@ function searchUser(str) {
                 userListDiv.show();
                 if (this.responseText === 'Not found!') {
                     usersList.empty();
-                    var notFound = $('<li>Not found!</li>');
+                    var notFound = $('<li class="not-found">Not found!</li>');
                     usersList.append(notFound);
                     return;
                 }
@@ -24,7 +24,7 @@ function searchUser(str) {
                     var li = $(`<li>
                                 <a href="profile.php?id=${user['id']}" class="${(user['gender'] == 'male') ? 'male' : 'female'}">
                                     <img class=commentProfPic src=${user['profile_pic']}>
-                                    ${user['first_name']} ${user['last_name']}
+                                    <span>${user['first_name']} ${user['last_name']}</span>
                                 </a>
                               </li>`);
                     usersList.append(li);
