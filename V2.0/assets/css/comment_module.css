@@ -199,7 +199,7 @@ span.user_pic {
     text-align: center;
 }
 a.comment_owner {
-    font-size: 1.1em;
+    font-size: 0.9em;
     font-weight:  bold;
     padding-top: 8px;
 }
@@ -262,5 +262,5 @@ span.likes_counter, .comment-counter {
     box-shadow: 2px 2px 5px #0000003b;
 }
 span.comment_desc p {
-    margin-top: 0px;
+    margin: -2px;
 }
