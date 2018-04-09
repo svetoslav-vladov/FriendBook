@@ -11,6 +11,7 @@
         if(isset($_SESSION['logged']["display_name"]) && strlen(trim($_SESSION['logged']["display_name"]," ")) > 0){
 
             echo $_SESSION['logged']["display_name"];
+            echo "<div class='small_fullname'>(" . $_SESSION['logged']["full_name"] .")</div>";
         }
         else{
             echo $_SESSION['logged']["full_name"];

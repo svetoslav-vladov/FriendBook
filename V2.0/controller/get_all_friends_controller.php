@@ -8,3 +8,9 @@ if (isset($_GET['id'])) {
     $result = getAllFriends($userId);
     echo json_encode($result);
 }
+else{
+    $userId = $_SESSION['logged']['id'];
+    $result = getAllFriends($userId);
+    echo json_encode($result);
+
+}

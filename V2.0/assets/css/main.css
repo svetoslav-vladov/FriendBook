@@ -914,3 +914,12 @@ div.friend-div .friend-loading-gif {
     left: 12px;
     font-family: sans-serif;
 }
+.small_fullname {
+    font-size: 0.7rem;
+    color: #555;
+}
+div#content-grid-full {text-align: center;grid-area:  main;grid-column: 1/7;}
+
+img.error_poster {
+    width: 100%;
+}

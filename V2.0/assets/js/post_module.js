@@ -42,7 +42,7 @@ if(document.querySelector('#post-form')){
             post_module_form.style.zIndex = '1000';
 
             // black background when popup
-            black_background.style.position = 'absolute';
+            black_background.style.position = 'fixed';
             black_background.style.display = 'block';
             black_background.style.height = '100%';
             black_background.style.width = '100%';
