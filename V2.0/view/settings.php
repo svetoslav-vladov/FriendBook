@@ -59,7 +59,7 @@ require_once "../model/posts_dao.php";
                     </div>
                     <div>
                         <label for="birthday">Your BirthDay</label>
-                        <input type="text" name="birthday" id="birthday">
+                        <input type="date" name="birthday" id="birthday">
                     </div>
                     <div>
                         <label for="country">Country</label>

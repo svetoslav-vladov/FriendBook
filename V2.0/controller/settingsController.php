@@ -128,6 +128,7 @@
                 $_SESSION['logged']['first_name'] = $first_name;
                 $_SESSION['logged']['last_name'] = $last_name;
                 $_SESSION['logged']['gender'] = $gender;
+                $_SESSION['logged']['display_name'] = $display_name;
                 $_SESSION['logged']['birthday'] = $birthday;
                 $_SESSION['logged']['relation_status'] = $relation_status;
 

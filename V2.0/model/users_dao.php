@@ -24,6 +24,10 @@ function loginSession($email) {
     $logged_user['id'] = $user['id'];
     $logged_user['first_name'] = $user['first_name'];
     $logged_user['last_name'] = $user['last_name'];
+    $logged_user['full_name'] = $user['first_name'] . " " . $user['last_name'];
+    if(isset($user['display_name'])){
+        $logged_user['display_name'] = $user['display_name'];
+    }
     $logged_user['email'] = $user['email'];
     $logged_user['reg_date'] = $user['reg_date'];
     $logged_user['gender'] = $user['gender'];
