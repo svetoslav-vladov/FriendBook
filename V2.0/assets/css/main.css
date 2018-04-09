@@ -899,8 +899,18 @@ form#general_form ul,form#security_form ul {margin: 5px 0;font-size: 0.9rem;colo
     left: 66px;
 }
 
-.friend-div .friend-loading-gif {
+div.friend-div .friend-loading-gif {
     top: 35px;
     left: 101px;
 }
->>>>>>> c4ad5777252c9fe98a3c54631d628dc9ad7f38a0
+
+#friendsCounter {
+    position: absolute;
+    top: 11px;
+    font-size: 0.5em;
+    border-radius: 50%;
+    padding: 2px 6px;
+    background: #b60000;
+    left: 12px;
+    font-family: sans-serif;
+}

@@ -5,8 +5,10 @@ function addFriend(friend_id) {
     request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     request.onreadystatechange = function() {
         if (this.readyState === 4 && this.status === 200) {
-            $('#'+friend_id).append(friend_loading_gif);
+            getCountFriends();
+            $('#friend'+friend_id).append(friend_loading_gif);
             setTimeout(function(){
+                var count = $('.friend-div').length;
                 friend_loading_gif.remove();
                 $('#user'+friend_id).fadeOut();
                 setTimeout(function () {
@@ -25,6 +27,7 @@ function deleteFriend(friend_id) {
     request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     request.onreadystatechange = function() {
         if (this.readyState === 4 && this.status === 200) {
+            getCountFriends();
             $('#friend'+friend_id).append(friend_loading_gif);
             setTimeout(function(){
                 friend_loading_gif.remove();
@@ -71,8 +74,8 @@ function getAllFriends(user_id, logged_user_id) {
     var request = new XMLHttpRequest();
     request.onreadystatechange = function() {
         if (this.readyState === 4 && this.status === 200) {
+            getCurrentCountFriends(user_id);
             var friends = JSON.parse(this.responseText);
-            console.log(JSON.parse(this.responseText));
             for (var friend of friends) {
                 var friendDiv = $(`<div class="friend-div ${(friend['gender'] == 'male') ? 'male-background' : 'female-background'}" id="friend${friend['id']}">
                                      <a class="${(friend['gender'] == 'male') ? 'male' : 'female'}" href="profile.php?id=${friend['id']}">
@@ -89,15 +92,27 @@ function getAllFriends(user_id, logged_user_id) {
     request.send();
 }
 
-function getCountFriends(user_id) {
+getCountFriends();
+function getCountFriends() {
+    $('#friendsCounter').empty();
     var req = new XMLHttpRequest();
     req.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-            var likeCounter = $(`<span class="likes_counter" id="counter${post_id}">${this.responseText}</span>`);
-            $('#like'+post_id).append(likeCounter);
-            $('#dislike'+post_id).append(likeCounter);
+            $('#friendsCounter').text(this.responseText);
+         }
+    };
+    req.open("GET", "../controller/friendsCounter_controller.php");
+    req.send();
+}
+
+function getCurrentCountFriends(user_id) {
+    $('#profileFriendsCounter'+user_id).empty();
+    var req = new XMLHttpRequest();
+    req.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            $('#profileFriendsCounter'+user_id).text(this.responseText);
         }
     };
-    req.open("GET", "../controller/likeCounter_controller.php?user_id="+user_id);
+    req.open("GET", "../controller/get_current_count_fr_controller.php?id="+user_id);
     req.send();
 }

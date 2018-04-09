@@ -33,3 +33,12 @@ function isFriend($user_id, $friend_id) {
     $statement->execute(array($user_id, $friend_id));
     echo $statement->fetch()['isFriend'];
 }
+
+function getCountFriends($post_id) {
+    $pdo = $GLOBALS['pdo'];
+    $statement = $pdo->prepare("SELECT COUNT(*) AS friend_count
+                                FROM friends
+                                WHERE user_id = ?");
+    $statement->execute(array($post_id));
+    echo $statement->fetch()['friend_count'];
+}

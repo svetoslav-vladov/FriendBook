@@ -7,4 +7,5 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $user_id = $_SESSION['logged']['id'];
     $friend_id = htmlentities($_POST['friend_id']);
     deleteFriend($user_id, $friend_id);
+
 }
