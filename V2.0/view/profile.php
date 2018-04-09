@@ -52,6 +52,11 @@
 
             <?php require_once '../include/profile_nav.php'; ?>
         </div>
+        <?php
+            if (isset($_GET['id']) && $_GET['id'] == $_SESSION['logged']['id']){
+                require_once '../include/modules/post-mod.php';
+            }
+        ?>
         <?php require_once '../include/modules/profile_feed_posts.php'; ?>
     </div>
 

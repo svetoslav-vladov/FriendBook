@@ -1,6 +1,12 @@
 <div id="newsfeed">
     <?php
-    $allPosts = getAllPosts();
+    if (isset($_GET['id'])) {
+        $allPosts = getOwnPosts($_GET['id']);
+    }
+    else {
+        $allPosts = getOwnPosts($_SESSION['logged']['id']);
+    }
+
     foreach ($allPosts as $post) {?>
         <div class="post">
             <div class="user_info">

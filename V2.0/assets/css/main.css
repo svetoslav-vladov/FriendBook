@@ -923,3 +923,6 @@ div#content-grid-full {text-align: center;grid-area:  main;grid-column: 1/7;}
 img.error_poster {
     width: 100%;
 }
+.comment_owner p{
+    margin:0px;
+}
