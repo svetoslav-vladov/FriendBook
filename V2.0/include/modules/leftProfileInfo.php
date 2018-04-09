@@ -1,5 +1,5 @@
 <div id="profile-pic">
-    <a href="./profile.php">
+    <a href="./profile.php?id=<?= $_SESSION['logged']['id']; ?>">
         <img id="mini-profile-pic" src="<?php if(isset($_SESSION["logged"])){ echo $_SESSION["logged"]["profile_pic"];} ?>"
              alt="profile_pic" title="<?php if(isset($_SESSION["logged"])){ echo $_SESSION["logged"]["first_name"] . " " . $_SESSION["logged"]["last_name"] ;} ?>">
     </a>

@@ -17,12 +17,12 @@
         <nav>
             <ul id="icon-nav">
                 <li class="profile-btn">
-                    <a href="../view/profile.php">
+                    <a href="../view/profile.php?id=<?= $_SESSION['logged']['id'] ?>">
                         <img src="<?php if(isset($_SESSION["logged"])){ echo $_SESSION["logged"]["profile_pic"];}?>" title="<?php if(isset($_SESSION["logged"])){ echo $_SESSION["logged"]["first_name"] . " " . $_SESSION["logged"]["last_name"] ;} ?>" alt="profile_pic">
                     </a>
                 </li>
                 <li><a href="../view/main.php"><i class="fas fa-home"></i></a></li>
-                <li><a href="#"><i class="fas fa-user"></i></a></li>
+                <li><a href="../view/friends.php?id=<?php echo $_SESSION['logged']['id']?>"><i class="fas fa-users"></i><span id="friendsCounter"></span></a></li>
                 <li><a href="#"><i class="fas fa-envelope"></i></a></li>
                 <li><a href="#"><i class="fas fa-bell"></i></a></li>
                 <li><a href="../controller/logout_controller.php"><i class="fas fa-sign-out-alt"></i></a></li>

@@ -55,14 +55,12 @@ else{
                 <ul>
                     <li><a href="#">Timeline</a></li>
                     <li><a href="#">About</a></li>
-                    <li><a href="#">Friends</a></li>
+                    <li><a href="friends.php?id=<?= htmlentities($_GET['id']); ?>">Friends</a></li>
                     <li><a href="#">Photos</a></li>
                 </ul>
             </div>
         </div>
-        <div>
-            friends
-        </div>
+        <?php require_once '../include/modules/get_all_friends.php'; ?>
     </div>
 
 

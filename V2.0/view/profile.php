@@ -38,7 +38,6 @@
         <div id="profileHolder">
             <div id="cover">
                 <img  id="cover_img" src="<?php echo $profileCover; ?>" alt="user cover picture">
-
                 <?php
                 if(isset($_GET["id"]) && $_GET["id"] != $_SESSION["logged"]["id"]){
                     ?>
@@ -55,7 +54,7 @@
                 <ul>
                     <li><a href="#">Timeline</a></li>
                     <li><a href="#">About</a></li>
-                    <li><a href="friends.php">Friends</a></li>
+                    <li><a href="friends.php?id=<?= htmlentities($_GET['id']) ?>">Friends</a></li>
                     <li><a href="#">Photos</a></li>
                 </ul>
             </div>

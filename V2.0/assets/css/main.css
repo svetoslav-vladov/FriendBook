@@ -61,7 +61,7 @@ body {
 }
 .proposed-users li a {
     text-decoration: none;
-    color: black;
+    vertical-align: top;
 }
 .proposed-users li a img {
     display: inline-block;
@@ -429,15 +429,21 @@ form#post-form label {
 }
 
 .female {
-    color: deeppink;
+    color: deeppink !important;
     text-decoration: none;
 }
-
+.female:hover {
+    opacity: 1;
+    text-shadow: 0 0 10px deeppink;
+}
 .male {
-    color: dodgerblue;
+    color: dodgerblue !important;
     text-decoration: none;
 }
-
+.male:hover {
+    opacity: 1;
+    text-shadow: 0 0 10px dodgerblue;
+}
 .users-result {
     position: absolute;
     width: 99.6%;
@@ -795,7 +801,7 @@ div#logo {
 
 .add-button, .delete-button {
     position: absolute;
-    top: -14px;
+    top: -28px;
     left: 50px;
     padding: 3px 10px;
     color: white;
@@ -823,7 +829,44 @@ div#logo {
 
 .friend-loading-gif {
     position: absolute;
-    top: -14px;
+    top: -28px;
     left: 86px;
     width: 18px;
+}
+.friends-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.friend-div a img {
+    display: inline-block;
+    vertical-align: top;
+    border-radius: 50%;
+    width: 50px;
+}
+
+.friend-div {
+    width: 28%;
+    margin: 10px;
+    display: inline-block;
+    position: relative;
+    padding: 10px;
+    text-align: left;
+    border-radius: 30px;
+    box-shadow: 0 0 16px 0px grey;
+}
+.male-background {
+    background: aliceblue;
+}
+.female-background {
+    background: pink;
+}
+.friend-div button {
+    top: 34px;
+    left: 66px;
+}
+
+.friend-div .friend-loading-gif {
+    top: 35px;
+    left: 101px;
 }
