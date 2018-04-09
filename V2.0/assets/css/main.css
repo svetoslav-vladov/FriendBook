@@ -914,3 +914,6 @@ div.friend-div .friend-loading-gif {
     left: 12px;
     font-family: sans-serif;
 }
+.comment_owner p{
+    margin:0px;
+}

@@ -18,21 +18,27 @@ function getComments(post_id) {
                         <span class="comment_desc">
                             <p>${comment['description']}</p>
                         </span>
-                        <a href="profile.php?id=${comment['owner_id']}" class="comment_owner ${(comment['gender'] == 'male') ? 'male' : 'female'}">${comment['first_name']} ${comment['last_name']}</a>
+                        <a href="profile.php?id=${comment['owner_id']}" class="comment_owner ${(comment['gender'] == 'male') ? 'male' : 'female'}">
+                            <p>${(comment['display_name'] == null) ? (comment['first_name'] + " " + comment['last_name']) : comment['display_name']}</p>
+                        </a>
                         <span class="comment_date">${comment['comment_date']}</span>
                     </div>`);
                 comments.append(commentDiv);
             }
             var commentCounter = $(`<span class="comment-counter" id="comment-counter${post_id}">${$("#comments"+post_id+" .comment").length}</span>`);
-            $('#comment_btn'+post_id).append(commentCounter);
+            if($("#comments"+post_id+" .comment").length == 0) {
+                $('#comment_btn'+post_id).attr('disabled', true);
+                $('#comment_btn'+post_id).append(commentCounter);
+            }else {
+                $('#comment_btn'+post_id).append(commentCounter);
+                $('#comment_btn'+post_id).attr('disabled', false);
+            }
+
         }
     };
     request.open("GET", "../controller/add_comment_controller.php?post_id="+post_id, true);
     request.send();
 }
-
-
-
 
 function displayComments(post_id) {
     var comment_box = document.querySelector('#comment_box'+post_id);
