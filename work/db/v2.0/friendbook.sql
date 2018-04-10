@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.0
--- https://www.phpmyadmin.net/
+-- version 4.5.1
+-- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 10 апр 2018 в 03:50
--- Версия на сървъра: 10.1.25-MariaDB
--- PHP Version: 7.1.7
+-- Generation Time: 
+-- Версия на сървъра: 10.1.13-MariaDB
+-- PHP Version: 5.6.23
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -82,7 +80,8 @@ INSERT INTO `comments` (`id`, `description`, `comment_date`, `edited_date`, `pos
 (73, 'wa', '2018-04-09 19:10:37', NULL, 28, 9),
 (74, 'www', '2018-04-09 19:23:48', NULL, 29, 9),
 (75, 'ww', '2018-04-09 19:24:10', NULL, 29, 9),
-(76, 'bb', '2018-04-10 00:24:21', NULL, 30, 4);
+(76, 'bb', '2018-04-10 00:24:21', NULL, 30, 4),
+(77, 'Браво само така', '2018-04-10 06:47:42', NULL, 31, 13);
 
 -- --------------------------------------------------------
 
@@ -128,8 +127,9 @@ INSERT INTO `friend_requests` (`requested_user_id`, `status_requested`, `accepte
 (11, 1, 7, 0),
 (11, 1, 8, 0),
 (11, 1, 4, 0),
-(4, 1, 6, 0),
-(4, 1, 5, 0);
+(5, 1, 4, 0),
+(5, 1, 11, 0),
+(13, 1, 5, 0);
 
 -- --------------------------------------------------------
 
@@ -162,7 +162,8 @@ INSERT INTO `likes` (`post_id`, `user_id`) VALUES
 (16, 9),
 (29, 4),
 (29, 11),
-(28, 11);
+(28, 11),
+(31, 13);
 
 -- --------------------------------------------------------
 
@@ -196,7 +197,10 @@ INSERT INTO `posts` (`id`, `description`, `create_date`, `edit_date`, `user_id`)
 (27, 'www', '2018-04-09 17:19:53', NULL, 4),
 (28, 'bbbb', '2018-04-09 18:49:38', NULL, 9),
 (29, 'zaza', '2018-04-09 19:23:40', NULL, 9),
-(30, 'wwwww', '2018-04-09 20:39:29', NULL, 11);
+(30, 'wwwww', '2018-04-09 20:39:29', NULL, 11),
+(31, 'асд', '2018-04-10 06:25:34', NULL, 5),
+(32, 'Здравейте на всички, вече съм в социалната мрежа!', '2018-04-10 06:51:33', NULL, 13),
+(33, 'Ремонтирам компютри!!!', '2018-04-10 07:44:43', NULL, 13);
 
 -- --------------------------------------------------------
 
@@ -241,13 +245,34 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `password`, `reg_date`, `gender`, `birthday`, `relation_status`, `profile_pic`, `profile_cover`, `description`, `display_name`, `country_id`, `mobile_number`, `www`, `skype`) VALUES
 (4, 'eray', 'myumyun', 'eray@abv.bg', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', '2018-04-09 17:37:33', 'male', '2018-03-15', '', '../uploads/male_default_picture.png', '../uploads/default_cover.jpg', NULL, 'Erchoooo', NULL, 0, '', ''),
-(5, 'Komara', 'Komarov', 'komara_@abv.bg', 'f10e2821bbbea527ea02200352313bc059445190', '2018-04-09 14:19:11', 'male', '1988-12-22', '', '../uploads/male_default_picture.png', '../uploads/default_cover.jpg', NULL, '', NULL, 0, '', ''),
+(5, 'Svetoslav', 'V. Vladov', 'komara_@abv.bg', 'f10e2821bbbea527ea02200352313bc059445190', '2018-04-10 06:36:19', 'male', '1988-12-22', 'Deep inlove :D', '../uploads/users/1523342002-5.jpg', '../uploads/users/1523342008-5.jpg', NULL, 'Komara', NULL, 0, '', ''),
 (6, 'asd', 'asd', 'asd1@abv.bg', 'f10e2821bbbea527ea02200352313bc059445190', '2018-03-28 14:53:33', 'female', '0002-02-22', NULL, '../uploads/female_default_picture.png', '../uploads/default_cover.jpg', NULL, NULL, NULL, NULL, NULL, NULL),
 (7, 'test1', 'test1', 'test1@abv.bg', 'f10e2821bbbea527ea02200352313bc059445190', '2018-03-29 12:16:28', 'female', '0002-02-12', NULL, '../uploads/female_default_picture.png', '../uploads/default_cover.jpg', NULL, NULL, NULL, NULL, NULL, NULL),
 (8, 'Dimitar', 'Bogoslovov', 'bogi@abv.bg', 'f10e2821bbbea527ea02200352313bc059445190', '2018-03-31 12:57:57', 'male', '0002-02-22', NULL, '../uploads/male_default_picture.png', '../uploads/default_cover.jpg', NULL, NULL, NULL, NULL, NULL, NULL),
 (9, 'Guray', 'Myumyun', 'email@gmail.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', '2018-04-09 18:05:43', 'male', '2018-04-17', '', '../uploads/male_default_picture.png', '../uploads/default_cover.jpg', NULL, 'GMMM', NULL, 0, '', ''),
-(11, 'test', 'test', 'test@abv.bg', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', '2018-04-09 20:29:04', 'female', '2018-04-13', NULL, '../uploads/female_default_picture.png', '../uploads/default_cover.jpg', NULL, NULL, NULL, NULL, NULL, NULL),
-(12, 'new', 'new', 'new@abv.bg', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', '2018-04-09 20:29:25', 'female', '2018-04-25', NULL, '../uploads/female_default_picture.png', '../uploads/default_cover.jpg', NULL, NULL, NULL, NULL, NULL, NULL);
+(11, 'test', 'test', 'test@abv.bg', 'f10e2821bbbea527ea02200352313bc059445190', '2018-04-10 06:31:32', 'female', '2018-04-13', '', '../uploads/users/1523341836-11.jpg', '../uploads/users/1523341892-11.jpg', NULL, 'Розалинда', NULL, 0, '', ''),
+(12, 'new', 'new', 'new@abv.bg', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', '2018-04-09 20:29:25', 'female', '2018-04-25', NULL, '../uploads/female_default_picture.png', '../uploads/default_cover.jpg', NULL, NULL, NULL, NULL, NULL, NULL),
+(13, 'Ivan', 'Petrov', 'teros@abv.bg', 'f10e2821bbbea527ea02200352313bc059445190', '2018-04-10 07:45:15', 'male', '0022-02-22', '', '../uploads/users/1523342422-13.jpg', '../uploads/users/1523346255-13.jpg', NULL, 'Vancho Computers', NULL, 0, '', '');
+
+-- --------------------------------------------------------
+
+--
+-- Структура на таблица `user_photos`
+--
+
+CREATE TABLE `user_photos` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) DEFAULT NULL,
+  `img_url` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Схема на данните от таблица `user_photos`
+--
+
+INSERT INTO `user_photos` (`id`, `user_id`, `img_url`) VALUES
+(1, 13, 'test'),
+(2, 13, 'test2');
 
 --
 -- Indexes for dumped tables
@@ -311,6 +336,13 @@ ALTER TABLE `users`
   ADD KEY `country_id_fk_idx` (`country_id`);
 
 --
+-- Indexes for table `user_photos`
+--
+ALTER TABLE `user_photos`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `user_id_fk_idx` (`user_id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -318,7 +350,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=77;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
 --
 -- AUTO_INCREMENT for table `countries`
 --
@@ -328,12 +360,17 @@ ALTER TABLE `countries`
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+--
+-- AUTO_INCREMENT for table `user_photos`
+--
+ALTER TABLE `user_photos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- Ограничения за дъмпнати таблици
 --
@@ -383,7 +420,12 @@ ALTER TABLE `post_images`
 --
 ALTER TABLE `users`
   ADD CONSTRAINT `country_id_fk` FOREIGN KEY (`country_id`) REFERENCES `countries` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-COMMIT;
+
+--
+-- Ограничения за таблица `user_photos`
+--
+ALTER TABLE `user_photos`
+  ADD CONSTRAINT `user_id_fk` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

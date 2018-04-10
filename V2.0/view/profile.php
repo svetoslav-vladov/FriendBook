@@ -70,13 +70,34 @@
             <?php require_once '../include/profile_nav.php'; ?>
         </div>
         <div class="space"></div>
-        <?php
-            if(isset($_GET['id']) && $_GET['id'] == $_SESSION['logged']['id']){
+
+        <div id="timeline">
+            <?php
+            if(isset($_GET['id'])){
+
+            }
+            elseif (isset($_GET['id']) && $_GET['id'] === $_SESSION['logged']['id']){
                 require_once '../include/modules/post-mod.php';
             }
-        ?>
-        <?php require_once '../include/modules/profile_feed_posts.php'; ?>
+            elseif(isset($_SESSION['logged']['id'])){
+
+                require_once '../include/modules/post-mod.php';
+            }
+            ?>
+            <?php require_once '../include/modules/profile_feed_posts.php'; ?>
+        </div>
+        <div id="about">
+            about
+        </div>
+        <div id="photos">
+            <div id="input_holder">
+                <input type="file" id="upload_photos" class="btn-input" accept="image/*">
+            </div>
+
+        </div>
     </div>
+
+
 
 
 <?php
