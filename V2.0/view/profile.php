@@ -71,7 +71,7 @@
         </div>
         <div class="space"></div>
         <?php
-            if (isset($_GET['id']) && $_GET['id'] == $_SESSION['logged']['id']){
+            if(isset($_GET['id'])){
 
             }
             elseif (isset($_GET['id']) && $_GET['id'] === $_SESSION['logged']['id']){

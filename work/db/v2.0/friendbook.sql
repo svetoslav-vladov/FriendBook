@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 10 апр 2018 в 03:35
+-- Generation Time: 10 апр 2018 в 03:50
 -- Версия на сървъра: 10.1.25-MariaDB
 -- PHP Version: 7.1.7
 
@@ -128,8 +128,8 @@ INSERT INTO `friend_requests` (`requested_user_id`, `status_requested`, `accepte
 (11, 1, 7, 0),
 (11, 1, 8, 0),
 (11, 1, 4, 0),
-(4, 1, 5, 0),
-(4, 1, 6, 0);
+(4, 1, 6, 0),
+(4, 1, 5, 0);
 
 -- --------------------------------------------------------
 
