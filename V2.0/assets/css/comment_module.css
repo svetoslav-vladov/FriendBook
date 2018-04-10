@@ -10,6 +10,8 @@ div#post {
 
 div.icon img {
     height: 70px;
+    border-radius: 50%;
+    width: 70px;
 }
 
 .user_info span {
