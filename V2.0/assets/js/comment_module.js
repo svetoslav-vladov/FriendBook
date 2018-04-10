@@ -42,7 +42,7 @@ function getComments(post_id) {
 
 function displayComments(post_id) {
     var comment_box = document.querySelector('#comment_box'+post_id);
-    comment_box.style.height = "450px";
+    comment_box.style.height = "350px";
     $('#comment_btn_close'+post_id).show();
     $('#comment_btn'+post_id).hide();
 

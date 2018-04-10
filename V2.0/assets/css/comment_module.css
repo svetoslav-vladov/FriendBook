@@ -147,8 +147,10 @@ span.likes_counter {
 }
 
 span.user_pic_add_comment img {
-    height: 40px;
+    height: 50px;
     vertical-align: middle;
+    border-radius: 5px;
+    margin-right: 7px;
 }
 
 .input_add_comment {
@@ -163,8 +165,8 @@ span.user_pic_add_comment span input {
 }
 
 input[type="text"] {
-    padding: 10px;
-    width: 80%;
+    padding: 16px;
+    width: 70%;
     box-sizing: border-box;
 }
 

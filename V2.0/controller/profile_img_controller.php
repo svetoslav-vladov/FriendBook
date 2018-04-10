@@ -26,9 +26,10 @@
                 $message = [];
                 if(uploadProfilePicture($_SESSION['logged']['id'],$profile_img)){
                     $oldPic =  $_SESSION['logged']['profile_pic'];
-                    $default_profil = $GLOBALS["female_default_picture"];
+                    $default_profil_male = $GLOBALS["male_default_picture"];
+                    $default_profil_female = $GLOBALS["male_default_picture"];
 
-                    if($oldPic !== $default_profil){
+                    if($oldPic !== $default_profil_male && $oldPic !== $default_profil_female){
                         unlink($oldPic);
                     }
                     $_SESSION['logged']['profile_pic'] = $profile_img;

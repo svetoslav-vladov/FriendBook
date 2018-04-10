@@ -131,6 +131,7 @@
                 $_SESSION['logged']['display_name'] = $display_name;
                 $_SESSION['logged']['birthday'] = $birthday;
                 $_SESSION['logged']['relation_status'] = $relation_status;
+                $_SESSION['logged']['full_name'] = $first_name . " " . $last_name;
 
 //                'first_name' => string 'Svetoslav' (length=9)
 //      'last_name' => string 'Vladov' (length=6)
