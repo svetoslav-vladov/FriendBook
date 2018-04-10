@@ -54,6 +54,7 @@ else{
 
         </div>
         <?php require_once '../include/modules/get_all_friends.php'; ?>
+
     </div>
 
 

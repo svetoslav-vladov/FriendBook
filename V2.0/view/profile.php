@@ -93,6 +93,9 @@
             <div id="input_holder">
                 <input type="file" id="upload_photos" class="btn-input" accept="image/*">
             </div>
+            <div id="image_list">
+
+            </div>
 
         </div>
     </div>

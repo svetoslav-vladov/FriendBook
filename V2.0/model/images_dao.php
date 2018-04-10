@@ -43,17 +43,18 @@
 
     }
 
-    function uploadPhotos($user_id, $data){
+    function uploadPhotos($user_id, $img_url){
 
         $pdo = $GLOBALS['pdo'];
-        $statement = $pdo->prepare("SELECT img_url 
-                                        FROM user_photos 
-                                        WHERE user_id = :user_id;");
+
+        $statement = $pdo->prepare("INSERT INTO user_photos (user_id, img_url) 
+                                VALUES (:user_id,:img_url)");
+
 
         $statement->bindParam(':user_id',$user_id, PDO::PARAM_INT);
-        $statement->bindParam(':data',$user_id, PDO::PARAM_INT);
+        $statement->bindParam(':img_url',$img_url, PDO::PARAM_STR);
 
-        $statement->execute();
+        return $statement->execute();
 
 
     }

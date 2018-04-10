@@ -1056,8 +1056,37 @@ input#upload_photos {
 
 div#input_holder {
     text-align: center;
+    margin:  10px 0;
 }
 
 input#upload_photos:hover {
     background: #eee;
+}
+
+div#ajax_success {
+    padding: 8px 0;
+    text-align: center;
+    font-size: 0.9em;
+    color: #4e8a4e;
+    background-color: #b2e4b1cc;
+    border-color: #ebccd1;
+    position: fixed;
+    top: 50px;
+    width: 100%;
+    font-weight: bold;
+    z-index: 1000;
+    display: none;
+}
+div#photos img {
+    width: 30%;
+    margin:  10px;
+    display:  inline-block;
+    vertical-align: middle;
+}
+
+.success {
+    padding: 10px;
+    background: #84d084a8;
+    margin: 10px 0;
+    text-align: center;
 }
