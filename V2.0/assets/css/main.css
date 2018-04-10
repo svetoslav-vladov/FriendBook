@@ -4,6 +4,7 @@ body {
     background-color: #e9ebee;
     margin: 0;
     padding-top: 35px;
+    font-family: monospace;
 }
 #register div {
     margin: 5px;
@@ -106,6 +107,7 @@ nav ul li {
 #left-col-grid > *,#right-col-grid > * {
     position: fixed;
     width: inherit;
+    font-family: monospace;
 }
 #top {
     width: 100%;
@@ -150,6 +152,11 @@ nav a {
     background:  #fff;
     box-sizing: border-box;
     padding:  10px;
+    font-family: monospace;
+}
+
+.proposed-container h3 {
+    text-align: center;
 }
 .logo-front img {
     height:  200px;

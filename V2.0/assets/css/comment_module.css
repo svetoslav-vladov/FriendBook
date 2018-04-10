@@ -107,6 +107,7 @@ span.likes_counter {
     height: 40px;
     display: inline;
     border-radius: 50%;
+    width: 40px;
 }
 
 .comment user_pic img {
