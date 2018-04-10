@@ -20,6 +20,7 @@
 </head>
 <body>
 <?php require_once "msg_push.php"; ?>
+<div id='ajax_error'></div>
 
 
 

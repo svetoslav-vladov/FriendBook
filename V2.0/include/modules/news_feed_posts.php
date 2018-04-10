@@ -65,6 +65,9 @@
                 </div>
             </div>
             <div class="add-comment-div">
+                <span class="user_pic_add_comment">
+                    <img src="<?php echo $_SESSION['logged']['profile_pic']; ?>" alt="icon" class="img-rounded center-block">
+                </span>
                 <input type="text" placeholder="Write comment..." class="comment-textarea<?= $post['post_id'] ?>" name="comment_description">
                 <input type="hidden" name="post_id" value="<?php echo $post['post_id']?>">
                 <button id="add<?php echo $post['post_id']?>" class="mini-btn">add</button>

@@ -58,8 +58,8 @@ body {
 .proposed-users li {
     padding: 8px;
     background: #e5e5e5;
-    margin: 12px 0px;
-    border-radius: 26px;
+    margin: 25px 0px;
+    border-radius: 15px;
     box-shadow: 0 0 11px 1px darkgrey;
     border: none;
 }
@@ -292,6 +292,20 @@ form a:hover {
     width: 100%;
     font-weight:  bold;
     z-index: 1000;
+}
+#ajax_error {
+    padding: 8px 0;
+    text-align:  center;
+    font-size:  0.9em;
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+    position:  fixed;
+    top: 50px;
+    width: 100%;
+    font-weight:  bold;
+    z-index: 1000;
+    display: none;
 }
 .ok_msg {
     padding: 8px 0;
@@ -614,7 +628,7 @@ div#profileUserNav ul li:last-child {
 
 .add-comment-div button {
     width: 11%;
-    padding: 11px 0 !important;
+    padding: 16px 0 !important;
 }
 .comment-input {
     width: 100%;
@@ -842,8 +856,8 @@ form#general_form ul,form#security_form ul {margin: 5px 0;font-size: 0.9rem;colo
 
 .add-button, .delete-button {
     position: absolute;
-    top: -28px;
-    left: 57px;
+    top: -20px;
+    right: 0;
     padding: 3px 10px;
     color: white;
     border-radius: 15px;
@@ -1006,6 +1020,10 @@ form#cover_image_form {
     height:  0;
 }
 img#cover_img {
-    height:  100%;
     width: 100%;
+    width: 100%;
+    height: 300px;
+}
+ul.proposed-users li {
+    position:  relative;
 }

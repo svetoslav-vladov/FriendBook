@@ -27,7 +27,7 @@
                     $default_profil = $GLOBALS["female_default_picture"];
 
                     if($oldPic !== $default_profil){
-                        //unlink($oldPic);
+                        unlink($oldPic);
                     }
                     $_SESSION['logged']['profile_pic'] = $profile_img;
                     $message['img_url'] = $profile_img;
