@@ -12,5 +12,4 @@ else{
     $userId = $_SESSION['logged']['id'];
     $result = getAllFriends($userId);
     echo json_encode($result);
-
 }

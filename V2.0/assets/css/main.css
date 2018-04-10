@@ -947,6 +947,10 @@ img.error_poster {
 .comment_owner p{
     margin:0px;
 }
+
+.space {
+    margin: 18px;
+}
 div#profile-pic {
     position:  relative;
     border: 1px solid #9f9f9f;

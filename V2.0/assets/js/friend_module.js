@@ -8,7 +8,6 @@ function addFriend(friend_id) {
             getCountFriends();
             $('#friend'+friend_id).append(friend_loading_gif);
             setTimeout(function(){
-                var count = $('.friend-div').length;
                 friend_loading_gif.remove();
                 $('#user'+friend_id).fadeOut();
                 setTimeout(function () {

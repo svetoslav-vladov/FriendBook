@@ -17,7 +17,7 @@ if(document.querySelector('#post-form')){
         post_module_form.removeEventListener("click", popup);
         //set loading image in input
 
-        img.src = '../assets/images/loading.gif';
+        img.src = '../assets/images/ajax-loading-c4.gif';
         img.classList.add("post_loading");
 
         fake_input.appendChild(img);

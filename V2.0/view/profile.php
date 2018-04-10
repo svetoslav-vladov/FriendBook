@@ -69,6 +69,7 @@
             </div>
             <?php require_once '../include/profile_nav.php'; ?>
         </div>
+        <div class="space"></div>
         <?php
             if(isset($_GET['id'])){
 

@@ -42,3 +42,27 @@ function getCountFriends($post_id) {
     $statement->execute(array($post_id));
     echo $statement->fetch()['friend_count'];
 }
+
+function sendRequestToFriend($user_id, $friend_id, $request_status, $accepted_status) {
+    $pdo = $GLOBALS['pdo'];
+    $statement = $pdo->prepare("INSERT INTO friend_requests (requested_user_id, accepted_user_id, status_requested, status_accepted) 
+                                VALUES (?,?,?,?)");
+    return $statement->execute(array($user_id, $friend_id, $request_status, $accepted_status));
+}
+
+function stopRequestToFriend($user_id, $friend_id) {
+    $pdo = $GLOBALS['pdo'];
+    $statement = $pdo->prepare("DELETE FROM friend_requests WHERE requested_user_id = ? AND accepted_user_id = ?");
+    return $statement->execute(array($user_id, $friend_id));
+}
+
+function isSendRequest($user_id, $friend_id, $request_status) {
+    $pdo = $GLOBALS['pdo'];
+    $statement = $pdo->prepare("SELECT COUNT(*) AS isSend
+                                FROM friend_requests
+                                WHERE requested_user_id = ? AND accepted_user_id = ? AND status_requested = ?");
+    $statement->execute(array($user_id, $friend_id, $request_status));
+    echo $statement->fetch()['isSend'];
+}
+
+
