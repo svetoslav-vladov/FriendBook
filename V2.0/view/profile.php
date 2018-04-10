@@ -71,13 +71,7 @@
         </div>
         <div class="space"></div>
         <?php
-            if(isset($_GET['id'])){
-
-            }
-            elseif (isset($_GET['id']) && $_GET['id'] === $_SESSION['logged']['id']){
-                require_once '../include/modules/post-mod.php';
-            }
-            elseif(isset($_SESSION['logged']['id'])){
+            if(isset($_GET['id']) && $_GET['id'] == $_SESSION['logged']['id']){
                 require_once '../include/modules/post-mod.php';
             }
         ?>
