@@ -4,9 +4,7 @@
     require_once '../include/session.php';
     require_once "../model/images_dao.php";
 
-    if(!empty($_FILES) && $_FILES['file']["size"] < 1000000){
-
-    if (0 < $_FILES['file']['error'] ) {
+    if ( 0 < $_FILES['file']['error'] ) {
         $message['file-firs-error'] = $_FILES['file']['error'];
     }
     else{
@@ -26,10 +24,9 @@
                 $message = [];
                 if(uploadProfilePicture($_SESSION['logged']['id'],$profile_img)){
                     $oldPic =  $_SESSION['logged']['profile_pic'];
-                    $default_profil_male = $GLOBALS["male_default_picture"];
-                    $default_profil_female = $GLOBALS["male_default_picture"];
+                    $default_profil = $GLOBALS["female_default_picture"];
 
-                    if($oldPic !== $default_profil_male && $oldPic !== $default_profil_female){
+                    if($oldPic !== $default_profil){
                         unlink($oldPic);
                     }
                     $_SESSION['logged']['profile_pic'] = $profile_img;
@@ -54,9 +51,6 @@
     else{
         $message['upload_error'] = "File not uploaded successfully";
     }
-
-    }else{
-        $message['uplod_max'] = "File max upload size reach, no more than 1MB";
-    }
     echo json_encode($message);
+
 ?>

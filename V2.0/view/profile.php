@@ -70,6 +70,7 @@
             <?php require_once '../include/profile_nav.php'; ?>
         </div>
         <div class="space"></div>
+
         <div id="timeline">
             <?php
             if(isset($_GET['id'])){
@@ -79,6 +80,7 @@
                 require_once '../include/modules/post-mod.php';
             }
             elseif(isset($_SESSION['logged']['id'])){
+
                 require_once '../include/modules/post-mod.php';
             }
             ?>

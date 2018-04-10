@@ -10,7 +10,8 @@
                     <div class="add-delete-buttons" id="friend<?php echo $user['id']?>">
                         <script>
                             $(document).ready(function () {
-                                isSendRequest(<?php echo $user['id']?>);
+                                isFriend(<?php echo $user['id']?>);
+//                                isSendRequest(<?php //echo $user['id']?>//);
                             });
                         </script>
                     </div>
