@@ -26,6 +26,7 @@
         <script>
             $(document).ready(function () {
                 getLikedPost();
+                checkRequest();
             });
         </script>
         <?php require_once '../include/modules/news_feed_posts.php'; ?>
