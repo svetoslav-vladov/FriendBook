@@ -42,20 +42,42 @@
                 if(isset($_GET["id"]) && $_GET["id"] != $_SESSION["logged"]["id"]){
                     ?>
                     <div id="userPictrue">
-                        <img  id="cover_img" src="<?php echo $profilePic; ?>" alt="user profile picture">
+                        <img  id="other_cover_img" src="<?php echo $profilePic; ?>" alt="user profile picture">
                         <div class="profile-mini-name"><?php echo $userName; ?></div>
                     </div>
                     <?php
                 }
+
+                    if (!isset($_GET["id"])){
+                        ?>
+                            <div id="change_cover_pic">
+                                <i class="fas fa-edit"></i>
+                            </div>
+                            <form id="cover_image_form" action="../controller/profile_img_controller.php" method="post" enctype="multipart/form-data">
+                                <label for="cover_image"></label>
+                                <input type="file" id="cover_image" name="cover_image" accept="image/*">
+                                <button type="submit"></button>
+                            </form>
+                        <?php
+                    }else{
+                        ?>
+
+                        <?php
+                    }
+
                 ?>
             </div>
-
             <?php require_once '../include/profile_nav.php'; ?>
         </div>
         <div class="space"></div>
         <?php
             if (isset($_GET['id']) && $_GET['id'] == $_SESSION['logged']['id']){
 
+            }
+            elseif (isset($_GET['id']) && $_GET['id'] === $_SESSION['logged']['id']){
+                require_once '../include/modules/post-mod.php';
+            }
+            elseif(isset($_SESSION['logged']['id'])){
                 require_once '../include/modules/post-mod.php';
             }
         ?>

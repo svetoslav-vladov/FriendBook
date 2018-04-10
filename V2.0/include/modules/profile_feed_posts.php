@@ -8,6 +8,7 @@
     }
 
     foreach ($allPosts as $post) {?>
+
         <div class="post">
             <div class="user_info">
                 <div class="icon"><img src="<?php echo $post['profile_pic']; ?>" alt="icon" class="img-rounded center-block"></div>

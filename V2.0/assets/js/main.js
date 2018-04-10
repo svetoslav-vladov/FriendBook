@@ -46,7 +46,7 @@ function getLikedPost() {
     req.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             var result = JSON.parse(this.responseText);
-            console.log(result);
+
         }
     };
     req.open("GET", "../controller/get_liked_posts_controller.php");

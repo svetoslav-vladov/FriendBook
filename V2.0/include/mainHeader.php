@@ -14,7 +14,7 @@
                 </div>
             </div>
         </div>
-        <nav>
+        <nav id="main_top_nav">
             <ul id="icon-nav">
                 <li class="profile-btn">
                     <a href="../view/profile.php?id=<?php echo $_SESSION['logged']['id']; ?>">

@@ -22,7 +22,7 @@ function getAllPosts() {
 function getOwnPosts($user_id) {
     // This function return information for all posts and information for the owner of the posts
     $pdo = $GLOBALS['pdo'];
-    $statement = $pdo->prepare("SELECT posts.id AS post_id, posts.description, posts.create_date, users.id AS user_id, users.first_name, users.last_name, users.profile_pic, users.profile_cover
+    $statement = $pdo->prepare("SELECT posts.id AS post_id, posts.description, posts.create_date, users.id AS user_id, users.first_name, users.last_name, users.profile_pic, users.profile_cover,users.gender
                                 FROM posts
                                 JOIN users ON posts.user_id = users.id 
                                 WHERE users.id = ? 
