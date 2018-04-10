@@ -27,3 +27,33 @@
 
         return $statement->execute();
     }
+
+    function getProfileImages($user_id){
+
+        $pdo = $GLOBALS['pdo'];
+        $statement = $pdo->prepare("SELECT img_url 
+                                    FROM user_photos 
+                                    WHERE user_id = :user_id;");
+
+        $statement->bindParam(':user_id',$user_id, PDO::PARAM_INT);
+
+        $statement->execute();
+        return $statement->fetchAll(PDO::FETCH_ASSOC);
+
+
+    }
+
+    function uploadPhotos($user_id, $data){
+
+        $pdo = $GLOBALS['pdo'];
+        $statement = $pdo->prepare("SELECT img_url 
+                                        FROM user_photos 
+                                        WHERE user_id = :user_id;");
+
+        $statement->bindParam(':user_id',$user_id, PDO::PARAM_INT);
+        $statement->bindParam(':data',$user_id, PDO::PARAM_INT);
+
+        $statement->execute();
+
+
+    }
