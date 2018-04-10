@@ -29,9 +29,18 @@ if(document.querySelector('#upload_left_image')){
                 success: function (response) {
 
                     var profile_pic = document.querySelector('#mini-profile-pic');
+                    console.log(response);
                     var res = JSON.parse(response);
+                    if(res.hasOwnProperty('uplod_max')){
+                        var err = document.querySelector('#ajax_error');
+                        err.innerHTML =  res['uplod_max'];
+                        err.style.display =  "block";
+                    }
+                    else{
+                        profile_pic.src = res['img_url'];
+                    }
 
-                    profile_pic.src = res['img_url'];
+
                 }
 
             });
@@ -76,7 +85,14 @@ if(document.querySelector('#cover_image_form')){
 
                 var cover_pic = document.querySelector('#cover_img');
                 var res = JSON.parse(response);
-                cover_pic.src = res['img_url'];
+                if(res.hasOwnProperty('uplod_max')){
+                    var err = document.querySelector('#ajax_error');
+                    err.innerHTML =  res['uplod_max'];
+                    err.style.display =  "block";
+                }
+                else {
+                    cover_pic.src = res['img_url'];
+                }
             }
 
         });

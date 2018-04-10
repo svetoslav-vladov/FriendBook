@@ -4,7 +4,9 @@
     require_once '../include/session.php';
     require_once "../model/images_dao.php";
 
-    if ( 0 < $_FILES['file']['error'] ) {
+    if(!empty($_FILES) && $_FILES['file']["size"] < 1000000){
+
+    if (0 < $_FILES['file']['error'] ) {
         $message['file-firs-error'] = $_FILES['file']['error'];
     }
     else{
@@ -51,6 +53,9 @@
     else{
         $message['upload_error'] = "File not uploaded successfully";
     }
-    echo json_encode($message);
 
+    }else{
+        $message['uplod_max'] = "File max upload size reach, no more than 1MB";
+    }
+    echo json_encode($message);
 ?>
