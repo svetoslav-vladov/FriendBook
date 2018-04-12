@@ -52,3 +52,5 @@ function getLikedPost() {
     req.open("GET", "../controller/get_liked_posts_controller.php");
     req.send();
 }
+
+// image magnifier

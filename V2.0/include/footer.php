@@ -7,6 +7,7 @@
         <script src="../assets/js/send_request_friend.js"></script>
         <script src="../assets/js/profile_nav.js"></script>
         <script src="../assets/js/main.js"></script>
-
+	
+		<div id="popup_box"></div>
     </body>
 </html>

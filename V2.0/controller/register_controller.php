@@ -48,7 +48,7 @@ if (isset($_POST['register'])) {
     else {
         registerUser($first_name, $last_name, $email, $password, $gender, $birthday, $profile_pic, $cover_pic);
         $success = 'Successfuly registered!';
-        header("location: ../view/register.php?success=" . htmlentities($success));
+        header("location: ../view/login.php?success=" . htmlentities($success));
     }
 
 }

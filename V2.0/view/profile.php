@@ -91,9 +91,26 @@
             about
         </div>
         <div id="photos">
-            <div id="input_holder">
-                <input type="file" id="upload_photos" class="btn-input" accept="image/*">
-            </div>
+			<?php
+            if(isset($_GET['id']) && $_GET['id'] === $_SESSION['logged']['id']){
+                ?>
+			<div id="input_holder">
+				<input type="file" id="upload_photos" class="btn-input" accept="image/*">
+			</div>
+				<?php
+            }
+            elseif (isset($_GET['id'])){
+
+            }
+            elseif(isset($_SESSION['logged']['id'])){
+				?>
+				<div id="input_holder">
+					<input type="file" id="upload_photos" class="btn-input" accept="image/*">
+				</div>
+				<?php
+            }
+            ?>
+            
             <div id="image_list">
 
             </div>

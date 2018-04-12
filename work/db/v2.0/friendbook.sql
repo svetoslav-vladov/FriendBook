@@ -81,7 +81,8 @@ INSERT INTO `comments` (`id`, `description`, `comment_date`, `edited_date`, `pos
 (74, 'www', '2018-04-09 19:23:48', NULL, 29, 9),
 (75, 'ww', '2018-04-09 19:24:10', NULL, 29, 9),
 (76, 'bb', '2018-04-10 00:24:21', NULL, 30, 4),
-(77, 'Браво само така', '2018-04-10 06:47:42', NULL, 31, 13);
+(77, 'Браво само така', '2018-04-10 06:47:42', NULL, 31, 13),
+(78, 'браво.. успех', '2018-04-10 08:40:12', NULL, 33, 4);
 
 -- --------------------------------------------------------
 
@@ -104,6 +105,18 @@ CREATE TABLE `friends` (
   `user_id` int(11) NOT NULL,
   `friend_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Схема на данните от таблица `friends`
+--
+
+INSERT INTO `friends` (`user_id`, `friend_id`) VALUES
+(4, 5),
+(4, 7),
+(4, 8),
+(4, 9),
+(5, 4),
+(5, 11);
 
 -- --------------------------------------------------------
 
@@ -163,7 +176,10 @@ INSERT INTO `likes` (`post_id`, `user_id`) VALUES
 (29, 4),
 (29, 11),
 (28, 11),
-(31, 13);
+(31, 13),
+(30, 4),
+(33, 4),
+(28, 4);
 
 -- --------------------------------------------------------
 
@@ -244,8 +260,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `password`, `reg_date`, `gender`, `birthday`, `relation_status`, `profile_pic`, `profile_cover`, `description`, `display_name`, `country_id`, `mobile_number`, `www`, `skype`) VALUES
-(4, 'eray', 'myumyun', 'eray@abv.bg', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', '2018-04-09 17:37:33', 'male', '2018-03-15', '', '../uploads/male_default_picture.png', '../uploads/default_cover.jpg', NULL, 'Erchoooo', NULL, 0, '', ''),
-(5, 'Svetoslav', 'V. Vladov', 'komara_@abv.bg', 'f10e2821bbbea527ea02200352313bc059445190', '2018-04-10 06:36:19', 'male', '1988-12-22', 'Deep inlove :D', '../uploads/users/1523342002-5.jpg', '../uploads/users/1523342008-5.jpg', NULL, 'Komara', NULL, 0, '', ''),
+(4, 'eray', 'myumyun', 'eray@abv.bg', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', '2018-04-10 08:40:48', 'male', '2018-03-15', '', '../uploads/users/1523349648-4.png', '../uploads/default_cover.jpg', NULL, 'Erchoooo', NULL, 0, '', ''),
+(5, 'Svetoslav', 'V. Vladov', 'komara_@abv.bg', 'f10e2821bbbea527ea02200352313bc059445190', '2018-04-10 09:01:00', 'male', '1988-12-22', 'Deep inlove :D', '../uploads/users/1523342002-5.jpg', '../uploads/users/1523350860-5.jpg', NULL, 'Komara', NULL, 0, '', ''),
 (6, 'asd', 'asd', 'asd1@abv.bg', 'f10e2821bbbea527ea02200352313bc059445190', '2018-03-28 14:53:33', 'female', '0002-02-22', NULL, '../uploads/female_default_picture.png', '../uploads/default_cover.jpg', NULL, NULL, NULL, NULL, NULL, NULL),
 (7, 'test1', 'test1', 'test1@abv.bg', 'f10e2821bbbea527ea02200352313bc059445190', '2018-03-29 12:16:28', 'female', '0002-02-12', NULL, '../uploads/female_default_picture.png', '../uploads/default_cover.jpg', NULL, NULL, NULL, NULL, NULL, NULL),
 (8, 'Dimitar', 'Bogoslovov', 'bogi@abv.bg', 'f10e2821bbbea527ea02200352313bc059445190', '2018-03-31 12:57:57', 'male', '0002-02-22', NULL, '../uploads/male_default_picture.png', '../uploads/default_cover.jpg', NULL, NULL, NULL, NULL, NULL, NULL),
@@ -271,8 +287,11 @@ CREATE TABLE `user_photos` (
 --
 
 INSERT INTO `user_photos` (`id`, `user_id`, `img_url`) VALUES
-(1, 13, 'test'),
-(2, 13, 'test2');
+(3, 5, '../uploads/users/photos/1523351836-5.jpg'),
+(4, 5, '../uploads/users/photos/1523352303-5.jpg'),
+(5, 5, '../uploads/users/photos/1523352423-5.jpg'),
+(6, 5, '../uploads/users/photos/1523352969-5.jpg'),
+(7, 5, '../uploads/users/photos/1523353189-5.jpg');
 
 --
 -- Indexes for dumped tables
@@ -350,7 +369,7 @@ ALTER TABLE `user_photos`
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
 --
 -- AUTO_INCREMENT for table `countries`
 --
@@ -370,7 +389,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `user_photos`
 --
 ALTER TABLE `user_photos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- Ограничения за дъмпнати таблици
 --

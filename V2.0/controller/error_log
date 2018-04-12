@@ -1,0 +1,1 @@
+[10-Apr-2018 14:42:45 Europe/Sofia] PHP Warning:  unlink(../uploads/male_default_picture.png): No such file or directory in /home/ivsbgj2e/friendbook.site/controller/profile_img_controller.php on line 30
