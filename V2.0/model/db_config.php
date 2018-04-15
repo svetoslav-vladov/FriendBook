@@ -3,8 +3,8 @@
 const DB_NAME = 'friendbook';
 const DB_IP = 'localhost';
 const DB_PORT = '3306';
-const DB_USER = 'root';
-const DB_PASS = '123trabata123';
+const DB_USER = '';
+const DB_PASS = '';
 
 try {
     $dsn = "mysql:host=" . DB_IP . ":" . DB_PORT . ";dbname=" . DB_NAME;
